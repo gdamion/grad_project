@@ -1,0 +1,2 @@
+/home/al/Code/diploma/openPOWERLINK_V2/apps/demo_cn_console/../../bin/linux/x86_64/demo_cn_console/set_prio
+/home/al/Code/diploma/openPOWERLINK_V2/apps/demo_cn_console/../../bin/linux/x86_64/demo_cn_console/demo_cn_console
