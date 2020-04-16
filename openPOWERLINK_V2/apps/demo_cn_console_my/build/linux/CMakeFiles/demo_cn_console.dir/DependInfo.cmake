@@ -38,7 +38,6 @@ set(CMAKE_C_TARGET_INCLUDE_PATH
   "../../../common/objdicts"
   "../../src"
   "../../../common/objdicts/CiA401_CN"
-  "/home/al/Code/diploma/EPL_ROS/openPOWERLINK_V2/drivers/linux/drv_kernelmod_edrv/proj/cn"
   )
 
 # Targets to which this target links.
