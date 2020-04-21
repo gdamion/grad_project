@@ -1,0 +1,34 @@
+{
+  "ros_project": "raspberry",
+  "xap_path": "/home/ilia/Dropbox/Documents/Development/Python/xap_parser/cn_xap.h",
+  "in": [
+    {
+      "alias": "DigitalOutput",
+      "index": "0x2000",
+      "subindex": 0,
+      "size": 8,
+      "type": "int",
+      "attributes": [
+        "unsigned"
+      ],
+      "messages": [
+        "PowerlinkIn"
+      ]
+    }
+  ],
+  "out": [
+    {
+      "alias": "DigitalInput",
+      "index": "0x2000",
+      "subindex": 0,
+      "size": 8,
+      "type": "int",
+      "attributes": [
+        "unsigned"
+      ],
+      "messages": [
+        "PowerlinkOut"
+      ]
+    }
+  ]
+}

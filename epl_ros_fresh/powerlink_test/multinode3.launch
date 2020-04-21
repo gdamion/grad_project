@@ -1,0 +1,7 @@
+<launch>
+    <node name="talker" pkg="powerlink_test" type="talker" output="screen"/>
+
+    <node name="listener1" pkg="powerlink_test" type="listener" output="screen"/>
+    <node name="listener2" pkg="powerlink_test" type="listener" output="screen"/>
+    <node name="listener3" pkg="powerlink_test" type="listener" output="screen"/>
+</launch>

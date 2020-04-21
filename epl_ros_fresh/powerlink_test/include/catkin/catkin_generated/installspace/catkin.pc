@@ -1,0 +1,8 @@
+prefix=/usr/local
+
+Name: catkin
+Description: Description of catkin
+Version: 0.7.6
+Cflags: 
+Libs: -L/usr/local/lib 
+Requires: 

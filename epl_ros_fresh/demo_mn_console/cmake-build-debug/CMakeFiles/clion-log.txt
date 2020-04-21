@@ -1,0 +1,39 @@
+/home/dev/Desktop/clion-2016.3.1/bin/cmake/bin/cmake -DCMAKE_BUILD_TYPE=Debug -G "CodeBlocks - Unix Makefiles" /home/dev/powerlink_new/apps/demo_mn_console
+-- The C compiler identification is GNU 4.8.3
+-- Check for working C compiler: /usr/bin/cc
+-- Check for working C compiler: /usr/bin/cc -- works
+-- Detecting C compiler ABI info
+-- Detecting C compiler ABI info - done
+-- Detecting C compile features
+-- Detecting C compile features - done
+-- Configuring demo_mn_console
+-- CMAKE_SYSTEM_NAME is Linux
+-- CMAKE_SYSTEM_PROCESSOR is x86_64
+-- Searching for LIBRARY oplkmn_d in /home/dev/powerlink_new/apps/demo_mn_console/../../stack/lib/linux/x86_64
+-- Configuring done
+CMake Warning (dev) in CMakeLists.txt:
+  Policy CMP0043 is not set: Ignore COMPILE_DEFINITIONS_<Config> properties.
+  Run "cmake --help-policy CMP0043" for policy details.  Use the cmake_policy
+  command to set the policy and suppress this warning.
+This warning is for project developers.  Use -Wno-dev to suppress it.
+
+CMake Warning (dev) in CMakeLists.txt:
+  Policy CMP0043 is not set: Ignore COMPILE_DEFINITIONS_<Config> properties.
+  Run "cmake --help-policy CMP0043" for policy details.  Use the cmake_policy
+  command to set the policy and suppress this warning.
+This warning is for project developers.  Use -Wno-dev to suppress it.
+
+CMake Warning (dev) in CMakeLists.txt:
+  Policy CMP0043 is not set: Ignore COMPILE_DEFINITIONS_<Config> properties.
+  Run "cmake --help-policy CMP0043" for policy details.  Use the cmake_policy
+  command to set the policy and suppress this warning.
+This warning is for project developers.  Use -Wno-dev to suppress it.
+
+CMake Warning (dev) in CMakeLists.txt:
+  Policy CMP0043 is not set: Ignore COMPILE_DEFINITIONS_<Config> properties.
+  Run "cmake --help-policy CMP0043" for policy details.  Use the cmake_policy
+  command to set the policy and suppress this warning.
+This warning is for project developers.  Use -Wno-dev to suppress it.
+
+-- Generating done
+-- Build files have been written to: /home/dev/powerlink_new/apps/demo_mn_console/cmake-build-debug

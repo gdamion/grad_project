@@ -1,0 +1,14 @@
+#ifndef XAP_h
+#define XAP_h
+
+typedef struct
+{
+$PI_IN_FIELDS
+} PI_OUT;
+
+typedef struct
+{
+$PI_IN_FIELDS
+} PI_IN;
+
+#endif

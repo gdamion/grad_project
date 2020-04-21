@@ -1,0 +1,51 @@
+#include <$ROS_PROJECT/ros_wrapper.h>
+
+IPC_DATA<PI_IN> oplk_pi_in_data;
+PI_IN *oplk_pi_in;
+IPC_DATA<PI_OUT> oplk_pi_out_data;
+PI_OUT *oplk_pi_out;
+
+$ROS_STRUCTS
+
+int init_ros_memory(int pid)
+{
+    ROS_INFO("-------------------------");
+    ROS_INFO("Initializing ROS shared memory");
+$INIT_ROS_CODE
+}
+
+int init_oplk_memory()
+{
+    oplk_pi_in_data.shm_name = "OPLK_PI_IN";
+    oplk_pi_in_data.address = init_shared_memory(oplk_pi_in_data.shm_name.c_str(), oplk_pi_in_data.length);
+    if (oplk_pi_in_data.address == (void*)-1)
+    {
+        ROS_ERROR("Accessing OPLK shared memory for %s: FAIL", oplk_pi_in_data.shm_name.c_str());
+        return 1;
+    }
+    else
+    {
+        oplk_pi_in = (PI_IN*)oplk_pi_in_data.address;
+        ROS_INFO("Accessing OPLK shared memory for %s: OK", oplk_pi_in_data.shm_name.c_str());
+    }
+    oplk_pi_out_data.shm_name = "OPLK_PI_OUT";
+    oplk_pi_out_data.address = init_shared_memory(oplk_pi_out_data.shm_name.c_str(), oplk_pi_out_data.length);
+    if (oplk_pi_out_data.address == (void*)-1)
+    {
+        ROS_ERROR("Accessing OPLK shared memory for %s: FAIL", oplk_pi_out_data.shm_name.c_str());
+        return 1;
+    }
+    else
+    {
+        oplk_pi_out = (PI_OUT*)oplk_pi_out_data.address;
+        ROS_INFO("Accessing OPLK shared memory for %s: OK", oplk_pi_out_data.shm_name.c_str());
+    }
+    return 0;
+}
+
+void unlink_memory()
+{
+$ROS_UNLINK_CODE
+}
+
+$ROS_EXCHANGE_CODE

@@ -1,0 +1,33 @@
+#ifndef MEMORY_API_H
+#define MEMORY_API_H
+
+#include <unistd.h>
+#include <fcntl.h>
+#include <sys/mman.h>
+#include <sys/types.h>
+
+/*
+
+#include <string>
+#include <list>
+
+using std::string;
+using std::list;
+
+template<typename T>
+struct IPC_DATA
+{
+    void* address = (void*)-1;
+    bool is_initialized = false;
+    bool is_buffers_initialized = false;
+    string shm_name = string("");
+    T* buffer_a = NULL;
+    T* buffer_b = NULL;
+    int length = sizeof(T);
+    list<int> pids;
+};
+*/
+
+void* init_shared_memory(const char* name, int length);
+
+#endif

@@ -1,0 +1,14 @@
+<launch>
+    <node name="talker" pkg="powerlink_test" type="talker" output="screen"/>
+
+    <node name="listener1" pkg="powerlink_test" type="listener" output="screen"/>
+    <node name="listener2" pkg="powerlink_test" type="listener" output="screen"/>
+    <node name="listener3" pkg="powerlink_test" type="listener" output="screen"/>
+    <node name="listener4" pkg="powerlink_test" type="listener" output="screen"/>
+    <node name="listener5" pkg="powerlink_test" type="listener" output="screen"/>
+    <node name="listener6" pkg="powerlink_test" type="listener" output="screen"/>
+    <node name="listener7" pkg="powerlink_test" type="listener" output="screen"/>
+    <node name="listener8" pkg="powerlink_test" type="listener" output="screen"/>
+    <node name="listener9" pkg="powerlink_test" type="listener" output="screen"/>
+    <node name="listener10" pkg="powerlink_test" type="listener" output="screen"/>
+</launch>

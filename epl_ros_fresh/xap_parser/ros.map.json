@@ -1,0 +1,82 @@
+{
+  "ros_project": "powerlink_test",
+  "xap_path": "/home/ilia/Dropbox/Documents/Development/Python/xap_parser/xap.h",
+  "in": [
+    {
+      "name": "CN1_M00_DigitalOutput_00h_AU8_DigitalOutput",
+      "alias": "CN1_M00_DigitalOutput_00h_AU8_DigitalOutput",
+      "size": 8,
+      "type": "int",
+      "attributes": [
+        "unsigned"
+      ],
+      "messages": [
+        "PowerlinkIn"
+      ]
+    },
+    {
+      "name": "CN32_M00_DigitalOutput_00h_AU8_DigitalOutput",
+      "alias": "CN32_M00_DigitalOutput_00h_AU8_DigitalOutput",
+      "size": 8,
+      "type": "int",
+      "attributes": [
+        "unsigned"
+      ],
+      "messages": [
+        "PowerlinkIn"
+      ]
+    },
+    {
+      "name": "CN110_M00_DigitalOutput_00h_AU8_DigitalOutput",
+      "alias": "CN110_M00_DigitalOutput_00h_AU8_DigitalOutput",
+      "size": 8,
+      "type": "int",
+      "attributes": [
+        "unsigned"
+      ],
+      "messages": [
+        "PowerlinkIn"
+      ]
+    }
+  ],
+  "out": [
+    {
+      "name": "CN1_M00_DigitalInput_00h_AU8_DigitalInput",
+      "alias": "CN1_M00_DigitalInput_00h_AU8_DigitalInput",
+      "size": 8,
+      "type": "int",
+      "attributes": [
+        "unsigned"
+      ],
+      "messages": [
+        "PowerlinkOut"
+      ]
+    },
+    {
+      "name": "CN32_M00_DigitalInput_00h_AU8_DigitalInput",
+      "alias": "CN32_M00_DigitalInput_00h_AU8_DigitalInput",
+      "size": 8,
+      "type": "int",
+      "attributes": [
+        "unsigned"
+      ],
+      "messages": [
+        "PowerlinkOut"
+      ]
+    },
+    {
+      "name": "CN110_M00_DigitalInput_00h_AU8_DigitalInput",
+      "alias": "CN110_M00_DigitalInput_00h_AU8_DigitalInput",
+      "size": 8,
+      "type": "int",
+      "attributes": [
+        "unsigned"
+      ],
+      "messages": [
+        "PowerlinkOut"
+      ]
+    }
+  ],
+  "out_size": 4,
+  "in_size": 4
+}

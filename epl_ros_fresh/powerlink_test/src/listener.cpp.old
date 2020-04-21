@@ -1,0 +1,141 @@
+#include "ros/ros.h"
+#include "std_msgs/String.h"
+
+#include <signal.h>
+#include <time.h>
+#include <fstream>
+#include <iostream>
+#include <sstream>
+#include <stdlib.h>
+#include <sched.h>
+
+#include <powerlink_test/PowerlinkIn.h>
+#include <powerlink_test/PowerlinkOut.h>
+#include <powerlink_test/PowerlinkInStruct.h>
+#include <powerlink_test/PowerlinkOutStruct.h>
+#include <powerlink_test/Signal.h>
+#include <powerlink_test/MemoryAPI.h>
+#include <powerlink_test/PrioritySetter.h>
+
+using namespace std;
+
+IPC_DATA<POWERLINK_IN> powerlink_in;
+struct timespec ts;
+ofstream file;
+ros::ServiceClient client;
+
+void message_callback(const powerlink_test::PowerlinkIn::ConstPtr& msg);
+void shutdown_handler(int sig);
+void user_signal_handler(int sig);
+
+int main(int argc, char **argv)
+{
+    int pid = getpid();
+
+    #ifdef LOG_LATENCY
+    stringstream filename;
+    filename << "/home/dev/catkin_ws/results_" << pid << ".m";
+    file.open(filename.str(), ios::out | ios::app);
+    #endif
+
+    stringstream node_name;
+    node_name << "listener_" << pid;
+    ros::init(argc, argv, node_name.str(), ros::init_options::NoSigintHandler);
+
+    signal(SIGINT, shutdown_handler);
+    signal(SIGKILL, shutdown_handler);
+    signal(SIGTERM, shutdown_handler);
+
+    if (signal(SIGUSR1, user_signal_handler) == SIG_ERR)
+    {
+        ROS_ERROR("Setting USR1 hook: FAIL");
+    }
+    else
+    {
+        ROS_INFO("Setting USR1 hook: OK");
+    }
+
+    if (signal(SIGUSR2, user_signal_handler) == SIG_ERR)
+    {
+        ROS_ERROR("Setting USR2 hook: FAIL");
+    }
+    else
+    {
+        ROS_INFO("Setting USR2 hook: OK");
+    }
+
+    ros::NodeHandle n;
+    ros::Subscriber sub = n.subscribe("chatter", 1000, message_callback);
+    client = n.serviceClient<powerlink_test::Signal>("signal");
+
+    set_group_priority(getpgrp());
+
+    powerlink_test::Signal srv;
+    srv.request.do_add = true;
+    srv.request.pid = getpgrp();
+    if ((client.call(srv)) && (srv.response.success))
+    {
+        ROS_INFO("Signal service request: OK");
+    }
+    else
+    {
+        ROS_ERROR("Signal service request: FAIL");
+    }
+
+    ros::spin();
+
+    return 0;
+}
+
+void message_callback(const powerlink_test::PowerlinkIn::ConstPtr& msg)
+{
+    if (!powerlink_in.is_initialized)
+    {
+        powerlink_in.is_initialized = true;
+        ROS_INFO("Message from PID %i", msg->pid);
+        ROS_INFO("Initializing shared memory for \"%s\"", msg->shm_name.c_str());
+        powerlink_in.shm_name = msg->shm_name;
+        powerlink_in.address = init_shared_memory(powerlink_in.shm_name.c_str(), powerlink_in.length);
+        if (powerlink_in.address != (void*)-1)
+        {
+            powerlink_in.buffer_a = (POWERLINK_IN*)powerlink_in.address;
+            powerlink_in.buffer_b = (POWERLINK_IN*)((char*)powerlink_in.address + sizeof(POWERLINK_IN));
+            powerlink_in.is_buffers_initialized = true;
+            ROS_INFO("Initializing shared memory: OK");
+        }
+        else
+        {
+            ROS_ERROR("Initializing shared memory: FAIL");
+        }
+    }
+}
+
+void shutdown_handler(int sig)
+{
+    #ifdef LOG_LATENCY
+    file.close();
+    #endif
+    ros::shutdown();
+}
+
+void user_signal_handler(int sig)
+{
+    if (!powerlink_in.is_buffers_initialized)
+    {
+        return;
+    }
+    if (sig == SIGUSR1)
+    {
+        clock_gettime(CLOCK_MONOTONIC, &ts);
+        #ifdef LOG_LATENCY
+        file << (float) (ts.tv_nsec - powerlink_in.buffer_a->nanosec) / 1000 << "\n";
+        #endif
+    }
+    if (sig == SIGUSR2)
+    {
+        clock_gettime(CLOCK_MONOTONIC, &ts);
+        #ifdef LOG_LATENCY
+        file << (float) (ts.tv_nsec - powerlink_in.buffer_b->nanosec) / 1000 << "\n";
+        #endif
+    }
+}

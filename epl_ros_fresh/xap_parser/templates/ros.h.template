@@ -1,0 +1,22 @@
+#ifndef GENERATED_H
+#define GENERATED_H
+
+#include <ros/ros.h>
+#include <$ROS_PROJECT/MemoryAPI.h>
+
+$INCLUDE_FILES
+
+extern IPC_DATA<PI_IN> oplk_pi_in_data;
+extern PI_IN *oplk_pi_in;
+extern IPC_DATA<PI_OUT> oplk_pi_out_data;
+extern PI_OUT *oplk_pi_out;
+
+$ROS_STRUCTS
+
+int init_ros_memory(int pid);
+int init_oplk_memory();
+void unlink_memory();
+
+$ROS_EXCHANGE_FUNC
+
+#endif

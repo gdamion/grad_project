@@ -1,0 +1,265 @@
+#include "ros/ros.h"
+#include "std_msgs/String.h"
+
+#include <signal.h>
+#include <time.h>
+#include <sched.h>
+#include <stdio.h>
+
+#include <powerlink_test/PowerlinkIn.h>
+#include <powerlink_test/PowerlinkOut.h>
+#include <powerlink_test/PowerlinkInStruct.h>
+#include <powerlink_test/PowerlinkOutStruct.h>
+#include <powerlink_test/Signal.h>
+#include <powerlink_test/MemoryAPI.h>
+#include <powerlink_test/PrioritySetter.h>
+
+#include "/home/dev/powerlink_new/apps/demo_mn_console/src/xap.h"
+
+void shutdown_handler(int sig);
+void oplk_handler(int sig);
+bool signal_service_handler(powerlink_test::Signal::Request &req, powerlink_test::Signal::Response &res);
+int init_oplk_memory();
+int init_signal_hooks();
+void message_callback(const powerlink_test::PowerlinkIn::ConstPtr& msg);
+
+IPC_DATA<POWERLINK_IN> powerlink_in;
+IPC_DATA<POWERLINK_OUT> powerlink_out;
+
+IPC_DATA<PI_IN> oplk_pi_in_data;
+PI_IN *oplk_pi_in;
+IPC_DATA<PI_OUT> oplk_pi_out_data;
+PI_OUT *oplk_pi_out;
+
+int pid = getpid();
+ros::Publisher publisher;
+
+bool tick;
+struct timespec ts;
+
+int main(int argc, char **argv)
+{
+    ROS_INFO("-------------------------");
+    ROS_INFO("Starting ROS-OPLK wrapper");
+
+    FILE *pid_file = fopen("/home/dev/ros_wrapper.pid", "w");
+    fprintf(pid_file, "%i\n", pid);
+    fclose(pid_file);
+
+    if (init_signal_hooks())
+    {
+        ROS_ERROR("Initializing signal hooks: FAIL");
+        return 1;
+    }
+    else
+    {
+        ROS_INFO("Initializing signal hooks: OK");
+    }
+
+    ROS_INFO("Booting up wrapper...");
+    sleep(5);
+
+    ROS_INFO("-------------------------");
+    ROS_INFO("Initializing OPLK shared memory");
+    if (init_oplk_memory())
+    {
+        ROS_ERROR("Initializing OPLK shared memory: FAIL");
+        return 1;
+    }
+    else
+    {
+        ROS_INFO("Initializing OPLK shared memory: OK");
+    }
+
+    ROS_INFO("-------------------------");
+    ROS_INFO("Initializing ROS shared memory");
+    powerlink_in.shm_name = "powerlink_in";
+    powerlink_in.address = init_shared_memory(powerlink_in.shm_name.c_str(), powerlink_in.length);
+    map_shared_memory<POWERLINK_IN>(&powerlink_in, pid);
+
+    powerlink_out.shm_name = "powerlink_out";
+    powerlink_out.address = init_shared_memory(powerlink_out.shm_name.c_str(), powerlink_out.length);
+    map_shared_memory<POWERLINK_OUT>(&powerlink_out, pid);
+
+    ROS_INFO("-------------------------");
+    ROS_INFO("Initializing ROS framework");
+    ros::init(argc, argv, "talker", ros::init_options::NoSigintHandler);
+
+
+    ros::NodeHandle n;
+    publisher = n.advertise<powerlink_test::PowerlinkIn>("chatter", 1000);
+    ros::Subscriber sub = n.subscribe("olololo", 1000, message_callback);
+    ros::ServiceServer service = n.advertiseService("signal", signal_service_handler);
+    ros::Rate loop_rate(10);
+
+    set_group_priority(getpgrp());
+
+    powerlink_test::PowerlinkIn msg;
+    msg.pid = pid;
+    msg.shm_name = powerlink_in.shm_name;
+
+    ROS_INFO("-------------------------");
+    ROS_INFO("Entering ROS loop");
+
+    while (ros::ok())
+    {
+        publisher.publish(msg);
+
+        ros::spinOnce();
+        loop_rate.sleep();
+    }
+    return 0;
+}
+
+void shutdown_handler(int sig)
+{
+    ROS_INFO("Terminating...");
+    if (powerlink_in.is_buffers_initialized)
+    {
+        munmap(powerlink_in.address, powerlink_in.length * 2);
+        shm_unlink(powerlink_in.shm_name.c_str());
+        ROS_INFO("Shared memory unlinking: OK");
+    }
+    ros::shutdown();
+}
+
+bool signal_service_handler(powerlink_test::Signal::Request &req, powerlink_test::Signal::Response &res)
+{
+    if (req.do_add)
+    {
+        if (std::find(powerlink_in.pids.begin(), powerlink_in.pids.end(), req.pid) == powerlink_in.pids.end())
+        {
+           ROS_INFO("Adding PID %i to subscribers list", req.pid);
+           powerlink_in.pids.push_back(req.pid);
+        }
+    }
+    else
+    {
+        if (std::find(powerlink_in.pids.begin(), powerlink_in.pids.end(), req.pid) != powerlink_in.pids.end())
+        {
+           ROS_INFO("Removing PID %i from subscribers list", req.pid);
+           powerlink_in.pids.remove(req.pid);
+        }
+    }
+    res.success = true;
+    return true;
+}
+
+int init_oplk_memory()
+{
+    oplk_pi_in_data.shm_name = "OPLK_PI_IN";
+    oplk_pi_in_data.address = init_shared_memory(oplk_pi_in_data.shm_name.c_str(), oplk_pi_in_data.length);
+    if (oplk_pi_in_data.address == (void*)-1)
+    {
+        ROS_ERROR("Accessing OPLK shared memory for %s: FAIL", oplk_pi_in_data.shm_name.c_str());
+        return 1;
+    }
+    else
+    {
+        oplk_pi_in = (PI_IN*)oplk_pi_in_data.address;
+        ROS_INFO("Accessing OPLK shared memory for %s: OK", oplk_pi_in_data.shm_name.c_str());
+    }
+    oplk_pi_out_data.shm_name = "OPLK_PI_OUT";
+    oplk_pi_out_data.address = init_shared_memory(oplk_pi_out_data.shm_name.c_str(), oplk_pi_out_data.length);
+    if (oplk_pi_out_data.address == (void*)-1)
+    {
+        ROS_ERROR("Accessing OPLK shared memory for %s: FAIL", oplk_pi_out_data.shm_name.c_str());
+        return 1;
+    }
+    else
+    {
+        oplk_pi_out = (PI_OUT*)oplk_pi_out_data.address;
+        ROS_INFO("Accessing OPLK shared memory for %s: OK", oplk_pi_out_data.shm_name.c_str());
+    }
+    return 0;
+}
+
+void oplk_handler(int sig)
+{
+    tick = !tick;
+    if (!powerlink_in.is_buffers_initialized)
+    {
+        return;
+    }
+    if (tick)
+    {
+        clock_gettime(CLOCK_MONOTONIC, &ts);
+        powerlink_in.buffer_a->nanosec = ts.tv_nsec;
+        for (auto iterator = powerlink_in.pids.begin(), end = powerlink_in.pids.end(); iterator != end; ++iterator)
+        {
+            if (killpg(*iterator, SIGUSR1))
+            {
+                ROS_WARN("PID %i is no longer alive, removing from subscribers list", *iterator);
+                iterator = powerlink_in.pids.erase(iterator);
+            }
+        }
+    }
+    else
+    {
+        clock_gettime(CLOCK_MONOTONIC, &ts);
+        powerlink_in.buffer_b->nanosec = ts.tv_nsec;
+        for (auto iterator = powerlink_in.pids.begin(), end = powerlink_in.pids.end(); iterator != end; ++iterator)
+        {
+            if (killpg(*iterator, SIGUSR2))
+            {
+                ROS_WARN("PID %i is no longer alive, removing from subscribers list", *iterator);
+                iterator = powerlink_in.pids.erase(iterator);
+            }
+        }
+    }
+}
+
+int init_signal_hooks()
+{
+    if (signal(SIGINT, shutdown_handler) == SIG_ERR)
+    {
+        ROS_ERROR("Setting SIGINT hook: FAIL");
+        return 1;
+    }
+    else
+    {
+        ROS_INFO("Setting SIGINT hook: OK");
+    }
+    if (signal(SIGTERM, shutdown_handler) == SIG_ERR)
+    {
+        ROS_ERROR("Setting SIGTERM hook: FAIL");
+        return 1;
+    }
+    else
+    {
+        ROS_INFO("Setting SIGTERM hook: OK");
+    }
+    if (signal(SIGUSR1, oplk_handler) == SIG_ERR)
+    {
+        ROS_ERROR("Setting USR1 hook: FAIL");
+        return 1;
+    }
+    else
+    {
+        ROS_INFO("Setting USR1 hook: OK");
+    }
+    return 0;
+}
+
+void message_callback(const powerlink_test::PowerlinkIn::ConstPtr& msg)
+{
+    if (!powerlink_in.is_initialized)
+    {
+        powerlink_in.is_initialized = true;
+        ROS_INFO("Message from PID %i", msg->pid);
+        ROS_INFO("Initializing shared memory for \"%s\"", msg->shm_name.c_str());
+        powerlink_in.shm_name = msg->shm_name;
+        powerlink_in.address = init_shared_memory(powerlink_in.shm_name.c_str(), powerlink_in.length);
+        if (powerlink_in.address != (void*)-1)
+        {
+            powerlink_in.buffer_a = (POWERLINK_IN*)powerlink_in.address;
+            powerlink_in.buffer_b = (POWERLINK_IN*)((char*)powerlink_in.address + sizeof(POWERLINK_IN));
+            powerlink_in.is_buffers_initialized = true;
+            ROS_INFO("Initializing shared memory: OK");
+        }
+        else
+        {
+            ROS_ERROR("Initializing shared memory: FAIL");
+        }
+    }
+}
