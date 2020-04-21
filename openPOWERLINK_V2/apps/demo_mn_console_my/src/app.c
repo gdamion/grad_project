@@ -127,7 +127,7 @@ tOplkError initApp(void)
     printf("Booting up OPLK...\n");
     sleep(5);
 
-    FILE *pid_file = fopen("/home/dev/ros_wrapper.pid", "r");
+    FILE *pid_file = fopen("/home/al/dev/ros_wrapper.pid", "r");
     if (pid_file == NULL)
     {
         printf("Error while booting up\n");
@@ -138,7 +138,7 @@ tOplkError initApp(void)
 
     printf("Wrapper PID is %i\n", wrapper_pid);
 
-    FILE *map_file = fopen("mn.map", "r");
+    FILE *map_file = fopen("/home/al/dev/mn.map", "r");
     if (map_file == NULL)
     {
         printf("Couldn't find mn.map file\n");
@@ -287,16 +287,19 @@ static tOplkError initProcessImage(void)
 
     printf("Initializing process image...\n");
 
-    ret = oplk_allocProcessImage(IN_SIZE, OUT_SIZE);
+    ret = oplk_allocProcessImage(sizeof(PI_IN), sizeof(PI_OUT));
     if (ret != kErrorOk)
     {
+        printf("mn initProcessImage: process image allocation failure\n");
         return ret;
     }
+    printf("mn initProcessImage: process image allocated, ret = %u\n", ret);
 
-    pProcessImageIn_l = oplk_getProcessImageIn();
-    pProcessImageOut_l = oplk_getProcessImageOut();
+    pProcessImageIn_l = (PI_IN*)oplk_getProcessImageIn();
+    pProcessImageOut_l = (const PI_OUT*)oplk_getProcessImageOut();
 
-    ret = oplk_setupProcessImage();
+    ret = obdpi_setupProcessImage();
+    printf("mn initProcessImage: function ret value = %u\n", ret);
 
     return ret;
 }

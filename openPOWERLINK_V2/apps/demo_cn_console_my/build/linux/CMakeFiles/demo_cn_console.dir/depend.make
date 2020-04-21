@@ -241,12 +241,12 @@ CMakeFiles/demo_cn_console.dir/src/main.c.o: ../../../../stack/include/oplk/targ
 CMakeFiles/demo_cn_console.dir/src/main.c.o: ../../../../stack/include/oplk/version.h
 CMakeFiles/demo_cn_console.dir/src/main.c.o: ../../../common/src/eventlog/eventlog.h
 CMakeFiles/demo_cn_console.dir/src/main.c.o: ../../../common/src/eventlog/eventlogstring.h
+CMakeFiles/demo_cn_console.dir/src/main.c.o: ../../../common/src/netselect/netselect.h
+CMakeFiles/demo_cn_console.dir/src/main.c.o: ../../../common/src/obdcreate/obdcreate.h
 CMakeFiles/demo_cn_console.dir/src/main.c.o: ../../../common/src/system/system.h
 CMakeFiles/demo_cn_console.dir/src/main.c.o: ../../src/app.h
 CMakeFiles/demo_cn_console.dir/src/main.c.o: ../../src/event.h
 CMakeFiles/demo_cn_console.dir/src/main.c.o: ../../src/main.c
-CMakeFiles/demo_cn_console.dir/src/main.c.o: ../../src/memory_api.h
-CMakeFiles/demo_cn_console.dir/src/main.c.o: ../../src/shm_structs.h
 
 CMakeFiles/demo_cn_console.dir/src/memory_api.c.o: ../../src/memory_api.h
 CMakeFiles/demo_cn_console.dir/src/memory_api.c.o: ../../src/memory_api.c

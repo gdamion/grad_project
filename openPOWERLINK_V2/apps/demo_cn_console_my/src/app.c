@@ -166,7 +166,7 @@ tOplkError initApp(void)
         printf("[SH_MEM]\tAccessing shared memory for %s: FAIL\n", imageOutData.shm_name);
         return 1;
     }
-    
+
     sdoData.shm_name = "OPLK_SDO";
     sdoData.length = sizeof(SDO);
     init_shared_memory(&sdoData);
@@ -180,7 +180,7 @@ tOplkError initApp(void)
         printf("[SH_MEM]\tAccessing shared memory for %s: FAIL\n", sdoData.shm_name);
         return 1;
     }
-    
+
     wrapperInfoData.shm_name = "OPLK_WRAPPER_INFO";
     wrapperInfoData.length = sizeof(WRAPPER_INFO);
     init_shared_memory(&wrapperInfoData);
@@ -194,7 +194,7 @@ tOplkError initApp(void)
         printf("[SH_MEM]\tAccessing shared memory for %s: FAIL\n", wrapperInfoData.shm_name);
         return 1;
     }
-    
+
     wrapper_pid = wrapperInfo->pid;
     printf("Wrapper PID is %i\n", wrapper_pid);
 
@@ -222,7 +222,7 @@ void shutdownApp(void)
         shm_unlink(imageInData.shm_name);
         printf("[SH_MEM]\tShared memory unlinking for %s: OK\n", imageInData.shm_name);
     }
-    
+
     if (imageOutData.is_initialized)
     {
         munmap(imageOutData.address, imageOutData.length * 2);
@@ -236,14 +236,14 @@ void shutdownApp(void)
         shm_unlink(sdoData.shm_name);
         printf("[SH_MEM]\tShared memory unlinking for %s: OK\n", sdoData.shm_name);
     }
-    
+
     if (wrapperInfoData.is_initialized)
     {
         munmap(wrapperInfoData.address, wrapperInfoData.length * 2);
         shm_unlink(wrapperInfoData.shm_name);
         printf("[SH_MEM]\tShared memory unlinking for %s: OK\n", wrapperInfoData.shm_name);
     }
-    
+
     oplk_freeProcessImage();
 }
 
@@ -298,7 +298,7 @@ static tOplkError initProcessImage(void)
     pProcessImageIn_l = oplk_getProcessImageIn();
     pProcessImageOut_l = oplk_getProcessImageOut();
 
-    
+
     obdSize = sizeof(pProcessImageIn_l->digitalIn);
     varEntries = 1;
     ret = oplk_linkProcessImageObject(0x6000, 0x01, offsetof(PI_IN, digitalIn),
@@ -320,7 +320,7 @@ static tOplkError initProcessImage(void)
     }
 
     fprintf(stderr, "Linking process vars... ok\n\n");
-    
+
     return kErrorOk;
 }
 

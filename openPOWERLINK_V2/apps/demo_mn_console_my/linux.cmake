@@ -2,7 +2,7 @@
 #
 # Linux definitions for demo_mn_console application
 #
-# Copyright (c) 2014, Bernecker+Rainer Industrie-Elektronik Ges.m.b.H. (B&R)
+# Copyright (c) 2017, B&R Industrial Automation GmbH
 # All rights reserved.
 #
 # Redistribution and use in source and binary forms, with or without
@@ -40,13 +40,34 @@ SET(CMAKE_C_FLAGS "${CMAKE_C_FLAGS} -Wall -Wextra -pedantic -std=c99 -pthread")
 SET (DEMO_ARCH_SOURCES
      ${COMMON_SOURCE_DIR}/system/system-linux.c
      ${CONTRIB_SOURCE_DIR}/console/console-linux.c
+     ${CONTRIB_SOURCE_DIR}/trace/trace-printf.c
      )
 
 ################################################################################
 # Set architecture specific libraries
 
+IF (NOT CFG_COMPILE_SHARED_LIBRARY)
+    SET(PCAP_CONFIG_OPTS --static)
+ENDIF()
+
 IF (CFG_KERNEL_STACK_DIRECTLINK OR CFG_KERNEL_STACK_USERSPACE_DAEMON)
+
+FIND_PROGRAM(PCAP_CONFIG NAMES pcap-config PATHS)
+
+IF (PCAP_CONFIG)
+    MESSAGE (STATUS "Looking for pcap-config... ${PCAP_CONFIG}")
+
+    EXECUTE_PROCESS (COMMAND ${PCAP_CONFIG} --libs ${PCAP_CONFIG_OPTS}
+        OUTPUT_VARIABLE PCAP_LDFLAGS OUTPUT_STRIP_TRAILING_WHITESPACE)
+    EXECUTE_PROCESS (COMMAND ${PCAP_CONFIG} --cflags ${PCAP_CONFIG_OPTS}
+        OUTPUT_VARIABLE PCAP_CFLAGS OUTPUT_STRIP_TRAILING_WHITESPACE)
+
+   SET (ARCH_LIBRARIES ${ARCH_LIBRARIES} ${PCAP_LDFLAGS})
+ELSE (PCAP_CONFIG)
+    MESSAGE (STATUS "pcap-config not found, using defaults...")
     SET (ARCH_LIBRARIES ${ARCH_LIBRARIES} pcap)
+ENDIF (PCAP_CONFIG)
+
 ENDIF (CFG_KERNEL_STACK_DIRECTLINK OR CFG_KERNEL_STACK_USERSPACE_DAEMON)
 SET (ARCH_LIBRARIES ${ARCH_LIBRARIES} pthread rt)
 
@@ -54,4 +75,3 @@ SET (ARCH_LIBRARIES ${ARCH_LIBRARIES} pthread rt)
 # Set architecture specific installation files
 
 INSTALL(PROGRAMS ${TOOLS_DIR}/linux/set_prio DESTINATION ${PROJECT_NAME})
-

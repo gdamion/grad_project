@@ -2,7 +2,8 @@
 #
 # CMake file of CiA 401 CN console demo application
 #
-# Copyright (c) 2014, Bernecker+Rainer Industrie-Elektronik Ges.m.b.H. (B&R)
+# Copyright (c) 2017, B&R Industrial Automation GmbH
+# Copyright (c) 2018, Kalycito Infotech Private Limited
 # All rights reserved.
 #
 # Redistribution and use in source and binary forms, with or without
@@ -34,7 +35,7 @@
 PROJECT(demo_cn_console C)
 MESSAGE(STATUS "Configuring demo_cn_console")
 
-CMAKE_MINIMUM_REQUIRED (VERSION 2.8.7)
+CMAKE_MINIMUM_REQUIRED(VERSION 2.8.7)
 
 # Set CMake Policy to suppress the warning in CMake version 3.3.x
 IF (POLICY CMP0043)
@@ -42,18 +43,16 @@ IF (POLICY CMP0043)
 ENDIF()
 
 INCLUDE(${CMAKE_CURRENT_SOURCE_DIR}/../common/cmake/options.cmake)
+INCLUDE(../common/cmake/firmwaremanager.cmake)
 
 OPTION(CFG_IP_STACK "Is an IP stack available (support of SDO/UDP)" OFF)
-OPTION(CFG_INCLUDE_MN_REDUNDANCY "Use MN redundancy functions (if compiled into the libraries)" OFF)
+OPTION(CFG_STORE_RESTORE "Support storing of OD in non-volatile memory (file system)" OFF)
+
 ################################################################################
 # Setup project files and definitions
 
-SET(OBJDICT CiA401_CN)              # Set object dictionary to use
-FIND_OPLK_LIBRARY("cn")             # Find suitable openPOWERLINK library
-
-SET(CFG_DEMO_PROJECT "mnconsole_robot" CACHE STRING
-        "Valid projects cnconsole_robot")
-SET_PROPERTY(CACHE CFG_DEMO_PROJECT PROPERTY STRINGS Demo_3CN Demo_RMN_3CN cnconsole_robot)
+SET(OBJDICT CiA401_CN)          # Set object dictionary to use
+FIND_OPLK_LIBRARY("cn")         # Find suitable openPOWERLINK library
 
 # Set generic sources and include directories for this demo
 SET(DEMO_SOURCES
@@ -61,53 +60,53 @@ SET(DEMO_SOURCES
     ${DEMO_SOURCE_DIR}/app.c
     ${DEMO_SOURCE_DIR}/event.c
     ${DEMO_SOURCE_DIR}/memory_api.c
+    ${COMMON_SOURCE_DIR}/obdcreate/obdcreate.c
     ${COMMON_SOURCE_DIR}/eventlog/eventlog.c
     ${COMMON_SOURCE_DIR}/eventlog/eventlogstring.c
+    ${COMMON_SOURCE_DIR}/netselect/netselect.c
     ${CONTRIB_SOURCE_DIR}/console/printlog.c
-    ${CONTRIB_SOURCE_DIR}/getopt/getopt.c
     )
 
 INCLUDE_DIRECTORIES(
     ${DEMO_SOURCE_DIR}
+    ${OBJDICT_DIR}/${OBJDICT}
+    ${CONTRIB_SOURCE_DIR}
+    # "/home/al/Code/diploma/EPL_ROS/openPOWERLINK_V2/drivers/linux/drv_kernelmod_edrv/proj/cn/"
     )
+
+# PResChaining is not supported by non-openMAC targets
+#ADD_DEFINITIONS(-DCONFIG_DLL_PRES_CHAINING_CN)
+ADD_DEFINITIONS(-DNMT_MAX_NODE_ID=0)
+ADD_DEFINITIONS(-DCONFIG_INCLUDE_PDO)
+ADD_DEFINITIONS(-DCONFIG_INCLUDE_SDO_ASND)
+ADD_DEFINITIONS(-DCONFIG_INCLUDE_MASND)
+
+IF(CFG_IP_STACK)
+    ADD_DEFINITIONS(-DCONFIG_INCLUDE_IP)
+    ADD_DEFINITIONS(-DCONFIG_INCLUDE_SDO_UDP)
+ENDIF(CFG_IP_STACK)
+
+IF(CFG_STORE_RESTORE)
+    ADD_DEFINITIONS(-DCONFIG_APP_STORE_RESTORE)
+ENDIF(CFG_STORE_RESTORE)
+
 
 ################################################################################
 # Setup compile definitions depending on configuration
-
-# # PCAP is used for directlink of userspace daemon
-# IF (CFG_KERNEL_STACK_DIRECTLINK OR CFG_KERNEL_STACK_USERSPACE_DAEMON)
-#     ADD_DEFINITIONS(-DCONFIG_USE_PCAP)
-#     SET (DEMO_SOURCES ${DEMO_SOURCES} ${COMMON_SOURCE_DIR}/pcap/pcap-console.c)
-# ENDIF (CFG_KERNEL_STACK_DIRECTLINK OR CFG_KERNEL_STACK_USERSPACE_DAEMON)
-
-# # Setup compile definitions depending on configuration
-# IF (CFG_KERNEL_STACK_DIRECTLINK)
-#     UNSET (CFG_DEMO_CN_CONSOLE_USE_SYNCTHREAD CACHE)
-#     ADD_DEFINITIONS(-DCONFIG_KERNELSTACK_DIRECTLINK)
-# ELSE (CFG_KERNEL_STACK_DIRECTLINK)
-#     OPTION (CFG_DEMO_CN_CONSOLE_USE_SYNCTHREAD "Create separate thread for syncronous data exchange" ON)
-#     IF (CFG_DEMO_CN_CONSOLE_USE_SYNCTHREAD)
-#         ADD_DEFINITIONS(-DCONFIG_USE_SYNCTHREAD)
-#     ENDIF (CFG_DEMO_CN_CONSOLE_USE_SYNCTHREAD)
-# ENDIF (CFG_KERNEL_STACK_DIRECTLINK)
-
-IF (CFG_KERNEL_STACK_DIRECTLINK) ##
-    UNSET (CFG_DEMO_MN_CONSOLE_USE_SYNCTHREAD CACHE)
+IF (CFG_KERNEL_STACK_DIRECTLINK)
+    UNSET (CFG_DEMO_CN_CONSOLE_USE_SYNCTHREAD CACHE)
     ADD_DEFINITIONS(-DCONFIG_KERNELSTACK_DIRECTLINK)
 ELSE (CFG_KERNEL_STACK_DIRECTLINK)
-    OPTION (CFG_DEMO_MN_CONSOLE_USE_SYNCTHREAD "Create separate thread for syncronous data exchange" ON)
-    IF (CFG_DEMO_MN_CONSOLE_USE_SYNCTHREAD)
+    OPTION (CFG_DEMO_CN_CONSOLE_USE_SYNCTHREAD "Create separate thread for syncronous data exchange" ON)
+    IF (CFG_DEMO_CN_CONSOLE_USE_SYNCTHREAD)
         ADD_DEFINITIONS(-DCONFIG_USE_SYNCTHREAD)
-    ENDIF (CFG_DEMO_MN_CONSOLE_USE_SYNCTHREAD)
+    ENDIF (CFG_DEMO_CN_CONSOLE_USE_SYNCTHREAD)
 ENDIF (CFG_KERNEL_STACK_DIRECTLINK)
 
-IF (CFG_KERNEL_STACK_PCIE_INTF)
-    ADD_DEFINITIONS(-D__LINUX_PCIE__)
-ENDIF()
-
-IF (CFG_KERNEL_STACK_ZYNQ_INTF) ##
+IF (CFG_KERNEL_STACK_ZYNQ_INTF)
     ADD_DEFINITIONS(-D__LINUX_ZYNQ__)
-ENDIF()
+ENDIF ()
+
 
 ################################################################################
 # Setup the architecture specific definitions
@@ -126,6 +125,11 @@ ENDIF()
 SOURCE_GROUP("Demo Sources" FILES ${DEMO_SOURCES})
 SOURCE_GROUP("Architecture Specific Sources" FILES ${DEMO_ARCH_SOURCES})
 SOURCE_GROUP("openPOWERLINK Header Files" FILES ${OPLK_HEADERS})
+SOURCE_GROUP("Object Dictionary" FILES
+    ${COMMON_SOURCE_DIR}/obdcreate/obdcreate.c
+    ${COMMON_SOURCE_DIR}/obdcreate/obdcreate.h
+    ${OBJDICT_DIR}/${OBJDICT}/objdict.h
+    )
 
 ################################################################################
 # Set the executable
