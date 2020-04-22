@@ -52,22 +52,9 @@ SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 #include <string.h>
 #include <signal.h>
-#include <stdint.h>
 
 #include "app.h"
 #include "memory_api.h"
-#include "shm_structs.h"
-
-typedef struct
-{
-    BYTE digitalIn;
-} PI_IN;
-
-typedef struct
-{
-    BYTE digitalOut;
-} PI_OUT;
-
 //============================================================================//
 //            G L O B A L   D E F I N I T I O N S                             //
 //============================================================================//
@@ -101,24 +88,24 @@ typedef struct
 // local vars
 //------------------------------------------------------------------------------
 /* process image */
-static PI_IN*   pProcessImageIn_l;
-static PI_OUT*  pProcessImageOut_l;
+static void*   pProcessImageIn_l;
+static void*  pProcessImageOut_l;
 
 static IPC_DATA     imageInData;
-static PI_IN*       shmImageIn;
+static void*       shmImageIn;
 static IPC_DATA     imageOutData;
-static PI_OUT*      shmImageOut;
-static IPC_DATA     sdoData;
-static SDO*      sdo;
-static IPC_DATA     wrapperInfoData;
-static WRAPPER_INFO*      wrapperInfo;
+static void*      shmImageOut;
 
 static int wrapper_pid;
+
 
 //------------------------------------------------------------------------------
 // local function prototypes
 //------------------------------------------------------------------------------
 static tOplkError initProcessImage(void);
+
+static int IN_SIZE;
+static int OUT_SIZE;
 
 //============================================================================//
 //            P U B L I C   F U N C T I O N S                                 //
@@ -139,64 +126,87 @@ tOplkError initApp(void)
 {
     tOplkError ret = kErrorOk;
 
+    printf("Booting up OPLK...\n");
+    sleep(5);
+
+    FILE *pid_file = fopen("/home/dev/ros_wrapper.pid", "r");
+    if (pid_file == NULL)
+    {
+        printf("Error while booting up\n");
+        return 1;
+    }
+    fscanf(pid_file, "%i", &wrapper_pid);
+    fclose(pid_file);
+
+    printf("Wrapper PID is %i\n", wrapper_pid);
+
+    FILE *map_file = fopen("cn.map", "r");
+    if (map_file == NULL)
+    {
+        printf("Couldn't find cn.map file\n");
+	    return 1;
+    }
+
+    char header[32];
+    fscanf(map_file, "%s\n", header);
+    if (strcmp(header, "--CN_MAPPING--"))
+    {
+       printf("Wrong mapping format\n");
+       return 1;
+    }
+
+    while (!feof(map_file))
+    {
+        int size;
+        char type;
+        char index[6];
+        int subindex;
+        fscanf(map_file, "%c %s %i %i\n", &type, index, &subindex, &size);
+        if (type == 'i')
+        {
+            IN_SIZE += size;
+        }
+        else if (type == 'o')
+        {
+            OUT_SIZE += size;
+        }
+        else
+        {
+            printf("Unknown variable type: %c\n", type);
+            return 1;
+        }
+    }
+
+    fclose(map_file);
+
+    printf("Calculated input size: %i\n", IN_SIZE);
+    printf("Calculated output size: %i\n", OUT_SIZE);
+
     imageInData.shm_name = "OPLK_PI_IN";
-    imageInData.length = sizeof(PI_IN);
+    imageInData.length = IN_SIZE;
     init_shared_memory(&imageInData);
     if (imageInData.is_initialized)
     {
-        shmImageIn = (PI_IN*)imageInData.address;
+        shmImageIn = imageInData.address;
         printf("[SH_MEM]\tAccessing shared memory for %s: OK\n", imageInData.shm_name);
     }
     else
     {
         printf("[SH_MEM]\tAccessing shared memory for %s: FAIL\n", imageInData.shm_name);
-        return 1;
     }
 
     imageOutData.shm_name = "OPLK_PI_OUT";
-    imageOutData.length = sizeof(PI_OUT);
+    imageOutData.length = OUT_SIZE;
     init_shared_memory(&imageOutData);
     if (imageOutData.is_initialized)
     {
-        shmImageOut = (PI_OUT*)imageOutData.address;
+        shmImageOut = imageOutData.address;
         printf("[SH_MEM]\tAccessing shared memory for %s: OK\n", imageOutData.shm_name);
     }
     else
     {
         printf("[SH_MEM]\tAccessing shared memory for %s: FAIL\n", imageOutData.shm_name);
-        return 1;
-    }
-
-    sdoData.shm_name = "OPLK_SDO";
-    sdoData.length = sizeof(SDO);
-    init_shared_memory(&sdoData);
-    if (sdoData.is_initialized)
-    {
-        sdo = sdoData.address;
-        printf("[SH_MEM]\tAccessing shared memory for %s: OK\n", sdoData.shm_name);
-    }
-    else
-    {
-        printf("[SH_MEM]\tAccessing shared memory for %s: FAIL\n", sdoData.shm_name);
-        return 1;
-    }
-
-    wrapperInfoData.shm_name = "OPLK_WRAPPER_INFO";
-    wrapperInfoData.length = sizeof(WRAPPER_INFO);
-    init_shared_memory(&wrapperInfoData);
-    if (wrapperInfoData.is_initialized)
-    {
-        wrapperInfo = wrapperInfoData.address;
-        printf("[SH_MEM]\tAccessing shared memory for %s: OK\n", wrapperInfoData.shm_name);
-    }
-    else
-    {
-        printf("[SH_MEM]\tAccessing shared memory for %s: FAIL\n", wrapperInfoData.shm_name);
-        return 1;
-    }
-
-    wrapper_pid = wrapperInfo->pid;
-    printf("Wrapper PID is %i\n", wrapper_pid);
+     }
 
     ret = initProcessImage();
 
@@ -222,26 +232,11 @@ void shutdownApp(void)
         shm_unlink(imageInData.shm_name);
         printf("[SH_MEM]\tShared memory unlinking for %s: OK\n", imageInData.shm_name);
     }
-
     if (imageOutData.is_initialized)
     {
         munmap(imageOutData.address, imageOutData.length * 2);
         shm_unlink(imageOutData.shm_name);
         printf("[SH_MEM]\tShared memory unlinking for %s: OK\n", imageOutData.shm_name);
-    }
-
-    if (sdoData.is_initialized)
-    {
-        munmap(sdoData.address, sdoData.length * 2);
-        shm_unlink(sdoData.shm_name);
-        printf("[SH_MEM]\tShared memory unlinking for %s: OK\n", sdoData.shm_name);
-    }
-
-    if (wrapperInfoData.is_initialized)
-    {
-        munmap(wrapperInfoData.address, wrapperInfoData.length * 2);
-        shm_unlink(wrapperInfoData.shm_name);
-        printf("[SH_MEM]\tShared memory unlinking for %s: OK\n", wrapperInfoData.shm_name);
     }
 
     oplk_freeProcessImage();
@@ -269,8 +264,10 @@ tOplkError processSync(void)
     if (ret != kErrorOk)
         return ret;
 
-    memcpy(pProcessImageIn_l, shmImageIn, sizeof(PI_IN));
-    memcpy(shmImageOut, pProcessImageOut_l, sizeof(PI_OUT));
+    /* read input image - digital outputs */
+
+    memcpy(pProcessImageIn_l, shmImageIn, IN_SIZE);
+    memcpy(shmImageOut, pProcessImageOut_l, OUT_SIZE);
 
     if(kill(wrapper_pid, SIGUSR1))
     {
@@ -289,7 +286,7 @@ static tOplkError initProcessImage(void)
     tObdSize        obdSize;
     /* Allocate process image */
 
-    ret = oplk_allocProcessImage(sizeof(PI_IN), sizeof(PI_OUT));
+    ret = oplk_allocProcessImage(IN_SIZE, OUT_SIZE);
     if (ret != kErrorOk)
     {
         return ret;
@@ -299,6 +296,54 @@ static tOplkError initProcessImage(void)
     pProcessImageOut_l = oplk_getProcessImageOut();
 
 
+    FILE *map_file = fopen("cn.map", "r");
+    if (map_file == NULL)
+    {
+        printf("Couldn't find cn.map file\n");
+	    return 1;
+    }
+
+    char header[32];
+    fscanf(map_file, "%s\n", header);
+    if (strcmp(header, "--CN_MAPPING--"))
+    {
+       printf("Wrong mapping format\n");
+       return 1;
+    }
+
+    int in_offset = 0;
+    int out_offset = 0;
+
+    UINT in_entries = 1;
+    UINT out_entries = 1;
+
+    while (!feof(map_file))
+    {
+        int size;
+        char type;
+        char index[6];
+        int subindex;
+        fscanf(map_file, "%c %s %i %i\n", &type, index, &subindex, &size);
+        if (type == 'i')
+        {
+            ret = oplk_linkProcessImageObject((int)strtol(index, NULL, 16), subindex, in_offset, FALSE, size, &in_entries);
+            in_offset += size;
+        }
+        else
+        {
+            ret = oplk_linkProcessImageObject((int)strtol(index, NULL, 16), subindex, out_offset, TRUE, size, &out_entries);
+            out_offset += size;
+        }
+        if (ret != kErrorOk)
+        {
+            printf("Error while linking image object: %i\n", ret);
+            return ret;
+        }
+    }
+
+    fclose(map_file);
+
+    /*
     obdSize = sizeof(pProcessImageIn_l->digitalIn);
     varEntries = 1;
     ret = oplk_linkProcessImageObject(0x6000, 0x01, offsetof(PI_IN, digitalIn),
@@ -320,7 +365,7 @@ static tOplkError initProcessImage(void)
     }
 
     fprintf(stderr, "Linking process vars... ok\n\n");
-
+    */
     return kErrorOk;
 }
 
