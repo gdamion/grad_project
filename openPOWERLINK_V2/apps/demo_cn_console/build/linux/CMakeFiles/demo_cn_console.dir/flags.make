@@ -6,5 +6,5 @@ C_FLAGS =  -Wall -Wextra -pedantic -std=c99 -pthread -O3 -DNDEBUG
 
 C_DEFINES = -DCONFIG_INCLUDE_MASND -DCONFIG_INCLUDE_PDO -DCONFIG_INCLUDE_SDO_ASND -DCONFIG_KERNELSTACK_DIRECTLINK -DNMT_MAX_NODE_ID=0 -D_GNU_SOURCE -D_POSIX_C_SOURCE=200112L
 
-C_INCLUDES = -I/home/al/Code/diploma/EPL_ROS/openPOWERLINK_V2/apps/demo_cn_console/../../stack/include -I/home/al/Code/diploma/EPL_ROS/openPOWERLINK_V2/apps/demo_cn_console/../../contrib -I/home/al/Code/diploma/EPL_ROS/openPOWERLINK_V2/apps/demo_cn_console/../common/src -I/home/al/Code/diploma/EPL_ROS/openPOWERLINK_V2/apps/demo_cn_console/../common/objdicts -I/home/al/Code/diploma/EPL_ROS/openPOWERLINK_V2/apps/demo_cn_console/src -I/home/al/Code/diploma/EPL_ROS/openPOWERLINK_V2/apps/demo_cn_console/../common/objdicts/CiA401_CN 
+C_INCLUDES = -I/home/al/grad_project/openPOWERLINK_V2/apps/demo_cn_console/../../stack/include -I/home/al/grad_project/openPOWERLINK_V2/apps/demo_cn_console/../../contrib -I/home/al/grad_project/openPOWERLINK_V2/apps/demo_cn_console/../common/src -I/home/al/grad_project/openPOWERLINK_V2/apps/demo_cn_console/../common/objdicts -I/home/al/grad_project/openPOWERLINK_V2/apps/demo_cn_console/src -I/home/al/grad_project/openPOWERLINK_V2/apps/demo_cn_console/../common/objdicts/CiA401_CN 
 

@@ -1,8 +1,8 @@
-# Install script for directory: /home/al/Code/diploma/EPL_ROS/openPOWERLINK_V2/apps/demo_cn_console
+# Install script for directory: /home/al/grad_project/openPOWERLINK_V2/apps/demo_cn_console
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
-  set(CMAKE_INSTALL_PREFIX "/home/al/Code/diploma/EPL_ROS/openPOWERLINK_V2/apps/demo_cn_console/../../bin/linux/x86_64")
+  set(CMAKE_INSTALL_PREFIX "/home/al/grad_project/openPOWERLINK_V2/apps/demo_cn_console/../../bin/linux/x86_64")
 endif()
 string(REGEX REPLACE "/$" "" CMAKE_INSTALL_PREFIX "${CMAKE_INSTALL_PREFIX}")
 
@@ -38,7 +38,7 @@ if(NOT DEFINED CMAKE_CROSSCOMPILING)
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/demo_cn_console" TYPE PROGRAM FILES "/home/al/Code/diploma/EPL_ROS/openPOWERLINK_V2/apps/demo_cn_console/../../tools/linux/set_prio")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/demo_cn_console" TYPE PROGRAM FILES "/home/al/grad_project/openPOWERLINK_V2/apps/demo_cn_console/../../tools/linux/set_prio")
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
@@ -48,7 +48,7 @@ if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_
          FILE "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/demo_cn_console/demo_cn_console"
          RPATH "")
   endif()
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/demo_cn_console" TYPE EXECUTABLE FILES "/home/al/Code/diploma/EPL_ROS/openPOWERLINK_V2/apps/demo_cn_console/build/linux/demo_cn_console")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/demo_cn_console" TYPE EXECUTABLE FILES "/home/al/grad_project/openPOWERLINK_V2/apps/demo_cn_console/build/linux/demo_cn_console")
   if(EXISTS "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/demo_cn_console/demo_cn_console" AND
      NOT IS_SYMLINK "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/demo_cn_console/demo_cn_console")
     if(CMAKE_INSTALL_DO_STRIP)
@@ -65,5 +65,5 @@ endif()
 
 string(REPLACE ";" "\n" CMAKE_INSTALL_MANIFEST_CONTENT
        "${CMAKE_INSTALL_MANIFEST_FILES}")
-file(WRITE "/home/al/Code/diploma/EPL_ROS/openPOWERLINK_V2/apps/demo_cn_console/build/linux/${CMAKE_INSTALL_MANIFEST}"
+file(WRITE "/home/al/grad_project/openPOWERLINK_V2/apps/demo_cn_console/build/linux/${CMAKE_INSTALL_MANIFEST}"
      "${CMAKE_INSTALL_MANIFEST_CONTENT}")

@@ -1,0 +1,2 @@
+# Hashes of file build rules.
+1159ba79849d6f608d3b23117bd23111 mnobd.cdc

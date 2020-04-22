@@ -1,0 +1,3 @@
+/home/al/grad_project/openPOWERLINK_V2/apps/rosepl_mn_console/../../bin/linux/x86_64/rosepl_mn_console/set_prio
+/home/al/grad_project/openPOWERLINK_V2/apps/rosepl_mn_console/../../bin/linux/x86_64/rosepl_mn_console/rosepl_mn_console
+/home/al/grad_project/openPOWERLINK_V2/apps/rosepl_mn_console/../../bin/linux/x86_64/rosepl_mn_console/mnobd.cdc

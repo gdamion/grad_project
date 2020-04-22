@@ -71,7 +71,6 @@ INCLUDE_DIRECTORIES(
     ${DEMO_SOURCE_DIR}
     ${OBJDICT_DIR}/${OBJDICT}
     ${CONTRIB_SOURCE_DIR}
-    # "/home/al/Code/diploma/EPL_ROS/openPOWERLINK_V2/drivers/linux/drv_kernelmod_edrv/proj/cn/"
     )
 
 # PResChaining is not supported by non-openMAC targets

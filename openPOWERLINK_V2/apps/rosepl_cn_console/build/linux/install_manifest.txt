@@ -1,2 +1,2 @@
-/home/al/Code/diploma/EPL_ROS/openPOWERLINK_V2/apps/demo_cn_console_my/../../bin/linux/x86_64/demo_cn_console/set_prio
-/home/al/Code/diploma/EPL_ROS/openPOWERLINK_V2/apps/demo_cn_console_my/../../bin/linux/x86_64/demo_cn_console/demo_cn_console
+/home/al/grad_project/openPOWERLINK_V2/apps/rosepl_cn_console/../../bin/linux/x86_64/rosepl_cn_console/set_prio
+/home/al/grad_project/openPOWERLINK_V2/apps/rosepl_cn_console/../../bin/linux/x86_64/rosepl_cn_console/rosepl_cn_console

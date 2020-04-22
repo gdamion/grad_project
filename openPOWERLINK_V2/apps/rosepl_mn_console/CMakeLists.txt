@@ -58,6 +58,8 @@ SET(CFG_DEMO_PROJECT "Demo_3CN" CACHE STRING
         "Valid projects are Demo_3CN, Demo_RMN_3CN")
 SET_PROPERTY(CACHE CFG_DEMO_PROJECT PROPERTY STRINGS Demo_3CN Demo_RMN_3CN)
 
+SET(DRV_KERNELMOD_EDRV_MN ${OPLK_BASE_DIR}/drivers/linux/drv_kernelmod_edrv/proj/mn/)
+
 # Set generic sources and include directories for this demo
 SET(DEMO_SOURCES
     ${DEMO_SOURCE_DIR}/main.c
@@ -71,13 +73,14 @@ SET(DEMO_SOURCES
     ${COMMON_SOURCE_DIR}/netselect/netselect.c
     ${CONTRIB_SOURCE_DIR}/console/printlog.c
     ${FIRMWARE_MANAGER_SOURCES}
+    ${DRV_KERNELMOD_EDRV_MN}
     )
 
 INCLUDE_DIRECTORIES(
     ${DEMO_SOURCE_DIR}
     ${OBJDICT_DIR}/${OBJDICT}
     ${CONTRIB_SOURCE_DIR}
-    "/home/al/Code/diploma/EPL_ROS/openPOWERLINK_V2/drivers/linux/drv_kernelmod_edrv/proj/mn/"
+    ${DRV_KERNELMOD_EDRV_MN}
     )
 
 ADD_DEFINITIONS(-DNMT_MAX_NODE_ID=254)
@@ -94,10 +97,6 @@ ADD_DEFINITIONS(-DCONFIG_INCLUDE_CFM)
 IF(CFG_INCLUDE_MN_REDUNDANCY)
     ADD_DEFINITIONS(-DCONFIG_INCLUDE_NMT_RMN)
 ENDIF(CFG_INCLUDE_MN_REDUNDANCY)
-
-#ADD_DEFINITIONS(-DCONFIG_APP_STORE_RESTORE)
-#ADD_DEFINITIONS(-DCONFIG_DLL_PRES_CHAINING_CN)
-#ADD_DEFINITIONS(-DCONFIG_INCLUDE_MASND)
 
 ################################################################################
 # Setup compile definitions depending on configuration
