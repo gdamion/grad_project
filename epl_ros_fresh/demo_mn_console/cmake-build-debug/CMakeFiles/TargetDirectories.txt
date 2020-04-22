@@ -1,7 +1,0 @@
-/home/dev/powerlink_new/apps/demo_mn_console/cmake-build-debug/CMakeFiles/edit_cache.dir
-/home/dev/powerlink_new/apps/demo_mn_console/cmake-build-debug/CMakeFiles/list_install_components.dir
-/home/dev/powerlink_new/apps/demo_mn_console/cmake-build-debug/CMakeFiles/install.dir
-/home/dev/powerlink_new/apps/demo_mn_console/cmake-build-debug/CMakeFiles/install/local.dir
-/home/dev/powerlink_new/apps/demo_mn_console/cmake-build-debug/CMakeFiles/install/strip.dir
-/home/dev/powerlink_new/apps/demo_mn_console/cmake-build-debug/CMakeFiles/rebuild_cache.dir
-/home/dev/powerlink_new/apps/demo_mn_console/cmake-build-debug/CMakeFiles/demo_mn_console.dir
