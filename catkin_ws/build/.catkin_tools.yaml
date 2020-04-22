@@ -1,6 +1,6 @@
-devel_space: /home/al/EPL_ROS/catkin_ws/devel
+devel_space: /home/al/grad_project/catkin_ws/devel
 install: false
-install_space: /home/al/EPL_ROS/catkin_ws/install
+install_space: /home/al/grad_project/catkin_ws/install
 profile: default
-source_space: /home/al/EPL_ROS/catkin_ws/src
-workspace: /home/al/EPL_ROS/catkin_ws
+source_space: /home/al/grad_project/catkin_ws/src
+workspace: /home/al/grad_project/catkin_ws

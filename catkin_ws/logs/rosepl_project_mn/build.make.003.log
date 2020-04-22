@@ -1,0 +1,53 @@
+[  0%] Built target std_msgs_generate_messages_cpp
+[  0%] Built target std_msgs_generate_messages_lisp
+[  0%] Built target std_msgs_generate_messages_nodejs
+[  0%] Built target rosgraph_msgs_generate_messages_nodejs
+[  0%] Built target std_msgs_generate_messages_py
+[  0%] Built target std_msgs_generate_messages_eus
+[  0%] Built target roscpp_generate_messages_py
+[  0%] Built target rosgraph_msgs_generate_messages_lisp
+[  0%] Built target rosgraph_msgs_generate_messages_cpp
+[  0%] Built target rosgraph_msgs_generate_messages_eus
+[  0%] Built target rosgraph_msgs_generate_messages_py
+[  0%] Built target roscpp_generate_messages_lisp
+[  0%] Built target roscpp_generate_messages_nodejs
+[  0%] Built target roscpp_generate_messages_eus
+[  0%] Built target rosepl_project_mn_generate_messages_py
+[  0%] Built target roscpp_generate_messages_cpp
+[ 14%] Built target rosepl_project_mn_generate_messages_eus
+[ 14%] Built target rosepl_project_mn_generate_messages_cpp
+[ 14%] Built target rosepl_project_mn_generate_messages_lisp
+[ 14%] Built target rosepl_project_mn_generate_messages_nodejs
+[ 14%] Built target rosepl_project_mn_generate_messages
+[ 28%] [32mBuilding CXX object CMakeFiles/rosepl_project_mn_node.dir/src/rosepl_project_mn_node.cpp.o[0m
+[ 42%] [32mBuilding CXX object CMakeFiles/rosepl_project_mn_node.dir/src/memory_api.cpp.o[0m
+[ 57%] [32mBuilding CXX object CMakeFiles/rosepl_project_mn_node.dir/src/priority_setter.cpp.o[0m
+[ 71%] [32mBuilding CXX object CMakeFiles/rosepl_project_mn_node.dir/src/generated_wrapper.cpp.o[0m
+[ 85%] [32mBuilding CXX object CMakeFiles/rosepl_project_mn_node.dir/src/user_app.cpp.o[0m
+In file included from [01m[K/home/al/grad_project/catkin_ws/src/rosepl_project_mn/src/rosepl_project_mn_node.cpp:10:0[m[K:
+[01m[K/home/al/grad_project/catkin_ws/src/rosepl_project_mn/include/rosepl_project_mn/epl_ros_node.h:21:10:[m[K [01;31m[Kfatal error: [m[Kepl_wrapper/SignalSync.h: No such file or directory
+ #include [01;31m[K<epl_wrapper/SignalSync.h>[m[K
+          [01;31m[K^~~~~~~~~~~~~~~~~~~~~~~~~~[m[K
+compilation terminated.
+CMakeFiles/rosepl_project_mn_node.dir/build.make:62: recipe for target 'CMakeFiles/rosepl_project_mn_node.dir/src/rosepl_project_mn_node.cpp.o' failed
+make[2]: *** [CMakeFiles/rosepl_project_mn_node.dir/src/rosepl_project_mn_node.cpp.o] Error 1
+make[2]: *** Waiting for unfinished jobs....
+In file included from [01m[K/home/al/grad_project/catkin_ws/src/rosepl_project_mn/src/generated_wrapper.cpp:1:0[m[K:
+[01m[K/home/al/grad_project/catkin_ws/src/rosepl_project_mn/include/rosepl_project_mn/generated_wrapper.h:15:10:[m[K [01;31m[Kfatal error: [m[Kepl_wrapper/PowerlinkIn.h: No such file or directory
+ #include [01;31m[K<epl_wrapper/PowerlinkIn.h>[m[K
+          [01;31m[K^~~~~~~~~~~~~~~~~~~~~~~~~~~[m[K
+compilation terminated.
+In file included from [01m[K/home/al/grad_project/catkin_ws/src/rosepl_project_mn/include/rosepl_project_mn/user_app.h:13:0[m[K,
+                 from [01m[K/home/al/grad_project/catkin_ws/src/rosepl_project_mn/src/user_app.cpp:10[m[K:
+[01m[K/home/al/grad_project/catkin_ws/src/rosepl_project_mn/include/rosepl_project_mn/epl_ros_node.h:21:10:[m[K [01;31m[Kfatal error: [m[Kepl_wrapper/SignalSync.h: No such file or directory
+ #include [01;31m[K<epl_wrapper/SignalSync.h>[m[K
+          [01;31m[K^~~~~~~~~~~~~~~~~~~~~~~~~~[m[K
+make[2]: *** [CMakeFiles/rosepl_project_mn_node.dir/src/generated_wrapper.cpp.o] Error 1
+compilation terminated.
+CMakeFiles/rosepl_project_mn_node.dir/build.make:134: recipe for target 'CMakeFiles/rosepl_project_mn_node.dir/src/generated_wrapper.cpp.o' failed
+CMakeFiles/rosepl_project_mn_node.dir/build.make:158: recipe for target 'CMakeFiles/rosepl_project_mn_node.dir/src/user_app.cpp.o' failed
+make[2]: *** [CMakeFiles/rosepl_project_mn_node.dir/src/user_app.cpp.o] Error 1
+CMakeFiles/Makefile2:1087: recipe for target 'CMakeFiles/rosepl_project_mn_node.dir/all' failed
+make[1]: *** [CMakeFiles/rosepl_project_mn_node.dir/all] Error 2
+Makefile:140: recipe for target 'all' failed
+make: *** [all] Error 2
