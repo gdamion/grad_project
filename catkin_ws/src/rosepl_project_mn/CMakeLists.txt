@@ -42,3 +42,4 @@ add_dependencies(rosepl_project_mn_node ${catkin_EXPORTED_TARGETS})
 add_dependencies(rosepl_project_mn_node ${${PROJECT_NAME}_EXPORTED_TARGETS})
 target_link_libraries(rosepl_project_mn_node ${catkin_LIBRARIES} rt)
 set_target_properties(rosepl_project_mn_node PROPERTIES COMPILE_FLAGS -std=c++11)
+ 

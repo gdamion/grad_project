@@ -122,25 +122,26 @@ The function initializes the synchronous data application
 \ingroup module_demo_cn_console
 */
 //------------------------------------------------------------------------------
-tOplkError initApp(void)
+tOplkError initApp(UINT32 wrapper_pid_income)
 {
     tOplkError ret = kErrorOk;
 
     printf("Booting up OPLK...\n");
-    sleep(5);
+    // sleep(5);
 
-    FILE *pid_file = fopen("/home/dev/ros_wrapper.pid", "r");
-    if (pid_file == NULL)
-    {
-        printf("Error while booting up\n");
-        return 1;
-    }
-    fscanf(pid_file, "%i", &wrapper_pid);
-    fclose(pid_file);
+    // FILE *pid_file = fopen("/home/dev/ros_wrapper.pid", "r");
+    // if (pid_file == NULL)
+    // {
+    //     printf("Error while booting up\n");
+    //     return 1;
+    // }
+    // fscanf(pid_file, "%i", &wrapper_pid);
+    // fclose(pid_file);
 
+    wrapper_pid = wrapper_pid_income;
     printf("Wrapper PID is %i\n", wrapper_pid);
 
-    FILE *map_file = fopen("cn.map", "r");
+    FILE *map_file = fopen("../../cn.map", "r");
     if (map_file == NULL)
     {
         printf("Couldn't find cn.map file\n");

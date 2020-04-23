@@ -98,6 +98,7 @@ SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 //------------------------------------------------------------------------------
 typedef struct
 {
+    UINT32          wrapper_pid;
     UINT32          nodeId;
     tEventlogFormat logFormat;
     UINT32          logLevel;
@@ -181,7 +182,7 @@ int main(int argc, char* argv[])
     if (ret != kErrorOk)
         goto Exit;
 
-    ret = initApp();
+    ret = initApp(opts.wrapper_pid);
     if (ret != kErrorOk)
         goto Exit;
 
@@ -514,12 +515,17 @@ static int getOptions(int argc_p,
     pOpts_p->logFormat = kEventlogFormatReadable;
     pOpts_p->logCategory = 0xffffffff;
     pOpts_p->logLevel = 0xffffffff;
+    pOpts_p->wrapper_pid = 0;
 
     /* get command line parameters */
-    while ((opt = getopt(argc_p, argv_p, "n:pv:t:d:")) != -1)
+    while ((opt = getopt(argc_p, argv_p, "w:n:pv:t:d:")) != -1)
     {
         switch (opt)
         {
+            case 'w':
+                pOpts_p->wrapper_pid = strtoul(optarg, NULL, 16);;
+                break;
+
             case 'n':
                 pOpts_p->nodeId = strtoul(optarg, NULL, 10);
                 break;
@@ -542,6 +548,7 @@ static int getOptions(int argc_p,
 
             default: /* '?' */
                 printf("Usage: %s [-n NODE_ID] [-l LOGFILE] [-d DEV_NAME] [-v LOGLEVEL] [-t LOGCATEGORY] [-p]\n", argv_p[0]);
+                printf(" -w WRAPPER_PID: PID of wrapper app\n");
                 printf(" -d DEV_NAME: Ethernet device name to use e.g. eth1\n");
                 printf("              If option is skipped the program prompts for the interface.\n");
                 printf(" -p: Use parsable log format\n");

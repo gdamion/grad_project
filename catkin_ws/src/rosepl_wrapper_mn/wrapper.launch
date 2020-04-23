@@ -1,4 +1,4 @@
 <launch>
-  <!-- <node name="wrapper" pkg="rosepl_wrapper_mn" type="wrapper" output="screen" /> -->
-  <node name="epl_node" pkg="rosepl_wrapper_mn" type="epl_launch.sh" output="screen" />
+  <node name="rosepl_wrapper_mn_node" pkg="rosepl_wrapper_mn" type="rosepl_wrapper_mn_node" output="screen" />
+  <!-- <node name="epl_node" pkg="rosepl_wrapper_mn" type="epl_launch.sh" output="screen" /> -->
 </launch>

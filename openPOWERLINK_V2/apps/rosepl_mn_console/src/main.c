@@ -103,6 +103,7 @@ static BOOL         fGsOff_l;
 //------------------------------------------------------------------------------
 typedef struct
 {
+    UINT32          wrapper_pid;
     char            cdcFile[256];
     char            fwInfoFile[256];
     char*           pLogFile;
@@ -217,7 +218,7 @@ int main(int argc, char* argv[])
     }
     printf("mn main: Powerlink initialized\n");
 
-    ret = initApp();
+    ret = initApp(opts.wrapper_pid);
     if (ret != kErrorOk)
     {
         printf("mn main: App init failure\n");
@@ -591,13 +592,17 @@ static int getOptions(int argc_p,
     pOpts_p->pLogFile = NULL;
     pOpts_p->logFormat = kEventlogFormatReadable;
     pOpts_p->logCategory = 0xffffffff;
-    pOpts_p->logLevel = 0xffffffff;
+    pOpts_p->wrapper_pid = 0;
 
     /* get command line parameters */
-    while ((opt = getopt(argc_p, argv_p, "c:f:l:pv:t:d:")) != -1)
+    while ((opt = getopt(argc_p, argv_p, "w:c:f:l:pv:t:d:")) != -1)
     {
         switch (opt)
         {
+            case 'w':
+                pOpts_p->wrapper_pid = strtoul(optarg, NULL, 16);;
+                break;
+
             case 'c':
                 strncpy(pOpts_p->cdcFile, optarg, 256);
                 break;
@@ -623,7 +628,8 @@ static int getOptions(int argc_p,
                 break;
 
             default: /* '?' */
-                printf("Usage: %s [-c CDC-FILE] [-f FWINFO-FILE] [-d DEV_NAME] [-v LOGLEVEL] [-t LOGCATEGORY] [-p]\n", argv_p[0]);
+                printf("Usage: %s [-w WRAPPER_PID] [-c CDC-FILE] [-f FWINFO-FILE] [-d DEV_NAME] [-v LOGLEVEL] [-t LOGCATEGORY] [-p]\n", argv_p[0]);
+                printf(" -w WRAPPER_PID: PID of wrapper app\n");
                 printf(" -d DEV_NAME: Ethernet device name to use e.g. eth1\n");
                 printf("              If option is skipped the program prompts for the interface.\n");
                 printf(" -p: Use parsable log format\n");

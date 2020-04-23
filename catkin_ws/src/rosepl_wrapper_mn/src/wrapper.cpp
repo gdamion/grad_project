@@ -74,7 +74,7 @@ int main(int argc, char **argv)
 
     ros::Publisher powerlink_out_pub = node.advertise<rosepl_wrapper_mn::PowerlinkOut>("PowerlinkOut", 1);
 
-    ros::Subscriber powerlink_in_sub = node.subscribe("PowerlinkIn", 1, powerlink_in_callback);
+    ros::Subscriber F_sub = node.subscribe("PowerlinkIn", 1, powerlink_in_callback);
 
     ros::ServiceServer signal_sync_service = node.advertiseService("signalSync", signal_sync_handler);
     ros::ServiceServer sdo_service = node.advertiseService("sdoTransfer", sdo_transfer_handler);

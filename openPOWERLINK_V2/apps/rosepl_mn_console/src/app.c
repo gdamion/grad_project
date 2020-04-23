@@ -122,37 +122,41 @@ The function initializes the synchronous data application
 \ingroup module_demo_mn_console
 */
 //------------------------------------------------------------------------------
-tOplkError initApp(void)
+tOplkError initApp(UINT32 wrapper_pid_income)
 {
     printf("Booting up OPLK...\n");
-    sleep(5);
+    // sleep(5);
 
-    FILE *pid_file = fopen("/home/al/dev/ros_wrapper.pid", "r");
-    if (pid_file == NULL)
-    {
-        printf("Error while booting up\n");
-        return 1;
-    }
-    fscanf(pid_file, "%i", &wrapper_pid);
-    fclose(pid_file);
+    // FILE *pid_file = fopen("/home/al/dev/ros_wrapper.pid", "r");
+    // if (pid_file == NULL)
+    // {
+    //     printf("Error while booting up\n");
+    //     return 1;
+    // }
+    // fscanf(pid_file, "%i", &wrapper_pid);
+    // fclose(pid_file);
 
+    wrapper_pid = wrapper_pid_income;
     printf("Wrapper PID is %i\n", wrapper_pid);
 
-    FILE *map_file = fopen("/home/al/dev/mn.map", "r");
-    if (map_file == NULL)
-    {
-        printf("Couldn't find mn.map file\n");
-        return 1;
-    }
-    char header[32];
-    fscanf(map_file, "%s", header);
-    if (strcmp(header, "--MN_MAPPING--"))
-    {
-        printf("Wrong mapping format\n");
-        return 1;
-    }
-    fscanf(map_file, "%i %i", &IN_SIZE, &OUT_SIZE);
-    fclose(map_file);
+    // FILE *map_file = fopen("/home/al/dev/mn.map", "r");
+    // if (map_file == NULL)
+    // {
+    //     printf("Couldn't find mn.map file\n");
+    //     return 1;
+    // }
+    // char header[32];
+    // fscanf(map_file, "%s", header);
+    // if (strcmp(header, "--MN_MAPPING--"))
+    // {
+    //     printf("Wrong mapping format\n");
+    //     return 1;
+    // }
+    // fscanf(map_file, "%i %i", &IN_SIZE, &OUT_SIZE);
+    // fclose(map_file);
+
+    IN_SIZE = sizeof(PI_IN);
+    OUT_SIZE = sizeof(PI_OUT);
 
     imageInData.shm_name = "OPLK_PI_IN";
     imageInData.length = IN_SIZE;

@@ -61,7 +61,7 @@ extern "C"
 {
 #endif
 
-tOplkError initApp(void);
+tOplkError initApp(UINT32 wrapper_pid_income);
 void shutdownApp(void);
 tOplkError processSync(void);
 
