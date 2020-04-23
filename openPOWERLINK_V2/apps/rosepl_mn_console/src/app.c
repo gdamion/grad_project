@@ -122,10 +122,10 @@ The function initializes the synchronous data application
 \ingroup module_demo_mn_console
 */
 //------------------------------------------------------------------------------
-tOplkError initApp(UINT32 wrapper_pid_income)
+tOplkError initApp(int wrapper_pid_income)
 {
     printf("Booting up OPLK...\n");
-    // sleep(5);
+    sleep(5);
 
     // FILE *pid_file = fopen("/home/al/dev/ros_wrapper.pid", "r");
     // if (pid_file == NULL)
@@ -138,7 +138,6 @@ tOplkError initApp(UINT32 wrapper_pid_income)
 
     wrapper_pid = wrapper_pid_income;
     printf("Wrapper PID is %i\n", wrapper_pid);
-
     // FILE *map_file = fopen("/home/al/dev/mn.map", "r");
     // if (map_file == NULL)
     // {

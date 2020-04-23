@@ -393,10 +393,14 @@ string.h
 -
 signal.h
 -
+stdint.h
+-
 app.h
 /home/al/grad_project/openPOWERLINK_V2/apps/rosepl_cn_console/src/app.h
 memory_api.h
 /home/al/grad_project/openPOWERLINK_V2/apps/rosepl_cn_console/src/memory_api.h
+shm_structs.h
+/home/al/grad_project/openPOWERLINK_V2/apps/rosepl_cn_console/src/shm_structs.h
 
 /home/al/grad_project/openPOWERLINK_V2/apps/rosepl_cn_console/src/app.h
 oplk/oplk.h
@@ -463,6 +467,8 @@ sys/types.h
 -
 stdio.h
 -
+
+/home/al/grad_project/openPOWERLINK_V2/apps/rosepl_cn_console/src/shm_structs.h
 
 /home/al/grad_project/openPOWERLINK_V2/contrib/console/console-linux.c
 stdio.h

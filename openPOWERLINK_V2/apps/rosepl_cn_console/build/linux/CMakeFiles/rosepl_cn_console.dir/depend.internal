@@ -180,6 +180,7 @@ CMakeFiles/rosepl_cn_console.dir/src/app.c.o
  /home/al/grad_project/openPOWERLINK_V2/apps/rosepl_cn_console/src/app.c
  /home/al/grad_project/openPOWERLINK_V2/apps/rosepl_cn_console/src/app.h
  /home/al/grad_project/openPOWERLINK_V2/apps/rosepl_cn_console/src/memory_api.h
+ /home/al/grad_project/openPOWERLINK_V2/apps/rosepl_cn_console/src/shm_structs.h
 CMakeFiles/rosepl_cn_console.dir/src/event.c.o
  ../../../../contrib/console/console.h
  ../../../../stack/include/oplk/basictypes.h

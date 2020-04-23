@@ -9,11 +9,12 @@ else
     roscore &
 fi
 
-sleep 3
+sleep 5
 
 # Run rosepl_wrapper_mn node
 cd /home/al/grad_project/catkin_ws/devel/lib/rosepl_wrapper_mn
 ./rosepl_wrapper_mn_node & MN_WRAPPER_PID=$!
+echo $MN_WRAPPER_PID > ~/dev/ros_wrapper.pid
 
 sleep 1
 

@@ -96,7 +96,7 @@ int main(int argc, char **argv)
             continue;
         }
         can_run_cycle = false;
-        ROS_INFO("Sync flow");
+        // ROS_INFO("Sync flow");
         get_powerlink_out(&powerlink_out_msg);
 
         powerlink_out_pub.publish(powerlink_out_msg);

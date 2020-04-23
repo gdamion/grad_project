@@ -98,7 +98,7 @@ SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 //------------------------------------------------------------------------------
 typedef struct
 {
-    UINT32          wrapper_pid;
+    int             wrapper_pid;
     UINT32          nodeId;
     tEventlogFormat logFormat;
     UINT32          logLevel;
@@ -523,7 +523,7 @@ static int getOptions(int argc_p,
         switch (opt)
         {
             case 'w':
-                pOpts_p->wrapper_pid = strtoul(optarg, NULL, 16);;
+                pOpts_p->wrapper_pid = (int)strtoul(optarg, NULL, 16);;
                 break;
 
             case 'n':

@@ -179,6 +179,7 @@ CMakeFiles/rosepl_cn_console.dir/src/app.c.o: ../../../common/src/eventlog/event
 CMakeFiles/rosepl_cn_console.dir/src/app.c.o: ../../src/app.c
 CMakeFiles/rosepl_cn_console.dir/src/app.c.o: ../../src/app.h
 CMakeFiles/rosepl_cn_console.dir/src/app.c.o: ../../src/memory_api.h
+CMakeFiles/rosepl_cn_console.dir/src/app.c.o: ../../src/shm_structs.h
 
 CMakeFiles/rosepl_cn_console.dir/src/event.c.o: ../../../../contrib/console/console.h
 CMakeFiles/rosepl_cn_console.dir/src/event.c.o: ../../../../stack/include/oplk/basictypes.h

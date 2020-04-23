@@ -103,7 +103,7 @@ static BOOL         fGsOff_l;
 //------------------------------------------------------------------------------
 typedef struct
 {
-    UINT32          wrapper_pid;
+    int             wrapper_pid;
     char            cdcFile[256];
     char            fwInfoFile[256];
     char*           pLogFile;
@@ -600,7 +600,7 @@ static int getOptions(int argc_p,
         switch (opt)
         {
             case 'w':
-                pOpts_p->wrapper_pid = strtoul(optarg, NULL, 16);;
+                pOpts_p->wrapper_pid = (int)strtol(optarg, NULL, 0);
                 break;
 
             case 'c':
@@ -620,7 +620,7 @@ static int getOptions(int argc_p,
                 break;
 
            case 'v':
-                pOpts_p->logLevel = strtoul(optarg, NULL, 16);
+                pOpts_p->logLevel = (int)strtol(optarg, NULL, 16);
                 break;
 
            case 't':
