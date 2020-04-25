@@ -1,0 +1,105 @@
+[35m[1mScanning dependencies of target toolbox_common_autogen[0m
+[35m[1mScanning dependencies of target kartoSlamToolbox[0m
+[  1%] [34m[1mAutomatic MOC for target toolbox_common[0m
+[  1%] Built target toolbox_common_autogen
+[  3%] [32mBuilding CXX object lib/karto_sdk/CMakeFiles/kartoSlamToolbox.dir/src/Karto.cpp.o[0m
+[  5%] [32mBuilding CXX object lib/karto_sdk/CMakeFiles/kartoSlamToolbox.dir/src/Mapper.cpp.o[0m
+[  7%] [32m[1mLinking CXX shared library /home/al/grad_project/catkin_ws/devel/lib/libkartoSlamToolbox.so[0m
+[  7%] Built target kartoSlamToolbox
+[35m[1mScanning dependencies of target ceres_solver_plugin_autogen[0m
+[35m[1mScanning dependencies of target SlamToolboxPlugin_autogen[0m
+[35m[1mScanning dependencies of target toolbox_common[0m
+[ 10%] [34m[1mAutomatic MOC for target ceres_solver_plugin[0m
+[ 10%] [34m[1mAutomatic MOC for target SlamToolboxPlugin[0m
+[ 10%] Built target ceres_solver_plugin_autogen
+[35m[1mScanning dependencies of target ceres_solver_plugin[0m
+[ 16%] [32mBuilding CXX object CMakeFiles/ceres_solver_plugin.dir/ceres_solver_plugin_autogen/mocs_compilation.cpp.o[0m
+[ 18%] [32mBuilding CXX object CMakeFiles/ceres_solver_plugin.dir/solvers/ceres_solver.cpp.o[0m
+[ 20%] [32mBuilding CXX object CMakeFiles/toolbox_common.dir/src/loop_closure_assistant.cpp.o[0m
+[ 18%] [32mBuilding CXX object CMakeFiles/toolbox_common.dir/src/map_saver.cpp.o[0m
+[ 18%] [32mBuilding CXX object CMakeFiles/toolbox_common.dir/src/slam_toolbox_common.cpp.o[0m
+[ 21%] [32mBuilding CXX object CMakeFiles/toolbox_common.dir/src/slam_mapper.cpp.o[0m
+[ 23%] [32mBuilding CXX object CMakeFiles/toolbox_common.dir/src/laser_utils.cpp.o[0m
+[ 25%] [32mBuilding CXX object CMakeFiles/toolbox_common.dir/toolbox_common_autogen/mocs_compilation.cpp.o[0m
+[ 25%] Built target SlamToolboxPlugin_autogen
+[35m[1mScanning dependencies of target SlamToolboxPlugin[0m
+[ 27%] [32mBuilding CXX object CMakeFiles/SlamToolboxPlugin.dir/rviz_plugin/slam_toolbox_rviz_plugin.cpp.o[0m
+[ 29%] [32mBuilding CXX object CMakeFiles/SlamToolboxPlugin.dir/SlamToolboxPlugin_autogen/mocs_compilation.cpp.o[0m
+[ 30%] [32m[1mLinking CXX shared library /home/al/grad_project/catkin_ws/devel/lib/libSlamToolboxPlugin.so[0m
+[ 30%] Built target SlamToolboxPlugin
+[ 32%] [32m[1mLinking CXX shared library /home/al/grad_project/catkin_ws/devel/lib/libceres_solver_plugin.so[0m
+[ 32%] Built target ceres_solver_plugin
+[ 34%] [32m[1mLinking CXX shared library /home/al/grad_project/catkin_ws/devel/lib/libtoolbox_common.so[0m
+[ 34%] Built target toolbox_common
+[35m[1mScanning dependencies of target async_slam_toolbox_autogen[0m
+[35m[1mScanning dependencies of target localization_slam_toolbox_autogen[0m
+[35m[1mScanning dependencies of target merge_maps_kinematic_autogen[0m
+[35m[1mScanning dependencies of target sync_slam_toolbox_autogen[0m
+[35m[1mScanning dependencies of target lifelong_slam_toolbox_autogen[0m
+[ 36%] [34m[1mAutomatic MOC for target localization_slam_toolbox[0m
+[ 38%] [34m[1mAutomatic MOC for target merge_maps_kinematic[0m
+[ 40%] [34m[1mAutomatic MOC for target async_slam_toolbox[0m
+[ 41%] [34m[1mAutomatic MOC for target lifelong_slam_toolbox[0m
+[ 43%] [34m[1mAutomatic MOC for target sync_slam_toolbox[0m
+[ 43%] Built target merge_maps_kinematic_autogen
+[ 43%] Built target localization_slam_toolbox_autogen
+[ 43%] Built target lifelong_slam_toolbox_autogen
+[ 43%] Built target async_slam_toolbox_autogen
+[ 43%] Built target sync_slam_toolbox_autogen
+[35m[1mScanning dependencies of target localization_slam_toolbox[0m
+[35m[1mScanning dependencies of target merge_maps_kinematic[0m
+[35m[1mScanning dependencies of target async_slam_toolbox[0m
+[35m[1mScanning dependencies of target lifelong_slam_toolbox[0m
+[35m[1mScanning dependencies of target sync_slam_toolbox[0m
+[ 47%] [32mBuilding CXX object CMakeFiles/localization_slam_toolbox.dir/localization_slam_toolbox_autogen/mocs_compilation.cpp.o[0m
+[ 47%] [32mBuilding CXX object CMakeFiles/localization_slam_toolbox.dir/src/slam_toolbox_localization.cpp.o[0m
+[ 49%] [32mBuilding CXX object CMakeFiles/async_slam_toolbox.dir/src/slam_toolbox_async.cpp.o[0m
+[ 50%] [32mBuilding CXX object CMakeFiles/async_slam_toolbox.dir/async_slam_toolbox_autogen/mocs_compilation.cpp.o[0m
+[ 52%] [32mBuilding CXX object CMakeFiles/sync_slam_toolbox.dir/src/slam_toolbox_sync.cpp.o[0m
+[ 54%] [32mBuilding CXX object CMakeFiles/sync_slam_toolbox.dir/sync_slam_toolbox_autogen/mocs_compilation.cpp.o[0m
+[ 56%] [32mBuilding CXX object CMakeFiles/merge_maps_kinematic.dir/src/merge_maps_kinematic.cpp.o[0m
+[ 58%] [32mBuilding CXX object CMakeFiles/lifelong_slam_toolbox.dir/src/experimental/slam_toolbox_lifelong.cpp.o[0m
+[ 60%] [32mBuilding CXX object CMakeFiles/lifelong_slam_toolbox.dir/lifelong_slam_toolbox_autogen/mocs_compilation.cpp.o[0m
+[ 61%] [32mBuilding CXX object CMakeFiles/merge_maps_kinematic.dir/merge_maps_kinematic_autogen/mocs_compilation.cpp.o[0m
+[ 63%] [32m[1mLinking CXX shared library /home/al/grad_project/catkin_ws/devel/lib/liblocalization_slam_toolbox.so[0m
+[ 63%] Built target localization_slam_toolbox
+[35m[1mScanning dependencies of target localization_slam_toolbox_node_autogen[0m
+[ 65%] [34m[1mAutomatic MOC for target localization_slam_toolbox_node[0m
+[ 67%] [32m[1mLinking CXX shared library /home/al/grad_project/catkin_ws/devel/lib/libsync_slam_toolbox.so[0m
+[ 67%] Built target localization_slam_toolbox_node_autogen
+[35m[1mScanning dependencies of target localization_slam_toolbox_node[0m
+[ 69%] [32mBuilding CXX object CMakeFiles/localization_slam_toolbox_node.dir/src/slam_toolbox_localization_node.cpp.o[0m
+[ 70%] [32mBuilding CXX object CMakeFiles/localization_slam_toolbox_node.dir/localization_slam_toolbox_node_autogen/mocs_compilation.cpp.o[0m
+[ 72%] [32m[1mLinking CXX executable /home/al/grad_project/catkin_ws/devel/lib/slam_toolbox/merge_maps_kinematic[0m
+[ 72%] Built target sync_slam_toolbox
+[35m[1mScanning dependencies of target sync_slam_toolbox_node_autogen[0m
+[ 74%] [34m[1mAutomatic MOC for target sync_slam_toolbox_node[0m
+[ 74%] Built target sync_slam_toolbox_node_autogen
+[35m[1mScanning dependencies of target sync_slam_toolbox_node[0m
+[ 76%] [32mBuilding CXX object CMakeFiles/sync_slam_toolbox_node.dir/sync_slam_toolbox_node_autogen/mocs_compilation.cpp.o[0m
+[ 78%] [32mBuilding CXX object CMakeFiles/sync_slam_toolbox_node.dir/src/slam_toolbox_sync_node.cpp.o[0m
+[ 78%] Built target merge_maps_kinematic
+[ 80%] [32m[1mLinking CXX shared library /home/al/grad_project/catkin_ws/devel/lib/libasync_slam_toolbox.so[0m
+[ 80%] Built target async_slam_toolbox
+[35m[1mScanning dependencies of target async_slam_toolbox_node_autogen[0m
+[ 81%] [34m[1mAutomatic MOC for target async_slam_toolbox_node[0m
+[ 83%] [32m[1mLinking CXX shared library /home/al/grad_project/catkin_ws/devel/lib/liblifelong_slam_toolbox.so[0m
+[ 83%] Built target async_slam_toolbox_node_autogen
+[35m[1mScanning dependencies of target async_slam_toolbox_node[0m
+[ 87%] [32mBuilding CXX object CMakeFiles/async_slam_toolbox_node.dir/src/slam_toolbox_async_node.cpp.o[0m
+[ 87%] [32mBuilding CXX object CMakeFiles/async_slam_toolbox_node.dir/async_slam_toolbox_node_autogen/mocs_compilation.cpp.o[0m
+[ 87%] Built target lifelong_slam_toolbox
+[35m[1mScanning dependencies of target lifelong_slam_toolbox_node_autogen[0m
+[ 89%] [34m[1mAutomatic MOC for target lifelong_slam_toolbox_node[0m
+[ 89%] Built target lifelong_slam_toolbox_node_autogen
+[35m[1mScanning dependencies of target lifelong_slam_toolbox_node[0m
+[ 92%] [32mBuilding CXX object CMakeFiles/lifelong_slam_toolbox_node.dir/src/experimental/slam_toolbox_lifelong_node.cpp.o[0m
+[ 92%] [32mBuilding CXX object CMakeFiles/lifelong_slam_toolbox_node.dir/lifelong_slam_toolbox_node_autogen/mocs_compilation.cpp.o[0m
+[ 94%] [32m[1mLinking CXX executable /home/al/grad_project/catkin_ws/devel/lib/slam_toolbox/localization_slam_toolbox_node[0m
+[ 94%] Built target localization_slam_toolbox_node
+[ 96%] [32m[1mLinking CXX executable /home/al/grad_project/catkin_ws/devel/lib/slam_toolbox/sync_slam_toolbox_node[0m
+[ 96%] Built target sync_slam_toolbox_node
+[ 98%] [32m[1mLinking CXX executable /home/al/grad_project/catkin_ws/devel/lib/slam_toolbox/async_slam_toolbox_node[0m
+[ 98%] Built target async_slam_toolbox_node
+[100%] [32m[1mLinking CXX executable /home/al/grad_project/catkin_ws/devel/lib/slam_toolbox/lifelong_slam_toolbox_node[0m
+[100%] Built target lifelong_slam_toolbox_node

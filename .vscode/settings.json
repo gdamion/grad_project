@@ -1,9 +1,0 @@
-{
-	"files.associations": {
-		"oplk.h": "c",
-		"memory_api.h": "c",
-		"stdint.h": "c",
-		"cstdint": "c",
-		"debugstr.h": "c"
-	}
-}
