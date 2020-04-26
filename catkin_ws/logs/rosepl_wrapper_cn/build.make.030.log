@@ -1,0 +1,84 @@
+[  0%] Built target std_msgs_generate_messages_eus
+[  0%] Built target std_msgs_generate_messages_nodejs
+[  0%] Built target std_msgs_generate_messages_cpp
+[  0%] Built target std_msgs_generate_messages_py
+[  0%] Built target std_msgs_generate_messages_lisp
+[  0%] Built target _rosepl_wrapper_cn_generate_messages_check_deps_SignalSync
+[  0%] Built target _rosepl_wrapper_cn_generate_messages_check_deps_PowerlinkOut
+[  0%] Built target _rosepl_wrapper_cn_generate_messages_check_deps_PowerlinkIn
+[  0%] Built target _rosepl_wrapper_cn_generate_messages_check_deps_SdoTransfer
+[ 21%] Built target rosepl_wrapper_cn_generate_messages_py
+[ 35%] Built target rosepl_wrapper_cn_generate_messages_cpp
+[ 50%] Built target rosepl_wrapper_cn_generate_messages_lisp
+[ 64%] Built target rosepl_wrapper_cn_generate_messages_nodejs
+[ 82%] Built target rosepl_wrapper_cn_generate_messages_eus
+[35m[1mScanning dependencies of target rosepl_wrapper_cn_node[0m
+[ 82%] Built target rosepl_wrapper_cn_generate_messages
+[ 85%] [32mBuilding CXX object CMakeFiles/rosepl_wrapper_cn_node.dir/src/wrapper.cpp.o[0m
+In file included from [01m[K/home/al/grad_project/catkin_ws/src/rosepl_wrapper_cn/include/rosepl_wrapper_cn/generated_wrapper.h:21:0[m[K,
+                 from [01m[K/home/al/grad_project/catkin_ws/src/rosepl_wrapper_cn/src/wrapper.cpp:27[m[K:
+[01m[K/home/al/grad_project/catkin_ws/src/rosepl_wrapper_cn/include/rosepl_wrapper_cn/xap.h:8:25:[m[K [01;35m[Kwarning: [m[Kwidth of ‘[01m[K<unnamed struct>::cmdvel_lwheel[m[K’ exceeds its type
+  unsigned cmdvel_lwheel:[01;35m[K64[m[K;
+                         [01;35m[K^~[m[K
+[01m[K/home/al/grad_project/catkin_ws/src/rosepl_wrapper_cn/include/rosepl_wrapper_cn/xap.h:9:25:[m[K [01;35m[Kwarning: [m[Kwidth of ‘[01m[K<unnamed struct>::cmdvel_rwheel[m[K’ exceeds its type
+  unsigned cmdvel_rwheel:[01;35m[K64[m[K;
+                         [01;35m[K^~[m[K
+[01m[K/home/al/grad_project/catkin_ws/src/rosepl_wrapper_cn/include/rosepl_wrapper_cn/xap.h:15:20:[m[K [01;35m[Kwarning: [m[Kwidth of ‘[01m[K<unnamed struct>::mm_x_pos[m[K’ exceeds its type
+  unsigned mm_x_pos:[01;35m[K64[m[K;
+                    [01;35m[K^~[m[K
+[01m[K/home/al/grad_project/catkin_ws/src/rosepl_wrapper_cn/include/rosepl_wrapper_cn/xap.h:16:20:[m[K [01;35m[Kwarning: [m[Kwidth of ‘[01m[K<unnamed struct>::mm_y_pos[m[K’ exceeds its type
+  unsigned mm_y_pos:[01;35m[K64[m[K;
+                    [01;35m[K^~[m[K
+[01m[K/home/al/grad_project/catkin_ws/src/rosepl_wrapper_cn/include/rosepl_wrapper_cn/xap.h:17:20:[m[K [01;35m[Kwarning: [m[Kwidth of ‘[01m[K<unnamed struct>::mm_z_pos[m[K’ exceeds its type
+  unsigned mm_z_pos:[01;35m[K64[m[K;
+                    [01;35m[K^~[m[K
+[01m[K/home/al/grad_project/catkin_ws/src/rosepl_wrapper_cn/include/rosepl_wrapper_cn/xap.h:18:23:[m[K [01;35m[Kwarning: [m[Kwidth of ‘[01m[K<unnamed struct>::mm_x_orient[m[K’ exceeds its type
+  unsigned mm_x_orient:[01;35m[K64[m[K;
+                       [01;35m[K^~[m[K
+[01m[K/home/al/grad_project/catkin_ws/src/rosepl_wrapper_cn/include/rosepl_wrapper_cn/xap.h:19:23:[m[K [01;35m[Kwarning: [m[Kwidth of ‘[01m[K<unnamed struct>::mm_y_orient[m[K’ exceeds its type
+  unsigned mm_y_orient:[01;35m[K64[m[K;
+                       [01;35m[K^~[m[K
+[01m[K/home/al/grad_project/catkin_ws/src/rosepl_wrapper_cn/include/rosepl_wrapper_cn/xap.h:20:23:[m[K [01;35m[Kwarning: [m[Kwidth of ‘[01m[K<unnamed struct>::mm_z_orient[m[K’ exceeds its type
+  unsigned mm_z_orient:[01;35m[K64[m[K;
+                       [01;35m[K^~[m[K
+[01m[K/home/al/grad_project/catkin_ws/src/rosepl_wrapper_cn/include/rosepl_wrapper_cn/xap.h:21:23:[m[K [01;35m[Kwarning: [m[Kwidth of ‘[01m[K<unnamed struct>::mm_w_orient[m[K’ exceeds its type
+  unsigned mm_w_orient:[01;35m[K64[m[K;
+                       [01;35m[K^~[m[K
+[01m[K/home/al/grad_project/catkin_ws/src/rosepl_wrapper_cn/include/rosepl_wrapper_cn/xap.h:22:23:[m[K [01;35m[Kwarning: [m[Kwidth of ‘[01m[K<unnamed struct>::odom_lwheel[m[K’ exceeds its type
+  unsigned odom_lwheel:[01;35m[K64[m[K;
+                       [01;35m[K^~[m[K
+[01m[K/home/al/grad_project/catkin_ws/src/rosepl_wrapper_cn/include/rosepl_wrapper_cn/xap.h:23:23:[m[K [01;35m[Kwarning: [m[Kwidth of ‘[01m[K<unnamed struct>::odom_rwheel[m[K’ exceeds its type
+  unsigned odom_rwheel:[01;35m[K64[m[K;
+                       [01;35m[K^~[m[K
+[01m[K/home/al/grad_project/catkin_ws/src/rosepl_wrapper_cn/src/wrapper.cpp:[m[K In function ‘[01m[Kvoid odom_callback(const ConstPtr&)[m[K’:
+[01m[K/home/al/grad_project/catkin_ws/src/rosepl_wrapper_cn/src/wrapper.cpp:129:33:[m[K [01;31m[Kerror: [m[K‘[01m[Kconst struct nav_msgs::Odometry_<std::allocator<void> >[m[K’ has no member named ‘[01m[Kodom_lwheel[m[K’
+  oplk_pi_in->odom_lwheel = msg->[01;31m[Kodom_lwheel[m[K;
+                                 [01;31m[K^~~~~~~~~~~[m[K
+[01m[K/home/al/grad_project/catkin_ws/src/rosepl_wrapper_cn/src/wrapper.cpp:130:33:[m[K [01;31m[Kerror: [m[K‘[01m[Kconst struct nav_msgs::Odometry_<std::allocator<void> >[m[K’ has no member named ‘[01m[Kodom_rwheel[m[K’
+  oplk_pi_in->odom_rwheel = msg->[01;31m[Kodom_rwheel[m[K;
+                                 [01;31m[K^~~~~~~~~~~[m[K
+[01m[K/home/al/grad_project/catkin_ws/src/rosepl_wrapper_cn/src/wrapper.cpp:[m[K In function ‘[01m[Kvoid coord_callback(const ConstPtr&)[m[K’:
+[01m[K/home/al/grad_project/catkin_ws/src/rosepl_wrapper_cn/src/wrapper.cpp:136:29:[m[K [01;31m[Kerror: [m[K‘[01m[Kconst ConstPtr {aka const class boost::shared_ptr<const gazebo_msgs::ModelStates_<std::allocator<void> > >}[m[K’ has no member named ‘[01m[Kmm_x_pos[m[K’
+  oplk_pi_in->mm_x_pos = msg.[01;31m[Kmm_x_pos[m[K;
+                             [01;31m[K^~~~~~~~[m[K
+[01m[K/home/al/grad_project/catkin_ws/src/rosepl_wrapper_cn/src/wrapper.cpp:137:29:[m[K [01;31m[Kerror: [m[K‘[01m[Kconst ConstPtr {aka const class boost::shared_ptr<const gazebo_msgs::ModelStates_<std::allocator<void> > >}[m[K’ has no member named ‘[01m[Kmm_y_pos[m[K’
+  oplk_pi_in->mm_y_pos = msg.[01;31m[Kmm_y_pos[m[K;
+                             [01;31m[K^~~~~~~~[m[K
+[01m[K/home/al/grad_project/catkin_ws/src/rosepl_wrapper_cn/src/wrapper.cpp:138:29:[m[K [01;31m[Kerror: [m[K‘[01m[Kconst ConstPtr {aka const class boost::shared_ptr<const gazebo_msgs::ModelStates_<std::allocator<void> > >}[m[K’ has no member named ‘[01m[Kmm_z_pos[m[K’
+  oplk_pi_in->mm_z_pos = msg.[01;31m[Kmm_z_pos[m[K;
+                             [01;31m[K^~~~~~~~[m[K
+[01m[K/home/al/grad_project/catkin_ws/src/rosepl_wrapper_cn/src/wrapper.cpp:139:32:[m[K [01;31m[Kerror: [m[K‘[01m[Kconst ConstPtr {aka const class boost::shared_ptr<const gazebo_msgs::ModelStates_<std::allocator<void> > >}[m[K’ has no member named ‘[01m[Kmm_x_orient[m[K’
+  oplk_pi_in->mm_x_orient = msg.[01;31m[Kmm_x_orient[m[K;
+                                [01;31m[K^~~~~~~~~~~[m[K
+[01m[K/home/al/grad_project/catkin_ws/src/rosepl_wrapper_cn/src/wrapper.cpp:140:32:[m[K [01;31m[Kerror: [m[K‘[01m[Kconst ConstPtr {aka const class boost::shared_ptr<const gazebo_msgs::ModelStates_<std::allocator<void> > >}[m[K’ has no member named ‘[01m[Kmm_y_orient[m[K’
+  oplk_pi_in->mm_y_orient = msg.[01;31m[Kmm_y_orient[m[K;
+                                [01;31m[K^~~~~~~~~~~[m[K
+[01m[K/home/al/grad_project/catkin_ws/src/rosepl_wrapper_cn/src/wrapper.cpp:141:32:[m[K [01;31m[Kerror: [m[K‘[01m[Kconst ConstPtr {aka const class boost::shared_ptr<const gazebo_msgs::ModelStates_<std::allocator<void> > >}[m[K’ has no member named ‘[01m[Kmm_w_orient[m[K’
+  oplk_pi_in->mm_w_orient = msg.[01;31m[Kmm_w_orient[m[K;
+                                [01;31m[K^~~~~~~~~~~[m[K
+CMakeFiles/rosepl_wrapper_cn_node.dir/build.make:62: recipe for target 'CMakeFiles/rosepl_wrapper_cn_node.dir/src/wrapper.cpp.o' failed
+make[2]: *** [CMakeFiles/rosepl_wrapper_cn_node.dir/src/wrapper.cpp.o] Error 1
+CMakeFiles/Makefile2:1220: recipe for target 'CMakeFiles/rosepl_wrapper_cn_node.dir/all' failed
+make[1]: *** [CMakeFiles/rosepl_wrapper_cn_node.dir/all] Error 2
+Makefile:140: recipe for target 'all' failed
+make: *** [all] Error 2

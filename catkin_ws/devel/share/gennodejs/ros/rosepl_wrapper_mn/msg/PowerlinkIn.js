@@ -20,9 +20,8 @@ class PowerlinkIn {
       // initObj === null is a special case for deserialization where we don't initialize fields
       this.shm_name = null;
       this.pid = null;
-      this.CN1_DigitalOutput_00h_AU8_DigitalOutput = null;
-      this.CN32_DigitalOutput_00h_AU8_DigitalOutput = null;
-      this.CN110_DigitalOutput_00h_AU8_DigitalOutput = null;
+      this.cmdvel_lwheel = null;
+      this.cmdvel_rwheel = null;
     }
     else {
       if (initObj.hasOwnProperty('shm_name')) {
@@ -37,23 +36,17 @@ class PowerlinkIn {
       else {
         this.pid = 0;
       }
-      if (initObj.hasOwnProperty('CN1_DigitalOutput_00h_AU8_DigitalOutput')) {
-        this.CN1_DigitalOutput_00h_AU8_DigitalOutput = initObj.CN1_DigitalOutput_00h_AU8_DigitalOutput
+      if (initObj.hasOwnProperty('cmdvel_lwheel')) {
+        this.cmdvel_lwheel = initObj.cmdvel_lwheel
       }
       else {
-        this.CN1_DigitalOutput_00h_AU8_DigitalOutput = 0;
+        this.cmdvel_lwheel = 0;
       }
-      if (initObj.hasOwnProperty('CN32_DigitalOutput_00h_AU8_DigitalOutput')) {
-        this.CN32_DigitalOutput_00h_AU8_DigitalOutput = initObj.CN32_DigitalOutput_00h_AU8_DigitalOutput
-      }
-      else {
-        this.CN32_DigitalOutput_00h_AU8_DigitalOutput = 0;
-      }
-      if (initObj.hasOwnProperty('CN110_DigitalOutput_00h_AU8_DigitalOutput')) {
-        this.CN110_DigitalOutput_00h_AU8_DigitalOutput = initObj.CN110_DigitalOutput_00h_AU8_DigitalOutput
+      if (initObj.hasOwnProperty('cmdvel_rwheel')) {
+        this.cmdvel_rwheel = initObj.cmdvel_rwheel
       }
       else {
-        this.CN110_DigitalOutput_00h_AU8_DigitalOutput = 0;
+        this.cmdvel_rwheel = 0;
       }
     }
   }
@@ -64,12 +57,10 @@ class PowerlinkIn {
     bufferOffset = _serializer.string(obj.shm_name, buffer, bufferOffset);
     // Serialize message field [pid]
     bufferOffset = _serializer.uint16(obj.pid, buffer, bufferOffset);
-    // Serialize message field [CN1_DigitalOutput_00h_AU8_DigitalOutput]
-    bufferOffset = _serializer.uint8(obj.CN1_DigitalOutput_00h_AU8_DigitalOutput, buffer, bufferOffset);
-    // Serialize message field [CN32_DigitalOutput_00h_AU8_DigitalOutput]
-    bufferOffset = _serializer.uint8(obj.CN32_DigitalOutput_00h_AU8_DigitalOutput, buffer, bufferOffset);
-    // Serialize message field [CN110_DigitalOutput_00h_AU8_DigitalOutput]
-    bufferOffset = _serializer.uint8(obj.CN110_DigitalOutput_00h_AU8_DigitalOutput, buffer, bufferOffset);
+    // Serialize message field [cmdvel_lwheel]
+    bufferOffset = _serializer.int64(obj.cmdvel_lwheel, buffer, bufferOffset);
+    // Serialize message field [cmdvel_rwheel]
+    bufferOffset = _serializer.int64(obj.cmdvel_rwheel, buffer, bufferOffset);
     return bufferOffset;
   }
 
@@ -81,19 +72,17 @@ class PowerlinkIn {
     data.shm_name = _deserializer.string(buffer, bufferOffset);
     // Deserialize message field [pid]
     data.pid = _deserializer.uint16(buffer, bufferOffset);
-    // Deserialize message field [CN1_DigitalOutput_00h_AU8_DigitalOutput]
-    data.CN1_DigitalOutput_00h_AU8_DigitalOutput = _deserializer.uint8(buffer, bufferOffset);
-    // Deserialize message field [CN32_DigitalOutput_00h_AU8_DigitalOutput]
-    data.CN32_DigitalOutput_00h_AU8_DigitalOutput = _deserializer.uint8(buffer, bufferOffset);
-    // Deserialize message field [CN110_DigitalOutput_00h_AU8_DigitalOutput]
-    data.CN110_DigitalOutput_00h_AU8_DigitalOutput = _deserializer.uint8(buffer, bufferOffset);
+    // Deserialize message field [cmdvel_lwheel]
+    data.cmdvel_lwheel = _deserializer.int64(buffer, bufferOffset);
+    // Deserialize message field [cmdvel_rwheel]
+    data.cmdvel_rwheel = _deserializer.int64(buffer, bufferOffset);
     return data;
   }
 
   static getMessageSize(object) {
     let length = 0;
     length += object.shm_name.length;
-    return length + 9;
+    return length + 22;
   }
 
   static datatype() {
@@ -103,7 +92,7 @@ class PowerlinkIn {
 
   static md5sum() {
     //Returns md5sum for a message object
-    return '83446a679c527fd90cd8516147e626c1';
+    return '084629ffa8e3d4d7e9182ff9bbabd096';
   }
 
   static messageDefinition() {
@@ -116,9 +105,9 @@ class PowerlinkIn {
     uint16 pid
     
     # xap.h variables:
-    uint8 CN1_DigitalOutput_00h_AU8_DigitalOutput
-    uint8 CN32_DigitalOutput_00h_AU8_DigitalOutput
-    uint8 CN110_DigitalOutput_00h_AU8_DigitalOutput
+    int64 cmdvel_lwheel
+    int64 cmdvel_rwheel
+    
     
     `;
   }
@@ -143,25 +132,18 @@ class PowerlinkIn {
       resolved.pid = 0
     }
 
-    if (msg.CN1_DigitalOutput_00h_AU8_DigitalOutput !== undefined) {
-      resolved.CN1_DigitalOutput_00h_AU8_DigitalOutput = msg.CN1_DigitalOutput_00h_AU8_DigitalOutput;
+    if (msg.cmdvel_lwheel !== undefined) {
+      resolved.cmdvel_lwheel = msg.cmdvel_lwheel;
     }
     else {
-      resolved.CN1_DigitalOutput_00h_AU8_DigitalOutput = 0
+      resolved.cmdvel_lwheel = 0
     }
 
-    if (msg.CN32_DigitalOutput_00h_AU8_DigitalOutput !== undefined) {
-      resolved.CN32_DigitalOutput_00h_AU8_DigitalOutput = msg.CN32_DigitalOutput_00h_AU8_DigitalOutput;
+    if (msg.cmdvel_rwheel !== undefined) {
+      resolved.cmdvel_rwheel = msg.cmdvel_rwheel;
     }
     else {
-      resolved.CN32_DigitalOutput_00h_AU8_DigitalOutput = 0
-    }
-
-    if (msg.CN110_DigitalOutput_00h_AU8_DigitalOutput !== undefined) {
-      resolved.CN110_DigitalOutput_00h_AU8_DigitalOutput = msg.CN110_DigitalOutput_00h_AU8_DigitalOutput;
-    }
-    else {
-      resolved.CN110_DigitalOutput_00h_AU8_DigitalOutput = 0
+      resolved.cmdvel_rwheel = 0
     }
 
     return resolved;

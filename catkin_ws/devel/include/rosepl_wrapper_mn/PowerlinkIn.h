@@ -26,16 +26,14 @@ struct PowerlinkIn_
   PowerlinkIn_()
     : shm_name()
     , pid(0)
-    , CN1_DigitalOutput_00h_AU8_DigitalOutput(0)
-    , CN32_DigitalOutput_00h_AU8_DigitalOutput(0)
-    , CN110_DigitalOutput_00h_AU8_DigitalOutput(0)  {
+    , cmdvel_lwheel(0)
+    , cmdvel_rwheel(0)  {
     }
   PowerlinkIn_(const ContainerAllocator& _alloc)
     : shm_name(_alloc)
     , pid(0)
-    , CN1_DigitalOutput_00h_AU8_DigitalOutput(0)
-    , CN32_DigitalOutput_00h_AU8_DigitalOutput(0)
-    , CN110_DigitalOutput_00h_AU8_DigitalOutput(0)  {
+    , cmdvel_lwheel(0)
+    , cmdvel_rwheel(0)  {
   (void)_alloc;
     }
 
@@ -47,14 +45,11 @@ struct PowerlinkIn_
    typedef uint16_t _pid_type;
   _pid_type pid;
 
-   typedef uint8_t _CN1_DigitalOutput_00h_AU8_DigitalOutput_type;
-  _CN1_DigitalOutput_00h_AU8_DigitalOutput_type CN1_DigitalOutput_00h_AU8_DigitalOutput;
+   typedef int64_t _cmdvel_lwheel_type;
+  _cmdvel_lwheel_type cmdvel_lwheel;
 
-   typedef uint8_t _CN32_DigitalOutput_00h_AU8_DigitalOutput_type;
-  _CN32_DigitalOutput_00h_AU8_DigitalOutput_type CN32_DigitalOutput_00h_AU8_DigitalOutput;
-
-   typedef uint8_t _CN110_DigitalOutput_00h_AU8_DigitalOutput_type;
-  _CN110_DigitalOutput_00h_AU8_DigitalOutput_type CN110_DigitalOutput_00h_AU8_DigitalOutput;
+   typedef int64_t _cmdvel_rwheel_type;
+  _cmdvel_rwheel_type cmdvel_rwheel;
 
 
 
@@ -87,9 +82,8 @@ bool operator==(const ::rosepl_wrapper_mn::PowerlinkIn_<ContainerAllocator1> & l
 {
   return lhs.shm_name == rhs.shm_name &&
     lhs.pid == rhs.pid &&
-    lhs.CN1_DigitalOutput_00h_AU8_DigitalOutput == rhs.CN1_DigitalOutput_00h_AU8_DigitalOutput &&
-    lhs.CN32_DigitalOutput_00h_AU8_DigitalOutput == rhs.CN32_DigitalOutput_00h_AU8_DigitalOutput &&
-    lhs.CN110_DigitalOutput_00h_AU8_DigitalOutput == rhs.CN110_DigitalOutput_00h_AU8_DigitalOutput;
+    lhs.cmdvel_lwheel == rhs.cmdvel_lwheel &&
+    lhs.cmdvel_rwheel == rhs.cmdvel_rwheel;
 }
 
 template<typename ContainerAllocator1, typename ContainerAllocator2>
@@ -146,12 +140,12 @@ struct MD5Sum< ::rosepl_wrapper_mn::PowerlinkIn_<ContainerAllocator> >
 {
   static const char* value()
   {
-    return "83446a679c527fd90cd8516147e626c1";
+    return "084629ffa8e3d4d7e9182ff9bbabd096";
   }
 
   static const char* value(const ::rosepl_wrapper_mn::PowerlinkIn_<ContainerAllocator>&) { return value(); }
-  static const uint64_t static_value1 = 0x83446a679c527fd9ULL;
-  static const uint64_t static_value2 = 0x0cd8516147e626c1ULL;
+  static const uint64_t static_value1 = 0x084629ffa8e3d4d7ULL;
+  static const uint64_t static_value2 = 0xe9182ff9bbabd096ULL;
 };
 
 template<class ContainerAllocator>
@@ -177,9 +171,9 @@ struct Definition< ::rosepl_wrapper_mn::PowerlinkIn_<ContainerAllocator> >
 "uint16 pid\n"
 "\n"
 "# xap.h variables:\n"
-"uint8 CN1_DigitalOutput_00h_AU8_DigitalOutput\n"
-"uint8 CN32_DigitalOutput_00h_AU8_DigitalOutput\n"
-"uint8 CN110_DigitalOutput_00h_AU8_DigitalOutput\n"
+"int64 cmdvel_lwheel\n"
+"int64 cmdvel_rwheel\n"
+"\n"
 ;
   }
 
@@ -200,9 +194,8 @@ namespace serialization
     {
       stream.next(m.shm_name);
       stream.next(m.pid);
-      stream.next(m.CN1_DigitalOutput_00h_AU8_DigitalOutput);
-      stream.next(m.CN32_DigitalOutput_00h_AU8_DigitalOutput);
-      stream.next(m.CN110_DigitalOutput_00h_AU8_DigitalOutput);
+      stream.next(m.cmdvel_lwheel);
+      stream.next(m.cmdvel_rwheel);
     }
 
     ROS_DECLARE_ALLINONE_SERIALIZER
@@ -225,12 +218,10 @@ struct Printer< ::rosepl_wrapper_mn::PowerlinkIn_<ContainerAllocator> >
     Printer<std::basic_string<char, std::char_traits<char>, typename ContainerAllocator::template rebind<char>::other > >::stream(s, indent + "  ", v.shm_name);
     s << indent << "pid: ";
     Printer<uint16_t>::stream(s, indent + "  ", v.pid);
-    s << indent << "CN1_DigitalOutput_00h_AU8_DigitalOutput: ";
-    Printer<uint8_t>::stream(s, indent + "  ", v.CN1_DigitalOutput_00h_AU8_DigitalOutput);
-    s << indent << "CN32_DigitalOutput_00h_AU8_DigitalOutput: ";
-    Printer<uint8_t>::stream(s, indent + "  ", v.CN32_DigitalOutput_00h_AU8_DigitalOutput);
-    s << indent << "CN110_DigitalOutput_00h_AU8_DigitalOutput: ";
-    Printer<uint8_t>::stream(s, indent + "  ", v.CN110_DigitalOutput_00h_AU8_DigitalOutput);
+    s << indent << "cmdvel_lwheel: ";
+    Printer<int64_t>::stream(s, indent + "  ", v.cmdvel_lwheel);
+    s << indent << "cmdvel_rwheel: ";
+    Printer<int64_t>::stream(s, indent + "  ", v.cmdvel_rwheel);
   }
 };
 

@@ -26,12 +26,28 @@ struct PowerlinkIn_
   PowerlinkIn_()
     : shm_name()
     , pid(0)
-    , DigitalOutput(0)  {
+    , mm_x_pos(0)
+    , mm_y_pos(0)
+    , mm_z_pos(0)
+    , mm_x_orient(0)
+    , mm_y_orient(0)
+    , mm_z_orient(0)
+    , mm_w_orient(0)
+    , odom_lwheel(0)
+    , odom_rwheel(0)  {
     }
   PowerlinkIn_(const ContainerAllocator& _alloc)
     : shm_name(_alloc)
     , pid(0)
-    , DigitalOutput(0)  {
+    , mm_x_pos(0)
+    , mm_y_pos(0)
+    , mm_z_pos(0)
+    , mm_x_orient(0)
+    , mm_y_orient(0)
+    , mm_z_orient(0)
+    , mm_w_orient(0)
+    , odom_lwheel(0)
+    , odom_rwheel(0)  {
   (void)_alloc;
     }
 
@@ -43,8 +59,32 @@ struct PowerlinkIn_
    typedef uint16_t _pid_type;
   _pid_type pid;
 
-   typedef uint8_t _DigitalOutput_type;
-  _DigitalOutput_type DigitalOutput;
+   typedef int64_t _mm_x_pos_type;
+  _mm_x_pos_type mm_x_pos;
+
+   typedef int64_t _mm_y_pos_type;
+  _mm_y_pos_type mm_y_pos;
+
+   typedef int64_t _mm_z_pos_type;
+  _mm_z_pos_type mm_z_pos;
+
+   typedef int64_t _mm_x_orient_type;
+  _mm_x_orient_type mm_x_orient;
+
+   typedef int64_t _mm_y_orient_type;
+  _mm_y_orient_type mm_y_orient;
+
+   typedef int64_t _mm_z_orient_type;
+  _mm_z_orient_type mm_z_orient;
+
+   typedef int64_t _mm_w_orient_type;
+  _mm_w_orient_type mm_w_orient;
+
+   typedef int64_t _odom_lwheel_type;
+  _odom_lwheel_type odom_lwheel;
+
+   typedef int64_t _odom_rwheel_type;
+  _odom_rwheel_type odom_rwheel;
 
 
 
@@ -77,7 +117,15 @@ bool operator==(const ::rosepl_wrapper_cn::PowerlinkIn_<ContainerAllocator1> & l
 {
   return lhs.shm_name == rhs.shm_name &&
     lhs.pid == rhs.pid &&
-    lhs.DigitalOutput == rhs.DigitalOutput;
+    lhs.mm_x_pos == rhs.mm_x_pos &&
+    lhs.mm_y_pos == rhs.mm_y_pos &&
+    lhs.mm_z_pos == rhs.mm_z_pos &&
+    lhs.mm_x_orient == rhs.mm_x_orient &&
+    lhs.mm_y_orient == rhs.mm_y_orient &&
+    lhs.mm_z_orient == rhs.mm_z_orient &&
+    lhs.mm_w_orient == rhs.mm_w_orient &&
+    lhs.odom_lwheel == rhs.odom_lwheel &&
+    lhs.odom_rwheel == rhs.odom_rwheel;
 }
 
 template<typename ContainerAllocator1, typename ContainerAllocator2>
@@ -134,12 +182,12 @@ struct MD5Sum< ::rosepl_wrapper_cn::PowerlinkIn_<ContainerAllocator> >
 {
   static const char* value()
   {
-    return "80f0197dc834c087f63affbd7bbe99ab";
+    return "43ef1fa8f235c243a4ab2c833daf73da";
   }
 
   static const char* value(const ::rosepl_wrapper_cn::PowerlinkIn_<ContainerAllocator>&) { return value(); }
-  static const uint64_t static_value1 = 0x80f0197dc834c087ULL;
-  static const uint64_t static_value2 = 0xf63affbd7bbe99abULL;
+  static const uint64_t static_value1 = 0x43ef1fa8f235c243ULL;
+  static const uint64_t static_value2 = 0xa4ab2c833daf73daULL;
 };
 
 template<class ContainerAllocator>
@@ -165,7 +213,16 @@ struct Definition< ::rosepl_wrapper_cn::PowerlinkIn_<ContainerAllocator> >
 "uint16 pid\n"
 "\n"
 "# xap.h variables:\n"
-"uint8 DigitalOutput\n"
+"# uint8 DigitalOutput\n"
+"int64 mm_x_pos\n"
+"int64 mm_y_pos\n"
+"int64 mm_z_pos\n"
+"int64 mm_x_orient\n"
+"int64 mm_y_orient\n"
+"int64 mm_z_orient\n"
+"int64 mm_w_orient\n"
+"int64 odom_lwheel\n"
+"int64 odom_rwheel\n"
 ;
   }
 
@@ -186,7 +243,15 @@ namespace serialization
     {
       stream.next(m.shm_name);
       stream.next(m.pid);
-      stream.next(m.DigitalOutput);
+      stream.next(m.mm_x_pos);
+      stream.next(m.mm_y_pos);
+      stream.next(m.mm_z_pos);
+      stream.next(m.mm_x_orient);
+      stream.next(m.mm_y_orient);
+      stream.next(m.mm_z_orient);
+      stream.next(m.mm_w_orient);
+      stream.next(m.odom_lwheel);
+      stream.next(m.odom_rwheel);
     }
 
     ROS_DECLARE_ALLINONE_SERIALIZER
@@ -209,8 +274,24 @@ struct Printer< ::rosepl_wrapper_cn::PowerlinkIn_<ContainerAllocator> >
     Printer<std::basic_string<char, std::char_traits<char>, typename ContainerAllocator::template rebind<char>::other > >::stream(s, indent + "  ", v.shm_name);
     s << indent << "pid: ";
     Printer<uint16_t>::stream(s, indent + "  ", v.pid);
-    s << indent << "DigitalOutput: ";
-    Printer<uint8_t>::stream(s, indent + "  ", v.DigitalOutput);
+    s << indent << "mm_x_pos: ";
+    Printer<int64_t>::stream(s, indent + "  ", v.mm_x_pos);
+    s << indent << "mm_y_pos: ";
+    Printer<int64_t>::stream(s, indent + "  ", v.mm_y_pos);
+    s << indent << "mm_z_pos: ";
+    Printer<int64_t>::stream(s, indent + "  ", v.mm_z_pos);
+    s << indent << "mm_x_orient: ";
+    Printer<int64_t>::stream(s, indent + "  ", v.mm_x_orient);
+    s << indent << "mm_y_orient: ";
+    Printer<int64_t>::stream(s, indent + "  ", v.mm_y_orient);
+    s << indent << "mm_z_orient: ";
+    Printer<int64_t>::stream(s, indent + "  ", v.mm_z_orient);
+    s << indent << "mm_w_orient: ";
+    Printer<int64_t>::stream(s, indent + "  ", v.mm_w_orient);
+    s << indent << "odom_lwheel: ";
+    Printer<int64_t>::stream(s, indent + "  ", v.odom_lwheel);
+    s << indent << "odom_rwheel: ";
+    Printer<int64_t>::stream(s, indent + "  ", v.odom_rwheel);
   }
 };
 

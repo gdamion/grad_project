@@ -20,7 +20,8 @@ class PowerlinkOut {
       // initObj === null is a special case for deserialization where we don't initialize fields
       this.shm_name = null;
       this.pid = null;
-      this.DigitalInput = null;
+      this.cmdvel_lwheel = null;
+      this.cmdvel_rwheel = null;
     }
     else {
       if (initObj.hasOwnProperty('shm_name')) {
@@ -35,11 +36,17 @@ class PowerlinkOut {
       else {
         this.pid = 0;
       }
-      if (initObj.hasOwnProperty('DigitalInput')) {
-        this.DigitalInput = initObj.DigitalInput
+      if (initObj.hasOwnProperty('cmdvel_lwheel')) {
+        this.cmdvel_lwheel = initObj.cmdvel_lwheel
       }
       else {
-        this.DigitalInput = 0;
+        this.cmdvel_lwheel = 0;
+      }
+      if (initObj.hasOwnProperty('cmdvel_rwheel')) {
+        this.cmdvel_rwheel = initObj.cmdvel_rwheel
+      }
+      else {
+        this.cmdvel_rwheel = 0;
       }
     }
   }
@@ -50,8 +57,10 @@ class PowerlinkOut {
     bufferOffset = _serializer.string(obj.shm_name, buffer, bufferOffset);
     // Serialize message field [pid]
     bufferOffset = _serializer.uint16(obj.pid, buffer, bufferOffset);
-    // Serialize message field [DigitalInput]
-    bufferOffset = _serializer.uint8(obj.DigitalInput, buffer, bufferOffset);
+    // Serialize message field [cmdvel_lwheel]
+    bufferOffset = _serializer.int64(obj.cmdvel_lwheel, buffer, bufferOffset);
+    // Serialize message field [cmdvel_rwheel]
+    bufferOffset = _serializer.int64(obj.cmdvel_rwheel, buffer, bufferOffset);
     return bufferOffset;
   }
 
@@ -63,15 +72,17 @@ class PowerlinkOut {
     data.shm_name = _deserializer.string(buffer, bufferOffset);
     // Deserialize message field [pid]
     data.pid = _deserializer.uint16(buffer, bufferOffset);
-    // Deserialize message field [DigitalInput]
-    data.DigitalInput = _deserializer.uint8(buffer, bufferOffset);
+    // Deserialize message field [cmdvel_lwheel]
+    data.cmdvel_lwheel = _deserializer.int64(buffer, bufferOffset);
+    // Deserialize message field [cmdvel_rwheel]
+    data.cmdvel_rwheel = _deserializer.int64(buffer, bufferOffset);
     return data;
   }
 
   static getMessageSize(object) {
     let length = 0;
     length += object.shm_name.length;
-    return length + 7;
+    return length + 22;
   }
 
   static datatype() {
@@ -81,7 +92,7 @@ class PowerlinkOut {
 
   static md5sum() {
     //Returns md5sum for a message object
-    return '8531aafcaf639a04b50bb4ea10f69ede';
+    return '084629ffa8e3d4d7e9182ff9bbabd096';
   }
 
   static messageDefinition() {
@@ -94,7 +105,9 @@ class PowerlinkOut {
     uint16 pid
     
     # xap.h variables:
-    uint8 DigitalInput
+    # uint8 DigitalInput
+    int64 cmdvel_lwheel
+    int64 cmdvel_rwheel
     
     `;
   }
@@ -119,11 +132,18 @@ class PowerlinkOut {
       resolved.pid = 0
     }
 
-    if (msg.DigitalInput !== undefined) {
-      resolved.DigitalInput = msg.DigitalInput;
+    if (msg.cmdvel_lwheel !== undefined) {
+      resolved.cmdvel_lwheel = msg.cmdvel_lwheel;
     }
     else {
-      resolved.DigitalInput = 0
+      resolved.cmdvel_lwheel = 0
+    }
+
+    if (msg.cmdvel_rwheel !== undefined) {
+      resolved.cmdvel_rwheel = msg.cmdvel_rwheel;
+    }
+    else {
+      resolved.cmdvel_rwheel = 0
     }
 
     return resolved;

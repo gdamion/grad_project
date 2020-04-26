@@ -10,6 +10,8 @@
 #include "ros/ros.h"
 #include "std_msgs/String.h"
 #include "nav_msgs/Odometry.h"
+#include "geometry_msgs/Twist.h"
+#include "gazebo_msgs/ModelStates.h"
 
 #include <signal.h>
 #include <time.h>
@@ -42,6 +44,9 @@ bool ready;
 list<int> pids;
 int sdo_client_pid;
 bool sdo_is_busy;
+
+ros::Subscriber odom_pub;
+ros::Subscriber coord_pub;
 
 ros::Subscriber cmd_vel_sub;
 
@@ -76,19 +81,23 @@ int main(int argc, char **argv)
 	ros::NodeHandle node;
 
 	ros::Publisher powerlink_out_pub = node.advertise<rosepl_wrapper_mn::PowerlinkOut>("PowerlinkOut", 1);
+	odom_pub = node.advertise<nav_msgs::Odometry>("odom", 1);
+	coord_pub = node.advertise<gazebo_msgs::ModelStates>("coord", 1);
 
-	ros::Subscriber F_sub = node.subscribe("PowerlinkIn", 1, powerlink_in_callback);
+	// ros::Subscriber powerlink_in_sub = node.subscribe("PowerlinkIn", 1, powerlink_in_callback);
 	cmd_vel_sub = node.subscribe("cmd_vel", 1, cmd_vel_callback);
+
 
 	ros::ServiceServer signal_sync_service = node.advertiseService("signalSync", signal_sync_handler);
 	ros::ServiceServer sdo_service = node.advertiseService("sdoTransfer", sdo_transfer_handler);
 
 	// set_group_priority(getpgrp());
 
-	rosepl_wrapper_mn::PowerlinkOut powerlink_out_msg;
-	powerlink_out_msg.pid = pid;
-	powerlink_out_msg.shm_name = powerlink_out.shm_name;
-
+	// rosepl_wrapper_mn::PowerlinkOut powerlink_out_msg;
+	// powerlink_out_msg.pid = pid;
+	// powerlink_out_msg.shm_name = powerlink_out.shm_name;
+	nav_msgs::Odometry odom_msg;
+	gazebo_msgs::ModelStates coord_msg;
 
 	ROS_INFO("-------------------------");
 	ROS_INFO("Entering ROS loop");
@@ -101,15 +110,38 @@ int main(int argc, char **argv)
 		}
 		can_run_cycle = false;
 		// ROS_INFO("Sync flow");
-		get_powerlink_out(&powerlink_out_msg);
+		// get_powerlink_out(&powerlink_out_msg);
+		odom_msg->pose.pose.position.x = oplk_pi_in->odom_lwheel;
+		odom_msg->pose.pose.position.y = oplk_pi_in->odom_rwheel;
 
-		powerlink_out_pub.publish(powerlink_out_msg);
+		msg->pose[0].position.x = oplk_pi_in->mm_x_pos =
+		msg->pose[0].position.y = oplk_pi_in->mm_y_pos =
+		msg->pose[0].position.z = oplk_pi_in->mm_z_pos =
+		msg->pose[0].orientation.x = oplk_pi_in->mm_x_orient =
+		msg->pose[0].orientation.y = oplk_pi_in->mm_y_orient =
+		msg->pose[0].orientation.z = oplk_pi_in->mm_z_orient =
+		oplk_pi_in->mm_w_orient = msg->pose[0].orientation.w;
+
+		// powerlink_out_pub.publish(powerlink_out_msg);
 
 		ros::spinOnce();
 	}
 
 	return 0;
 }
+
+void cmd_vel_callback(const geometry_msgs::Twist::ConstPtr& msg)
+{
+	// set_powerlink_in(*msg);
+	oplk_pi_in->cmdvel_lwheel = msg->linear.x;
+	oplk_pi_in->cmdvel_rwheel = msg->linear.y;
+}
+
+// void powerlink_in_callback(const rosepl_wrapper_mn::PowerlinkIn::ConstPtr& msg)
+// {
+// 	set_powerlink_in(*msg);
+// }
+
 
 void shutdown_handler(int sig)
 {
@@ -276,12 +308,6 @@ int init_signal_hooks()
 	return 0;
 }
 
-// void powerlink_in_callback(const rosepl_wrapper_mn::PowerlinkIn::ConstPtr& msg)
-// {
-// 	set_powerlink_in(*msg);
-// }
 
-void cmd_vel_callback(const nav_msgs::Odometry::ConstPtr& msg)
-{
-	set_powerlink_in(*msg);
-}
+
+

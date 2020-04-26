@@ -7,7 +7,7 @@ import struct
 
 
 class PowerlinkOut(genpy.Message):
-  _md5sum = "8531aafcaf639a04b50bb4ea10f69ede"
+  _md5sum = "084629ffa8e3d4d7e9182ff9bbabd096"
   _type = "rosepl_wrapper_cn/PowerlinkOut"
   _has_header = False #flag to mark the presence of a Header object
   _full_text = """# Generated with epl_ros_generator.py
@@ -17,10 +17,12 @@ string shm_name
 uint16 pid
 
 # xap.h variables:
-uint8 DigitalInput
+# uint8 DigitalInput
+int64 cmdvel_lwheel
+int64 cmdvel_rwheel
 """
-  __slots__ = ['shm_name','pid','DigitalInput']
-  _slot_types = ['string','uint16','uint8']
+  __slots__ = ['shm_name','pid','cmdvel_lwheel','cmdvel_rwheel']
+  _slot_types = ['string','uint16','int64','int64']
 
   def __init__(self, *args, **kwds):
     """
@@ -30,7 +32,7 @@ uint8 DigitalInput
     changes.  You cannot mix in-order arguments and keyword arguments.
 
     The available fields are:
-       shm_name,pid,DigitalInput
+       shm_name,pid,cmdvel_lwheel,cmdvel_rwheel
 
     :param args: complete set of field values, in .msg order
     :param kwds: use keyword arguments corresponding to message field names
@@ -43,12 +45,15 @@ uint8 DigitalInput
         self.shm_name = ''
       if self.pid is None:
         self.pid = 0
-      if self.DigitalInput is None:
-        self.DigitalInput = 0
+      if self.cmdvel_lwheel is None:
+        self.cmdvel_lwheel = 0
+      if self.cmdvel_rwheel is None:
+        self.cmdvel_rwheel = 0
     else:
       self.shm_name = ''
       self.pid = 0
-      self.DigitalInput = 0
+      self.cmdvel_lwheel = 0
+      self.cmdvel_rwheel = 0
 
   def _get_types(self):
     """
@@ -69,7 +74,7 @@ uint8 DigitalInput
         length = len(_x)
       buff.write(struct.pack('<I%ss'%length, length, _x))
       _x = self
-      buff.write(_get_struct_HB().pack(_x.pid, _x.DigitalInput))
+      buff.write(_get_struct_H2q().pack(_x.pid, _x.cmdvel_lwheel, _x.cmdvel_rwheel))
     except struct.error as se: self._check_types(struct.error("%s: '%s' when writing '%s'" % (type(se), str(se), str(locals().get('_x', self)))))
     except TypeError as te: self._check_types(ValueError("%s: '%s' when writing '%s'" % (type(te), str(te), str(locals().get('_x', self)))))
 
@@ -91,8 +96,8 @@ uint8 DigitalInput
         self.shm_name = str[start:end]
       _x = self
       start = end
-      end += 3
-      (_x.pid, _x.DigitalInput,) = _get_struct_HB().unpack(str[start:end])
+      end += 18
+      (_x.pid, _x.cmdvel_lwheel, _x.cmdvel_rwheel,) = _get_struct_H2q().unpack(str[start:end])
       return self
     except struct.error as e:
       raise genpy.DeserializationError(e) #most likely buffer underfill
@@ -112,7 +117,7 @@ uint8 DigitalInput
         length = len(_x)
       buff.write(struct.pack('<I%ss'%length, length, _x))
       _x = self
-      buff.write(_get_struct_HB().pack(_x.pid, _x.DigitalInput))
+      buff.write(_get_struct_H2q().pack(_x.pid, _x.cmdvel_lwheel, _x.cmdvel_rwheel))
     except struct.error as se: self._check_types(struct.error("%s: '%s' when writing '%s'" % (type(se), str(se), str(locals().get('_x', self)))))
     except TypeError as te: self._check_types(ValueError("%s: '%s' when writing '%s'" % (type(te), str(te), str(locals().get('_x', self)))))
 
@@ -135,8 +140,8 @@ uint8 DigitalInput
         self.shm_name = str[start:end]
       _x = self
       start = end
-      end += 3
-      (_x.pid, _x.DigitalInput,) = _get_struct_HB().unpack(str[start:end])
+      end += 18
+      (_x.pid, _x.cmdvel_lwheel, _x.cmdvel_rwheel,) = _get_struct_H2q().unpack(str[start:end])
       return self
     except struct.error as e:
       raise genpy.DeserializationError(e) #most likely buffer underfill
@@ -145,9 +150,9 @@ _struct_I = genpy.struct_I
 def _get_struct_I():
     global _struct_I
     return _struct_I
-_struct_HB = None
-def _get_struct_HB():
-    global _struct_HB
-    if _struct_HB is None:
-        _struct_HB = struct.Struct("<HB")
-    return _struct_HB
+_struct_H2q = None
+def _get_struct_H2q():
+    global _struct_H2q
+    if _struct_H2q is None:
+        _struct_H2q = struct.Struct("<H2q")
+    return _struct_H2q

@@ -58,15 +58,15 @@ SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 #include "memory_api.h"
 #include "shm_structs.h"
 
-typedef struct
-{
-    BYTE digitalIn;
-} PI_IN;
+// typedef struct
+// {
+//     BYTE digitalIn;
+// } PI_IN;
 
-typedef struct
-{
-    BYTE digitalOut;
-} PI_OUT;
+// typedef struct
+// {
+//     BYTE digitalOut;
+// } PI_OUT;
 
 //============================================================================//
 //            G L O B A L   D E F I N I T I O N S                             //

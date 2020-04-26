@@ -1,0 +1,62 @@
+[  0%] Built target _rosepl_wrapper_mn_generate_messages_check_deps_PowerlinkIn
+[  0%] Built target _rosepl_wrapper_mn_generate_messages_check_deps_PowerlinkOut
+[  0%] Built target std_msgs_generate_messages_cpp
+[  0%] Built target _rosepl_wrapper_mn_generate_messages_check_deps_SignalSync
+[  0%] Built target _rosepl_wrapper_mn_generate_messages_check_deps_SdoTransfer
+[  0%] Built target std_msgs_generate_messages_eus
+[  0%] Built target std_msgs_generate_messages_py
+[  0%] Built target std_msgs_generate_messages_nodejs
+[  0%] Built target std_msgs_generate_messages_lisp
+[ 14%] Built target rosepl_wrapper_mn_generate_messages_cpp
+[ 32%] Built target rosepl_wrapper_mn_generate_messages_eus
+[ 53%] Built target rosepl_wrapper_mn_generate_messages_py
+[ 67%] Built target rosepl_wrapper_mn_generate_messages_nodejs
+[ 82%] Built target rosepl_wrapper_mn_generate_messages_lisp
+[35m[1mScanning dependencies of target rosepl_wrapper_mn_node[0m
+[ 82%] Built target rosepl_wrapper_mn_generate_messages
+[ 85%] [32mBuilding CXX object CMakeFiles/rosepl_wrapper_mn_node.dir/src/wrapper.cpp.o[0m
+In file included from [01m[K/home/al/grad_project/catkin_ws/src/rosepl_wrapper_mn/include/rosepl_wrapper_mn/generated_wrapper.h:21:0[m[K,
+                 from [01m[K/home/al/grad_project/catkin_ws/src/rosepl_wrapper_mn/src/wrapper.cpp:25[m[K:
+[01m[K/home/al/grad_project/catkin_ws/src/rosepl_wrapper_mn/include/rosepl_wrapper_mn/xap.h:8:20:[m[K [01;35m[Kwarning: [m[Kwidth of ‘[01m[K<unnamed struct>::mm_x_pos[m[K’ exceeds its type
+  unsigned mm_x_pos:[01;35m[K64[m[K;
+                    [01;35m[K^~[m[K
+[01m[K/home/al/grad_project/catkin_ws/src/rosepl_wrapper_mn/include/rosepl_wrapper_mn/xap.h:9:20:[m[K [01;35m[Kwarning: [m[Kwidth of ‘[01m[K<unnamed struct>::mm_y_pos[m[K’ exceeds its type
+  unsigned mm_y_pos:[01;35m[K64[m[K;
+                    [01;35m[K^~[m[K
+[01m[K/home/al/grad_project/catkin_ws/src/rosepl_wrapper_mn/include/rosepl_wrapper_mn/xap.h:10:20:[m[K [01;35m[Kwarning: [m[Kwidth of ‘[01m[K<unnamed struct>::mm_z_pos[m[K’ exceeds its type
+  unsigned mm_z_pos:[01;35m[K64[m[K;
+                    [01;35m[K^~[m[K
+[01m[K/home/al/grad_project/catkin_ws/src/rosepl_wrapper_mn/include/rosepl_wrapper_mn/xap.h:11:23:[m[K [01;35m[Kwarning: [m[Kwidth of ‘[01m[K<unnamed struct>::mm_x_orient[m[K’ exceeds its type
+  unsigned mm_x_orient:[01;35m[K64[m[K;
+                       [01;35m[K^~[m[K
+[01m[K/home/al/grad_project/catkin_ws/src/rosepl_wrapper_mn/include/rosepl_wrapper_mn/xap.h:12:23:[m[K [01;35m[Kwarning: [m[Kwidth of ‘[01m[K<unnamed struct>::mm_y_orient[m[K’ exceeds its type
+  unsigned mm_y_orient:[01;35m[K64[m[K;
+                       [01;35m[K^~[m[K
+[01m[K/home/al/grad_project/catkin_ws/src/rosepl_wrapper_mn/include/rosepl_wrapper_mn/xap.h:13:23:[m[K [01;35m[Kwarning: [m[Kwidth of ‘[01m[K<unnamed struct>::mm_z_orient[m[K’ exceeds its type
+  unsigned mm_z_orient:[01;35m[K64[m[K;
+                       [01;35m[K^~[m[K
+[01m[K/home/al/grad_project/catkin_ws/src/rosepl_wrapper_mn/include/rosepl_wrapper_mn/xap.h:14:23:[m[K [01;35m[Kwarning: [m[Kwidth of ‘[01m[K<unnamed struct>::mm_w_orient[m[K’ exceeds its type
+  unsigned mm_w_orient:[01;35m[K64[m[K;
+                       [01;35m[K^~[m[K
+[01m[K/home/al/grad_project/catkin_ws/src/rosepl_wrapper_mn/include/rosepl_wrapper_mn/xap.h:15:23:[m[K [01;35m[Kwarning: [m[Kwidth of ‘[01m[K<unnamed struct>::odom_lwheel[m[K’ exceeds its type
+  unsigned odom_lwheel:[01;35m[K64[m[K;
+                       [01;35m[K^~[m[K
+[01m[K/home/al/grad_project/catkin_ws/src/rosepl_wrapper_mn/include/rosepl_wrapper_mn/xap.h:16:23:[m[K [01;35m[Kwarning: [m[Kwidth of ‘[01m[K<unnamed struct>::odom_rwheel[m[K’ exceeds its type
+  unsigned odom_rwheel:[01;35m[K64[m[K;
+                       [01;35m[K^~[m[K
+[01m[K/home/al/grad_project/catkin_ws/src/rosepl_wrapper_mn/include/rosepl_wrapper_mn/xap.h:22:25:[m[K [01;35m[Kwarning: [m[Kwidth of ‘[01m[K<unnamed struct>::cmdvel_lwheel[m[K’ exceeds its type
+  unsigned cmdvel_lwheel:[01;35m[K64[m[K;
+                         [01;35m[K^~[m[K
+[01m[K/home/al/grad_project/catkin_ws/src/rosepl_wrapper_mn/include/rosepl_wrapper_mn/xap.h:23:25:[m[K [01;35m[Kwarning: [m[Kwidth of ‘[01m[K<unnamed struct>::cmdvel_rwheel[m[K’ exceeds its type
+  unsigned cmdvel_rwheel:[01;35m[K64[m[K;
+                         [01;35m[K^~[m[K
+[01m[K/home/al/grad_project/catkin_ws/src/rosepl_wrapper_mn/src/wrapper.cpp:[m[K In function ‘[01m[Kvoid cmd_vel_callback(const ConstPtr&)[m[K’:
+[01m[K/home/al/grad_project/catkin_ws/src/rosepl_wrapper_mn/src/wrapper.cpp:286:19:[m[K [01;31m[Kerror: [m[Kcould not convert ‘[01m[K(& msg)->boost::shared_ptr<const nav_msgs::Odometry_<std::allocator<void> > >::operator*()[m[K’ from ‘[01m[Kconst nav_msgs::Odometry_<std::allocator<void> >[m[K’ to ‘[01m[Krosepl_wrapper_mn::PowerlinkIn {aka rosepl_wrapper_mn::PowerlinkIn_<std::allocator<void> >}[m[K’
+  set_powerlink_in([01;31m[K*msg[m[K);
+                   [01;31m[K^~~~[m[K
+CMakeFiles/rosepl_wrapper_mn_node.dir/build.make:62: recipe for target 'CMakeFiles/rosepl_wrapper_mn_node.dir/src/wrapper.cpp.o' failed
+make[2]: *** [CMakeFiles/rosepl_wrapper_mn_node.dir/src/wrapper.cpp.o] Error 1
+CMakeFiles/Makefile2:207: recipe for target 'CMakeFiles/rosepl_wrapper_mn_node.dir/all' failed
+make[1]: *** [CMakeFiles/rosepl_wrapper_mn_node.dir/all] Error 2
+Makefile:140: recipe for target 'all' failed
+make: *** [all] Error 2

@@ -206,6 +206,15 @@ CMakeFiles/rosepl_wrapper_cn_node.dir/src/wrapper.cpp.o
  /home/al/grad_project/catkin_ws/src/rosepl_wrapper_cn/include/rosepl_wrapper_cn/shm_structs.h
  /home/al/grad_project/catkin_ws/src/rosepl_wrapper_cn/include/rosepl_wrapper_cn/xap.h
  /home/al/grad_project/catkin_ws/src/rosepl_wrapper_cn/src/wrapper.cpp
+ /opt/ros/melodic/include/gazebo_msgs/ModelStates.h
+ /opt/ros/melodic/include/geometry_msgs/Point.h
+ /opt/ros/melodic/include/geometry_msgs/Pose.h
+ /opt/ros/melodic/include/geometry_msgs/PoseWithCovariance.h
+ /opt/ros/melodic/include/geometry_msgs/Quaternion.h
+ /opt/ros/melodic/include/geometry_msgs/Twist.h
+ /opt/ros/melodic/include/geometry_msgs/TwistWithCovariance.h
+ /opt/ros/melodic/include/geometry_msgs/Vector3.h
+ /opt/ros/melodic/include/nav_msgs/Odometry.h
  /opt/ros/melodic/include/ros/advertise_options.h
  /opt/ros/melodic/include/ros/advertise_service_options.h
  /opt/ros/melodic/include/ros/assert.h
@@ -262,6 +271,7 @@ CMakeFiles/rosepl_wrapper_cn_node.dir/src/wrapper.cpp.o
  /opt/ros/melodic/include/ros/wall_timer.h
  /opt/ros/melodic/include/ros/wall_timer_options.h
  /opt/ros/melodic/include/rosconsole/macros_generated.h
+ /opt/ros/melodic/include/std_msgs/Header.h
  /opt/ros/melodic/include/std_msgs/String.h
  /opt/ros/melodic/include/xmlrpcpp/XmlRpcDecl.h
  /opt/ros/melodic/include/xmlrpcpp/XmlRpcValue.h

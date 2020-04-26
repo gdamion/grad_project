@@ -3,6 +3,8 @@
           SHM_NAME
           PID-VAL
           PID
-          DIGITALINPUT-VAL
-          DIGITALINPUT
+          CMDVEL_LWHEEL-VAL
+          CMDVEL_LWHEEL
+          CMDVEL_RWHEEL-VAL
+          CMDVEL_RWHEEL
 ))

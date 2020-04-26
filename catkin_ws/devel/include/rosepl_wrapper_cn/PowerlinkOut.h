@@ -26,12 +26,14 @@ struct PowerlinkOut_
   PowerlinkOut_()
     : shm_name()
     , pid(0)
-    , DigitalInput(0)  {
+    , cmdvel_lwheel(0)
+    , cmdvel_rwheel(0)  {
     }
   PowerlinkOut_(const ContainerAllocator& _alloc)
     : shm_name(_alloc)
     , pid(0)
-    , DigitalInput(0)  {
+    , cmdvel_lwheel(0)
+    , cmdvel_rwheel(0)  {
   (void)_alloc;
     }
 
@@ -43,8 +45,11 @@ struct PowerlinkOut_
    typedef uint16_t _pid_type;
   _pid_type pid;
 
-   typedef uint8_t _DigitalInput_type;
-  _DigitalInput_type DigitalInput;
+   typedef int64_t _cmdvel_lwheel_type;
+  _cmdvel_lwheel_type cmdvel_lwheel;
+
+   typedef int64_t _cmdvel_rwheel_type;
+  _cmdvel_rwheel_type cmdvel_rwheel;
 
 
 
@@ -77,7 +82,8 @@ bool operator==(const ::rosepl_wrapper_cn::PowerlinkOut_<ContainerAllocator1> & 
 {
   return lhs.shm_name == rhs.shm_name &&
     lhs.pid == rhs.pid &&
-    lhs.DigitalInput == rhs.DigitalInput;
+    lhs.cmdvel_lwheel == rhs.cmdvel_lwheel &&
+    lhs.cmdvel_rwheel == rhs.cmdvel_rwheel;
 }
 
 template<typename ContainerAllocator1, typename ContainerAllocator2>
@@ -134,12 +140,12 @@ struct MD5Sum< ::rosepl_wrapper_cn::PowerlinkOut_<ContainerAllocator> >
 {
   static const char* value()
   {
-    return "8531aafcaf639a04b50bb4ea10f69ede";
+    return "084629ffa8e3d4d7e9182ff9bbabd096";
   }
 
   static const char* value(const ::rosepl_wrapper_cn::PowerlinkOut_<ContainerAllocator>&) { return value(); }
-  static const uint64_t static_value1 = 0x8531aafcaf639a04ULL;
-  static const uint64_t static_value2 = 0xb50bb4ea10f69edeULL;
+  static const uint64_t static_value1 = 0x084629ffa8e3d4d7ULL;
+  static const uint64_t static_value2 = 0xe9182ff9bbabd096ULL;
 };
 
 template<class ContainerAllocator>
@@ -165,7 +171,9 @@ struct Definition< ::rosepl_wrapper_cn::PowerlinkOut_<ContainerAllocator> >
 "uint16 pid\n"
 "\n"
 "# xap.h variables:\n"
-"uint8 DigitalInput\n"
+"# uint8 DigitalInput\n"
+"int64 cmdvel_lwheel\n"
+"int64 cmdvel_rwheel\n"
 ;
   }
 
@@ -186,7 +194,8 @@ namespace serialization
     {
       stream.next(m.shm_name);
       stream.next(m.pid);
-      stream.next(m.DigitalInput);
+      stream.next(m.cmdvel_lwheel);
+      stream.next(m.cmdvel_rwheel);
     }
 
     ROS_DECLARE_ALLINONE_SERIALIZER
@@ -209,8 +218,10 @@ struct Printer< ::rosepl_wrapper_cn::PowerlinkOut_<ContainerAllocator> >
     Printer<std::basic_string<char, std::char_traits<char>, typename ContainerAllocator::template rebind<char>::other > >::stream(s, indent + "  ", v.shm_name);
     s << indent << "pid: ";
     Printer<uint16_t>::stream(s, indent + "  ", v.pid);
-    s << indent << "DigitalInput: ";
-    Printer<uint8_t>::stream(s, indent + "  ", v.DigitalInput);
+    s << indent << "cmdvel_lwheel: ";
+    Printer<int64_t>::stream(s, indent + "  ", v.cmdvel_lwheel);
+    s << indent << "cmdvel_rwheel: ";
+    Printer<int64_t>::stream(s, indent + "  ", v.cmdvel_rwheel);
   }
 };
 
