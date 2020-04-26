@@ -1,0 +1,70 @@
+##	CN -> MN
+
+# mm pos (gazebo_msgs/ModelStates)
+	float64 x_pos
+	float64 y_pos
+	float64 z_pos
+	float64 x_orientation
+	float64 y_orientation
+	float64 z_orientation
+	float64 w_orientation
+	float64 x_linear
+	float64 y_linear
+	float64 z_linear
+	float64 x_angular
+	float64 y_angular
+	float64 z_angular
+SIZE: 832 bit = 104 bytes
+
+# robot odom (nav_msgs/Odometry)
+	uint32 seq
+	time stamp
+	string frame_id
+	string child_frame_id
+	float64 x_position
+	float64 y_position
+	float64 z_position
+	float64 x_orientation
+	float64 y_orientation
+	float64 z_orientation
+	float64 w_orientation
+	float64[36] covariance
+	float64 x_linear
+	float64 y_linear
+	float64 z_linear
+	float64 x_angular
+	float64 y_angular
+	float64 z_angular
+	float64[36] covariance
+SIZE: 5440 bit = 680 bytes
+(not counting: seq frame_id child_frame_id)
+
+# robot laser point cloud (sensor_msgs/LaserScan)
+	uint32 seq
+	time stamp
+	string frame_id
+	float32 angle_min
+	float32 angle_max
+	float32 angle_increment
+	float32 time_increment
+	float32 scan_time
+	float32 range_min
+	float32 range_max
+	float32[] ranges
+	float32[] intensities
+SIZE: 256 bit = 32 bytes
+(not counting: seq frame_id ranges intensities, approximately +19250 bit, result 2440 bytes)
+
+SUM(CN -> MN): 3200 bytess
+
+##	MN -> CN
+
+# robot's move commands (geometry_msgs/Twist)
+	float64 x_linear
+	float64 y_linear
+	float64 z_linear
+	float64 x_angular
+	float64 y_angular
+	float64 z_angular
+SIZE: 384 bit = 48 bytes
+SUM(MN -> CN): 48 bytess

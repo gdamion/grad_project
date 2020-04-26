@@ -1,3 +1,39 @@
+##	CN -> MN
+
+# mm pos (gazebo_msgs/ModelStates)
+	float32 x_pos
+	float32 y_pos
+	float32 z_pos
+	float32 x_orientation
+	float32 y_orientation
+	float32 z_orientation
+	float32 w_orientation
+	float64 x_linear
+	float64 y_linear
+	float64 z_linear
+	float64 x_angular
+	float64 y_angular
+	float64 z_angular
+SIZE: 224 bit =  bytes
+
+# robot odom (nav_msgs/Odometry)
+	int16 l_wheel
+	int16 r_wheel
+SIZE: 32 bit = 4 bytes
+
+SUM(CN -> MN): 300 bytess
+
+##	MN -> CN
+
+# robot's move commands (geometry_msgs/Twist)
+	int16 l_wheel
+	int16 r_wheel
+SIZE: 384 bit = 48 bytes
+
+SUM(MN -> CN): 48 bytess
+
+
+
 function [epl_type] = iec2epl(iec_type)
   switch (lower(iec_type))
     case 'boolean'
