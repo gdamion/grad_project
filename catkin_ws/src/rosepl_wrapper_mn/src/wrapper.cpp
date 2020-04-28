@@ -12,6 +12,7 @@
 #include "nav_msgs/Odometry.h"
 #include "geometry_msgs/Twist.h"
 #include "gazebo_msgs/ModelStates.h"
+#include "geometry_msgs/Pose.h"
 
 #include <signal.h>
 #include <time.h>
@@ -35,6 +36,7 @@ bool signal_sync_handler(rosepl_wrapper_mn::SignalSync::Request &req, rosepl_wra
 bool sdo_transfer_handler(rosepl_wrapper_mn::SdoTransfer::Request &req, rosepl_wrapper_mn::SdoTransfer::Response &res);
 
 void powerlink_in_callback(const rosepl_wrapper_mn::PowerlinkIn::ConstPtr& msg);
+void cmd_vel_callback(const geometry_msgs::Twist::ConstPtr& msg);
 
 int pid = getpid();
 bool tick;
@@ -45,8 +47,8 @@ list<int> pids;
 int sdo_client_pid;
 bool sdo_is_busy;
 
-ros::Subscriber odom_pub;
-ros::Subscriber coord_pub;
+ros::Publisher odom_pub;
+ros::Publisher coord_pub;
 
 ros::Subscriber cmd_vel_sub;
 
@@ -82,7 +84,7 @@ int main(int argc, char **argv)
 
 	ros::Publisher powerlink_out_pub = node.advertise<rosepl_wrapper_mn::PowerlinkOut>("PowerlinkOut", 1);
 	odom_pub = node.advertise<nav_msgs::Odometry>("odom", 1);
-	coord_pub = node.advertise<gazebo_msgs::ModelStates>("coord", 1);
+	coord_pub = node.advertise<geometry_msgs::Pose>("coord", 1);
 
 	// ros::Subscriber powerlink_in_sub = node.subscribe("PowerlinkIn", 1, powerlink_in_callback);
 	cmd_vel_sub = node.subscribe("cmd_vel", 1, cmd_vel_callback);
@@ -97,7 +99,7 @@ int main(int argc, char **argv)
 	// powerlink_out_msg.pid = pid;
 	// powerlink_out_msg.shm_name = powerlink_out.shm_name;
 	nav_msgs::Odometry odom_msg;
-	gazebo_msgs::ModelStates coord_msg;
+	geometry_msgs::Pose coord_msg;
 
 	ROS_INFO("-------------------------");
 	ROS_INFO("Entering ROS loop");
@@ -111,18 +113,20 @@ int main(int argc, char **argv)
 		can_run_cycle = false;
 		// ROS_INFO("Sync flow");
 		// get_powerlink_out(&powerlink_out_msg);
-		odom_msg->pose.pose.position.x = oplk_pi_in->odom_lwheel;
-		odom_msg->pose.pose.position.y = oplk_pi_in->odom_rwheel;
+		odom_msg.pose.pose.position.x = (double)(oplk_pi_out->odom_lwheel / COEF_FLOAT_POINT);
+		odom_msg.pose.pose.position.y = (double)(oplk_pi_out->odom_rwheel / COEF_FLOAT_POINT);
 
-		msg->pose[0].position.x = oplk_pi_in->mm_x_pos =
-		msg->pose[0].position.y = oplk_pi_in->mm_y_pos =
-		msg->pose[0].position.z = oplk_pi_in->mm_z_pos =
-		msg->pose[0].orientation.x = oplk_pi_in->mm_x_orient =
-		msg->pose[0].orientation.y = oplk_pi_in->mm_y_orient =
-		msg->pose[0].orientation.z = oplk_pi_in->mm_z_orient =
-		oplk_pi_in->mm_w_orient = msg->pose[0].orientation.w;
+		coord_msg.position.x = (double)(oplk_pi_out->mm_x_pos / COEF_FLOAT_POINT);
+		coord_msg.position.y = (double)(oplk_pi_out->mm_y_pos / COEF_FLOAT_POINT);
+		coord_msg.position.z = (double)(oplk_pi_out->mm_z_pos / COEF_FLOAT_POINT);
+		coord_msg.orientation.x = (double)(oplk_pi_out->mm_x_orient / COEF_FLOAT_POINT);
+		coord_msg.orientation.y = (double)(oplk_pi_out->mm_y_orient / COEF_FLOAT_POINT);
+		coord_msg.orientation.z = (double)(oplk_pi_out->mm_z_orient / COEF_FLOAT_POINT);
+		coord_msg.orientation.w = (double)(oplk_pi_out->mm_w_orient / COEF_FLOAT_POINT);
 
 		// powerlink_out_pub.publish(powerlink_out_msg);
+		odom_pub.publish(odom_msg);
+		coord_pub.publish(coord_msg);
 
 		ros::spinOnce();
 	}
@@ -133,8 +137,8 @@ int main(int argc, char **argv)
 void cmd_vel_callback(const geometry_msgs::Twist::ConstPtr& msg)
 {
 	// set_powerlink_in(*msg);
-	oplk_pi_in->cmdvel_lwheel = msg->linear.x;
-	oplk_pi_in->cmdvel_rwheel = msg->linear.y;
+	oplk_pi_in->cmdvel_lwheel = (int64_t)(msg->linear.x * COEF_FLOAT_POINT);
+	oplk_pi_in->cmdvel_rwheel = (int64_t)(msg->linear.y * COEF_FLOAT_POINT);
 }
 
 // void powerlink_in_callback(const rosepl_wrapper_mn::PowerlinkIn::ConstPtr& msg)

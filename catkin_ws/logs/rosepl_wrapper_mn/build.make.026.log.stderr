@@ -1,0 +1,35 @@
+In file included from [01m[K/home/al/grad_project/catkin_ws/src/rosepl_wrapper_mn/include/rosepl_wrapper_mn/generated_wrapper.h:21:0[m[K,
+                 from [01m[K/home/al/grad_project/catkin_ws/src/rosepl_wrapper_mn/src/wrapper.cpp:28[m[K:
+[01m[K/home/al/grad_project/catkin_ws/src/rosepl_wrapper_mn/include/rosepl_wrapper_mn/xap.h:8:20:[m[K [01;35m[Kwarning: [m[Kwidth of ‘[01m[K<unnamed struct>::mm_x_pos[m[K’ exceeds its type
+  unsigned mm_x_pos:[01;35m[K64[m[K;
+                    [01;35m[K^~[m[K
+[01m[K/home/al/grad_project/catkin_ws/src/rosepl_wrapper_mn/include/rosepl_wrapper_mn/xap.h:9:20:[m[K [01;35m[Kwarning: [m[Kwidth of ‘[01m[K<unnamed struct>::mm_y_pos[m[K’ exceeds its type
+  unsigned mm_y_pos:[01;35m[K64[m[K;
+                    [01;35m[K^~[m[K
+[01m[K/home/al/grad_project/catkin_ws/src/rosepl_wrapper_mn/include/rosepl_wrapper_mn/xap.h:10:20:[m[K [01;35m[Kwarning: [m[Kwidth of ‘[01m[K<unnamed struct>::mm_z_pos[m[K’ exceeds its type
+  unsigned mm_z_pos:[01;35m[K64[m[K;
+                    [01;35m[K^~[m[K
+[01m[K/home/al/grad_project/catkin_ws/src/rosepl_wrapper_mn/include/rosepl_wrapper_mn/xap.h:11:23:[m[K [01;35m[Kwarning: [m[Kwidth of ‘[01m[K<unnamed struct>::mm_x_orient[m[K’ exceeds its type
+  unsigned mm_x_orient:[01;35m[K64[m[K;
+                       [01;35m[K^~[m[K
+[01m[K/home/al/grad_project/catkin_ws/src/rosepl_wrapper_mn/include/rosepl_wrapper_mn/xap.h:12:23:[m[K [01;35m[Kwarning: [m[Kwidth of ‘[01m[K<unnamed struct>::mm_y_orient[m[K’ exceeds its type
+  unsigned mm_y_orient:[01;35m[K64[m[K;
+                       [01;35m[K^~[m[K
+[01m[K/home/al/grad_project/catkin_ws/src/rosepl_wrapper_mn/include/rosepl_wrapper_mn/xap.h:13:23:[m[K [01;35m[Kwarning: [m[Kwidth of ‘[01m[K<unnamed struct>::mm_z_orient[m[K’ exceeds its type
+  unsigned mm_z_orient:[01;35m[K64[m[K;
+                       [01;35m[K^~[m[K
+[01m[K/home/al/grad_project/catkin_ws/src/rosepl_wrapper_mn/include/rosepl_wrapper_mn/xap.h:14:23:[m[K [01;35m[Kwarning: [m[Kwidth of ‘[01m[K<unnamed struct>::mm_w_orient[m[K’ exceeds its type
+  unsigned mm_w_orient:[01;35m[K64[m[K;
+                       [01;35m[K^~[m[K
+[01m[K/home/al/grad_project/catkin_ws/src/rosepl_wrapper_mn/include/rosepl_wrapper_mn/xap.h:15:23:[m[K [01;35m[Kwarning: [m[Kwidth of ‘[01m[K<unnamed struct>::odom_lwheel[m[K’ exceeds its type
+  unsigned odom_lwheel:[01;35m[K64[m[K;
+                       [01;35m[K^~[m[K
+[01m[K/home/al/grad_project/catkin_ws/src/rosepl_wrapper_mn/include/rosepl_wrapper_mn/xap.h:16:23:[m[K [01;35m[Kwarning: [m[Kwidth of ‘[01m[K<unnamed struct>::odom_rwheel[m[K’ exceeds its type
+  unsigned odom_rwheel:[01;35m[K64[m[K;
+                       [01;35m[K^~[m[K
+[01m[K/home/al/grad_project/catkin_ws/src/rosepl_wrapper_mn/include/rosepl_wrapper_mn/xap.h:22:25:[m[K [01;35m[Kwarning: [m[Kwidth of ‘[01m[K<unnamed struct>::cmdvel_lwheel[m[K’ exceeds its type
+  unsigned cmdvel_lwheel:[01;35m[K64[m[K;
+                         [01;35m[K^~[m[K
+[01m[K/home/al/grad_project/catkin_ws/src/rosepl_wrapper_mn/include/rosepl_wrapper_mn/xap.h:23:25:[m[K [01;35m[Kwarning: [m[Kwidth of ‘[01m[K<unnamed struct>::cmdvel_rwheel[m[K’ exceeds its type
+  unsigned cmdvel_rwheel:[01;35m[K64[m[K;
+                         [01;35m[K^~[m[K

@@ -2,14 +2,16 @@
 #ifndef XAP_h
 #define XAP_h
 
-# define COMPUTED_PI_OUT_SIZE 72
+#define COEF_FLOAT_POINT 10000
+
+# define COMPUTED_PI_OUT_SIZE 16
 typedef struct
 {
 	unsigned cmdvel_lwheel:64;
 	unsigned cmdvel_rwheel:64;
 } PI_OUT;
 
-# define COMPUTED_PI_IN_SIZE 16
+# define COMPUTED_PI_IN_SIZE 72
 typedef struct
 {
 	unsigned mm_x_pos:64;

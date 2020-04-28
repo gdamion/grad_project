@@ -2,6 +2,8 @@
 #ifndef XAP_h
 #define XAP_h
 
+#define COEF_FLOAT_POINT 10000
+
 # define COMPUTED_PI_OUT_SIZE 72
 typedef struct
 {

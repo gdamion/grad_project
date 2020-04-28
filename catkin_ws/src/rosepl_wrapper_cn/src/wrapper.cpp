@@ -111,8 +111,8 @@ int main(int argc, char **argv)
 		can_run_cycle = false;
 
 		// get_powerlink_out(&powerlink_out_msg);
-		cmd_vel_msg.linear.x = oplk_pi_out->cmdvel_lwheel;
-		cmd_vel_msg.linear.y = oplk_pi_out->cmdvel_rwheel;
+		cmd_vel_msg.linear.x = (double)(oplk_pi_out->cmdvel_lwheel / COEF_FLOAT_POINT);
+		cmd_vel_msg.linear.y = (double)(oplk_pi_out->cmdvel_rwheel / COEF_FLOAT_POINT);
 
 		// powerlink_out_pub.publish(powerlink_out_msg);
 		cmd_vel_pub.publish(cmd_vel_msg);
@@ -126,20 +126,20 @@ int main(int argc, char **argv)
 void odom_callback(const nav_msgs::Odometry::ConstPtr& msg)
 {
 	// set_powerlink_in(*msg);
-	oplk_pi_in->odom_lwheel = msg->pose.pose.position.x;
-	oplk_pi_in->odom_rwheel = msg->pose.pose.position.y;
+	oplk_pi_in->odom_lwheel = (int64_t)(msg->pose.pose.position.x * COEF_FLOAT_POINT);
+	oplk_pi_in->odom_rwheel = (int64_t)(msg->pose.pose.position.y * COEF_FLOAT_POINT);
 }
 
 void coord_callback(const gazebo_msgs::ModelStates::ConstPtr& msg)
 {
 	// set_powerlink_in(*msg);
-	oplk_pi_in->mm_x_pos = msg->pose[0].position.x;
-	oplk_pi_in->mm_y_pos = msg->pose[0].position.y;
-	oplk_pi_in->mm_z_pos = msg->pose[0].position.z;
-	oplk_pi_in->mm_x_orient = msg->pose[0].orientation.x;
-	oplk_pi_in->mm_y_orient = msg->pose[0].orientation.y;
-	oplk_pi_in->mm_z_orient = msg->pose[0].orientation.z;
-	oplk_pi_in->mm_w_orient = msg->pose[0].orientation.w;
+	oplk_pi_in->mm_x_pos = (int64_t)(msg->pose[0].position.x * COEF_FLOAT_POINT);
+	oplk_pi_in->mm_y_pos = (int64_t)(msg->pose[0].position.y * COEF_FLOAT_POINT);
+	oplk_pi_in->mm_z_pos = (int64_t)(msg->pose[0].position.z * COEF_FLOAT_POINT);
+	oplk_pi_in->mm_x_orient = (int64_t)(msg->pose[0].orientation.x * COEF_FLOAT_POINT);
+	oplk_pi_in->mm_y_orient = (int64_t)(msg->pose[0].orientation.y * COEF_FLOAT_POINT);
+	oplk_pi_in->mm_z_orient = (int64_t)(msg->pose[0].orientation.z * COEF_FLOAT_POINT);
+	oplk_pi_in->mm_w_orient = (int64_t)(msg->pose[0].orientation.w * COEF_FLOAT_POINT);
 }
 
 void powerlink_in_callback(const rosepl_wrapper_cn::PowerlinkIn::ConstPtr& msg)
