@@ -296,7 +296,6 @@ static tOplkError initProcessImage(void)
     pProcessImageIn_l = oplk_getProcessImageIn();
     pProcessImageOut_l = oplk_getProcessImageOut();
 
-
     FILE *map_file = fopen("/home/al/grad_project/catkin_ws/src/rosepl_wrapper_cn/cn.map", "r");
     if (map_file == NULL)
     {
