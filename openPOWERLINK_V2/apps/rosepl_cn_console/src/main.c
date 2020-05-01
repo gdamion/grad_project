@@ -353,7 +353,7 @@ This function implements the main loop of the demo application.
 static void loopMain(void)
 {
     tOplkError  ret;
-    char        cKey = 0;
+    // char        cKey = 0;
     BOOL        fExit = FALSE;
 
 #if !defined(CONFIG_KERNELSTACK_DIRECTLINK)
@@ -371,13 +371,13 @@ static void loopMain(void)
 
     printf("Start POWERLINK stack... ok\n");
     printf("Digital I/O interface with openPOWERLINK is ready!\n");
-    printf("\n-------------------------------\n");
-    printf("Press Esc to leave the program\n");
-    printf("Press r to reset the node\n");
-    printf("Press i to increase the digital input\n");
-    printf("Press d to decrease the digital input\n");
-    printf("Press p to print the digital outputs\n");
-    printf("-------------------------------\n\n");
+    // printf("\n-------------------------------\n");
+    // printf("Press Esc to leave the program\n");
+    // printf("Press r to reset the node\n");
+    // printf("Press i to increase the digital input\n");
+    // printf("Press d to decrease the digital input\n");
+    // printf("Press p to print the digital outputs\n");
+    // printf("-------------------------------\n\n");
 
     // setupInputs();
 
@@ -560,5 +560,3 @@ static int getOptions(int argc_p,
     }
     return 0;
 }
-
-/// \}

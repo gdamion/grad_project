@@ -5,22 +5,22 @@
 # define COMPUTED_PI_OUT_SIZE 72
 typedef struct
 {
-	int64_t CN1_M01_mm_x_pos1_mm_x_pos1:64;
-	int64_t CN1_M02_mm_y_pos2_mm_y_pos2:64;
-	int64_t CN1_M03_mm_z_pos3_mm_z_pos3:64;
-	int64_t CN1_M04_mm_x_orient4_mm_x_orient4:64;
-	int64_t CN1_M05_mm_y_orient5_mm_y_orient5:64;
-	int64_t CN1_M06_mm_z_orient6_mm_z_orient6:64;
-	int64_t CN1_M07_mm_w_orient7_mm_w_orient7:64;
-	int64_t CN1_M08_odom_lwheel14_odom_lwheel14:64;
-	int64_t CN1_M09_odom_rwheel15_odom_rwheel15:64;
+	int64_t CN1_M01_mm_x_pos1_mm_x_pos1;
+	int64_t CN1_M02_mm_y_pos2_mm_y_pos2;
+	int64_t CN1_M03_mm_z_pos3_mm_z_pos3;
+	int64_t CN1_M04_mm_x_orient4_mm_x_orient4;
+	int64_t CN1_M05_mm_y_orient5_mm_y_orient5;
+	int64_t CN1_M06_mm_z_orient6_mm_z_orient6;
+	int64_t CN1_M07_mm_w_orient7_mm_w_orient7;
+	int64_t CN1_M08_odom_lwheel14_odom_lwheel14;
+	int64_t CN1_M09_odom_rwheel15_odom_rwheel15;
 } PI_IN;
 
 # define COMPUTED_PI_IN_SIZE 16
 typedef struct
 {
-	int64_t CN1_M0A_cmdvel_lwheel1_cmdvel_lwheel1:64;
-	int64_t CN1_M0B_cmdvel_rwheel2_cmdvel_rwheel2:64;
+	int64_t CN1_M0A_cmdvel_lwheel1_cmdvel_lwheel1;
+	int64_t CN1_M0B_cmdvel_rwheel2_cmdvel_rwheel2;
 } PI_OUT;
 
 #endif

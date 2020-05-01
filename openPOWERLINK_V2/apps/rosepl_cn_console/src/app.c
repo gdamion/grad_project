@@ -289,14 +289,89 @@ tOplkError processSync(void)
     return ret;
 }
 
+static tOplkError initProcessImage(void)
+{
+    tOplkError      ret = kErrorOk;
+    UINT            varEntries;
+    /* Allocate process image */
+
+    ret = oplk_allocProcessImage(sizeof(PI_IN), sizeof(PI_OUT));
+    if (ret != kErrorOk)
+    {
+        return ret;
+    }
+
+    pProcessImageIn_l = oplk_getProcessImageIn();
+    pProcessImageOut_l = oplk_getProcessImageOut();
+
+    fprintf(stderr, "Linking process vars... START\n\n");
+
+    varEntries = 1;
+    ret = oplk_linkProcessImageObject(0x6000, 0x01, offsetof(PI_IN, CN1_M01_mm_x_pos1_mm_x_pos1),
+                                      FALSE, sizeof(pProcessImageIn_l->CN1_M01_mm_x_pos1_mm_x_pos1), &varEntries);
+    fprintf(stderr, "Linking process vars... 1\n\n");
+
+    varEntries = 1;
+    ret = oplk_linkProcessImageObject(0x6001, 0x01, offsetof(PI_IN, CN1_M02_mm_y_pos2_mm_y_pos2),
+                                      FALSE, sizeof(pProcessImageIn_l->CN1_M02_mm_y_pos2_mm_y_pos2), &varEntries);
+    fprintf(stderr, "Linking process vars... 2\n\n");
+
+    varEntries = 1;
+    ret = oplk_linkProcessImageObject(0x6002, 0x01, offsetof(PI_IN, CN1_M03_mm_z_pos3_mm_z_pos3),
+                                      FALSE, sizeof(pProcessImageIn_l->CN1_M03_mm_z_pos3_mm_z_pos3), &varEntries);
+    fprintf(stderr, "Linking process vars... 3\n\n");
+
+    varEntries = 1;
+    ret = oplk_linkProcessImageObject(0x6003, 0x01, offsetof(PI_IN, CN1_M04_mm_x_orient4_mm_x_orient4),
+                                      FALSE, sizeof(pProcessImageIn_l->CN1_M04_mm_x_orient4_mm_x_orient4), &varEntries);
+    fprintf(stderr, "Linking process vars... 4\n\n");
+
+    varEntries = 1;
+    ret = oplk_linkProcessImageObject(0x6004, 0x01, offsetof(PI_IN, CN1_M05_mm_y_orient5_mm_y_orient5),
+                                      FALSE, sizeof(pProcessImageIn_l->CN1_M05_mm_y_orient5_mm_y_orient5), &varEntries);
+    fprintf(stderr, "Linking process vars... 5\n\n");
+
+    varEntries = 1;
+    ret = oplk_linkProcessImageObject(0x6005, 0x01, offsetof(PI_IN, CN1_M06_mm_z_orient6_mm_z_orient6),
+                                      FALSE, sizeof(pProcessImageIn_l->CN1_M06_mm_z_orient6_mm_z_orient6), &varEntries);
+    fprintf(stderr, "Linking process vars... 6\n\n");
+
+    varEntries = 1;
+    ret = oplk_linkProcessImageObject(0x6006, 0x01, offsetof(PI_IN, CN1_M07_mm_w_orient7_mm_w_orient7),
+                                      FALSE, sizeof(pProcessImageIn_l->CN1_M07_mm_w_orient7_mm_w_orient7), &varEntries);
+    fprintf(stderr, "Linking process vars... 7\n\n");
+
+    varEntries = 1;
+    ret = oplk_linkProcessImageObject(0x6007, 0x01, offsetof(PI_IN, CN1_M08_odom_lwheel14_odom_lwheel14),
+                                      FALSE, sizeof(pProcessImageIn_l->CN1_M08_odom_lwheel14_odom_lwheel14), &varEntries);
+    fprintf(stderr, "Linking process vars... 8\n\n");
+
+    varEntries = 1;
+    ret = oplk_linkProcessImageObject(0x6008, 0x01, offsetof(PI_IN, CN1_M09_odom_rwheel15_odom_rwheel15),
+                                      FALSE, sizeof(pProcessImageIn_l->CN1_M09_odom_rwheel15_odom_rwheel15), &varEntries);
+    fprintf(stderr, "Linking process vars... 9\n\n");
+
+
+    varEntries = 1;
+    ret = oplk_linkProcessImageObject(0x6200, 0x01, offsetof(PI_OUT, CN1_M0A_cmdvel_lwheel1_cmdvel_lwheel1),
+                                      TRUE, sizeof(pProcessImageOut_l->CN1_M0A_cmdvel_lwheel1_cmdvel_lwheel1), &varEntries);
+    fprintf(stderr, "Linking process vars... 10\n\n");
+
+    varEntries = 1;
+    ret = oplk_linkProcessImageObject(0x6201, 0x01, offsetof(PI_OUT, CN1_M0B_cmdvel_rwheel2_cmdvel_rwheel2),
+                                      TRUE, sizeof(pProcessImageOut_l->CN1_M0B_cmdvel_rwheel2_cmdvel_rwheel2), &varEntries);
+
+    fprintf(stderr, "Linking process vars... ok\n\n");
+
+    return kErrorOk;
+}
+
 // static tOplkError initProcessImage(void)
 // {
 //     tOplkError      ret = kErrorOk;
-//     UINT            varEntries;
-//     tObdSize        obdSize;
 //     /* Allocate process image */
 
-//     ret = oplk_allocProcessImage(sizeof(PI_IN), sizeof(PI_OUT));
+//     ret = oplk_allocProcessImage(IN_SIZE, OUT_SIZE);
 //     if (ret != kErrorOk)
 //     {
 //         return ret;
@@ -305,28 +380,65 @@ tOplkError processSync(void)
 //     pProcessImageIn_l = oplk_getProcessImageIn();
 //     pProcessImageOut_l = oplk_getProcessImageOut();
 
-
-//     obdSize = sizeof(pProcessImageIn_l->digitalIn);
-//     varEntries = 1;
-//     ret = oplk_linkProcessImageObject(0x6000, 0x01, offsetof(PI_IN, digitalIn),
-//                                       FALSE, obdSize, &varEntries);
-//     if (ret != kErrorOk)
+//     FILE *map_file = fopen("/home/al/grad_project/dev/cn.map", "r");
+//     if (map_file == NULL)
 //     {
-//         fprintf(stderr, "linking process vars failed with \"%s\" (0x%04x)\n", debugstr_getRetValStr(ret), ret);
-//         return ret;
+//         printf("Couldn't find cn.map file\n");
+// 	    return 1;
 //     }
 
-//     obdSize = sizeof(pProcessImageOut_l->digitalOut);
-//     varEntries = 1;
-//     ret = oplk_linkProcessImageObject(0x6200, 0x01, offsetof(PI_OUT, digitalOut),
-//                                       TRUE, obdSize, &varEntries);
-//     if (ret != kErrorOk)
+//     char header[32];
+//     if (fscanf(map_file, "%s\n", header) != 1)
 //     {
-//         fprintf(stderr, "linking process vars failed with \"%s\" (0x%04x)\n", debugstr_getRetValStr(ret), ret);
-//         return ret;
+//         printf("Error while reading cn.map file header\n");
+//         return 1;
 //     }
-//     fprintf(stderr, "Linking process vars... ok\n\n");
+//     if (strcmp(header, "--CN_MAPPING--"))
+//     {
+//        printf("Wrong mapping format\n");
+//        return 1;
+//     }
 
+//     int in_offset = 0;
+//     int out_offset = 0;
+
+//     UINT in_entries = 1;
+//     UINT out_entries = 1;
+
+//     while (!feof(map_file))
+//     {
+//         int size;
+//         char type;
+//         char index[6];
+//         int subindex;
+
+//         if (fscanf(map_file, "%c %s %i %i\n", &type, index, &subindex, &size) == -1)
+//         {
+//             printf("Error while reading cn.map file\n");
+//             return 1;
+//         }
+//         if (type == 'i')
+//         {
+//             printf("Init process image object for input\n");
+//             printf("Index: %d | Subindex: %d | Size: %d\n", (int)strtol(index, NULL, 16), subindex, size);
+//             ret = oplk_linkProcessImageObject((int)strtol(index, NULL, 16), subindex, in_offset, FALSE, size, &in_entries);
+//             in_offset += size;
+//         }
+//         else
+//         {
+//             printf("Init process image object for output\n");
+//             printf("Index: %d | Subindex: %d | Size: %d\n", (int)strtol(index, NULL, 16), subindex, size);
+//             ret = oplk_linkProcessImageObject((int)strtol(index, NULL, 16), subindex, out_offset, TRUE, size, &out_entries);
+//             out_offset += size;
+//         }
+//         if (ret != kErrorOk)
+//         {
+//             printf("Error while linking image object: %i\n", ret);
+//             return ret;
+//         }
+//     }
+
+//     fclose(map_file);
 //     return kErrorOk;
 // }
 
@@ -368,79 +480,3 @@ tOplkError processSync(void)
 //     }
 
 
-static tOplkError initProcessImage(void)
-{
-    tOplkError      ret = kErrorOk;
-    /* Allocate process image */
-
-    ret = oplk_allocProcessImage(IN_SIZE, OUT_SIZE);
-    if (ret != kErrorOk)
-    {
-        return ret;
-    }
-
-    pProcessImageIn_l = oplk_getProcessImageIn();
-    pProcessImageOut_l = oplk_getProcessImageOut();
-
-
-    FILE *map_file = fopen("/home/al/grad_project/dev/cn.map", "r");
-    if (map_file == NULL)
-    {
-        printf("Couldn't find cn.map file\n");
-	    return 1;
-    }
-
-    char header[32];
-    if (fscanf(map_file, "%s\n", header) != 1)
-    {
-        printf("Error while reading cn.map file header\n");
-        return 1;
-    }
-    if (strcmp(header, "--CN_MAPPING--"))
-    {
-       printf("Wrong mapping format\n");
-       return 1;
-    }
-
-    int in_offset = 0;
-    int out_offset = 0;
-
-    UINT in_entries = 1;
-    UINT out_entries = 1;
-
-    while (!feof(map_file))
-    {
-        int size;
-        char type;
-        char index[6];
-        int subindex;
-
-        if (fscanf(map_file, "%c %s %i %i\n", &type, index, &subindex, &size) == -1)
-        {
-            printf("Error while reading cn.map file\n");
-            return 1;
-        }
-        if (type == 'i')
-        {
-            printf("Init process image object for input\n");
-            printf("Index: %d | Subindex: %d | Size: %d\n", (int)strtol(index, NULL, 16), subindex, size);
-            ret = oplk_linkProcessImageObject((int)strtol(index, NULL, 16), subindex, in_offset, FALSE, size, &in_entries);
-            in_offset += size;
-        }
-        else
-        {
-            printf("Init process image object for output\n");
-            printf("Index: %d | Subindex: %d | Size: %d\n", (int)strtol(index, NULL, 16), subindex, size);
-            ret = oplk_linkProcessImageObject((int)strtol(index, NULL, 16), subindex, out_offset, TRUE, size, &out_entries);
-            out_offset += size;
-        }
-        if (ret != kErrorOk)
-        {
-            printf("Error while linking image object: %i\n", ret);
-            return ret;
-        }
-    }
-
-    fclose(map_file);
-    return kErrorOk;
-}
