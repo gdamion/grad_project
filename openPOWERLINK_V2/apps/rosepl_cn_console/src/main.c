@@ -523,7 +523,7 @@ static int getOptions(int argc_p,
         switch (opt)
         {
             case 'w':
-                pOpts_p->wrapper_pid = (int)strtoul(optarg, NULL, 16);;
+                pOpts_p->wrapper_pid = (int)strtol(optarg, NULL, 0);
                 break;
 
             case 'n':
