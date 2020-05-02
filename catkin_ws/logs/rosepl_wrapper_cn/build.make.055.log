@@ -1,0 +1,23 @@
+[  0%] Built target std_msgs_generate_messages_nodejs
+[  0%] Built target std_msgs_generate_messages_cpp
+[  0%] Built target std_msgs_generate_messages_eus
+[  0%] Built target std_msgs_generate_messages_py
+[  0%] Built target std_msgs_generate_messages_lisp
+[  0%] Built target _rosepl_wrapper_cn_generate_messages_check_deps_PowerlinkIn
+[  0%] Built target _rosepl_wrapper_cn_generate_messages_check_deps_PowerlinkOut
+[  0%] Built target _rosepl_wrapper_cn_generate_messages_check_deps_SdoTransfer
+[  0%] Built target _rosepl_wrapper_cn_generate_messages_check_deps_SignalSync
+[ 17%] Built target rosepl_wrapper_cn_generate_messages_eus
+[ 46%] Built target rosepl_wrapper_cn_generate_messages_lisp
+[ 53%] Built target rosepl_wrapper_cn_generate_messages_py
+[ 67%] Built target rosepl_wrapper_cn_generate_messages_nodejs
+[ 82%] Built target rosepl_wrapper_cn_generate_messages_cpp
+[35m[1mScanning dependencies of target rosepl_wrapper_cn_node[0m
+[ 82%] Built target rosepl_wrapper_cn_generate_messages
+[ 85%] [32mBuilding CXX object CMakeFiles/rosepl_wrapper_cn_node.dir/src/generated_wrapper.cpp.o[0m
+[01m[K/home/al/grad_project/catkin_ws/src/rosepl_wrapper_cn/src/generated_wrapper.cpp:[m[K In function ‘[01m[Kvoid set_powerlink_in_struct(POWERLINK_IN*)[m[K’:
+[01m[K/home/al/grad_project/catkin_ws/src/rosepl_wrapper_cn/src/generated_wrapper.cpp:116:38:[m[K [01;35m[Kwarning: [m[Kformat ‘[01m[K%ld[m[K’ expects a matching ‘[01m[Klong int[m[K’ argument [[01;35m[K-Wformat=[m[K]
+  data->odom_lwheel, data->odom_rwheel[01;35m[K)[m[K;
+                                      [01;35m[K^[m[K
+[ 89%] [32m[1mLinking CXX executable /home/al/grad_project/catkin_ws/devel/lib/rosepl_wrapper_cn/rosepl_wrapper_cn_node[0m
+[100%] Built target rosepl_wrapper_cn_node

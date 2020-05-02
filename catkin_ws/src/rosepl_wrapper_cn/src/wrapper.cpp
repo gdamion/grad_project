@@ -85,9 +85,9 @@ int main(int argc, char **argv)
 	// ros::Publisher powerlink_out_pub = node.advertise<rosepl_wrapper_cn::PowerlinkOut>("PowerlinkOut", 1);
 	cmd_vel_pub = node.advertise<geometry_msgs::Twist>("cmd_vel", 1);
 
-	ros::Subscriber powerlink_in_sub = node.subscribe("PowerlinkIn", 1, powerlink_in_callback);
-	odom_sub = node.subscribe("odom", 1, odom_callback);
-	coord_sub = node.subscribe("gazebo/model_states", 1, coord_callback);
+	// ros::Subscriber powerlink_in_sub = node.subscribe("PowerlinkIn", 1, powerlink_in_callback);
+	odom_sub = node.subscribe("/odom", 1, odom_callback);
+	coord_sub = node.subscribe("/gazebo/model_states", 1, coord_callback);
 
 	ros::ServiceServer signal_sync_service = node.advertiseService("signalSync", signal_sync_handler);
 	ros::ServiceServer sdo_service = node.advertiseService("sdoTransfer", sdo_transfer_handler);
@@ -119,7 +119,7 @@ int main(int argc, char **argv)
 
 		ros::spinOnce();
 	}
-
+	
 	return 0;
 }
 
@@ -128,6 +128,8 @@ void odom_callback(const nav_msgs::Odometry::ConstPtr& msg)
 	// set_powerlink_in(*msg);
 	oplk_pi_in->odom_lwheel = (int64_t)(msg->pose.pose.position.x * COEF_FLOAT_POINT);
 	oplk_pi_in->odom_rwheel = (int64_t)(msg->pose.pose.position.y * COEF_FLOAT_POINT);
+	ROS_INFO("Odom callback: odom_lwheel = %ld | odom_rwheel = %ld",\
+		oplk_pi_in->odom_lwheel, oplk_pi_in->odom_rwheel);
 }
 
 void coord_callback(const gazebo_msgs::ModelStates::ConstPtr& msg)
@@ -140,12 +142,15 @@ void coord_callback(const gazebo_msgs::ModelStates::ConstPtr& msg)
 	oplk_pi_in->mm_y_orient = (int64_t)(msg->pose[0].orientation.y * COEF_FLOAT_POINT);
 	oplk_pi_in->mm_z_orient = (int64_t)(msg->pose[0].orientation.z * COEF_FLOAT_POINT);
 	oplk_pi_in->mm_w_orient = (int64_t)(msg->pose[0].orientation.w * COEF_FLOAT_POINT);
+	ROS_INFO("Coord callback:\n	mm_x_pos = %ld | mm_y_pos = %ld | mm_z_pos = %ld \n	mm_x_orient = %ld, mm_y_orient = %ld | mm_z_orient = %ld | mm_w_orient = %ld",\
+			oplk_pi_in->mm_x_pos, oplk_pi_in->mm_y_pos, oplk_pi_in->mm_z_pos, \
+			oplk_pi_in->mm_x_orient, oplk_pi_in->mm_y_orient, oplk_pi_in->mm_z_orient, oplk_pi_in->mm_w_orient);
 }
 
-void powerlink_in_callback(const rosepl_wrapper_cn::PowerlinkIn::ConstPtr& msg)
-{
-	set_powerlink_in(*msg);
-}
+// void powerlink_in_callback(const rosepl_wrapper_cn::PowerlinkIn::ConstPtr& msg)
+// {
+// 	set_powerlink_in(*msg);
+// }
 
 void shutdown_handler(int sig)
 {

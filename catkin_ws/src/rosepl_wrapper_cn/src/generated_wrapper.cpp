@@ -93,46 +93,53 @@ void unlink_memory()
 	ROS_INFO("Shared memory unlinking: OK");
 }
 
-void set_powerlink_in(rosepl_wrapper_cn::PowerlinkIn msg)
-{
-	// oplk_pi_in->DigitalOutput = msg.DigitalOutput;
+// void set_powerlink_in(rosepl_wrapper_cn::PowerlinkIn msg)
+// {
+// 	// oplk_pi_in->DigitalOutput = msg.DigitalOutput;
 
-	oplk_pi_in->mm_x_pos = msg.mm_x_pos;
-	oplk_pi_in->mm_y_pos = msg.mm_y_pos;
-	oplk_pi_in->mm_z_pos = msg.mm_z_pos;
-	oplk_pi_in->mm_x_orient = msg.mm_x_orient;
-	oplk_pi_in->mm_y_orient = msg.mm_y_orient;
-	oplk_pi_in->mm_w_orient = msg.mm_w_orient;
-	oplk_pi_in->odom_lwheel = msg.odom_lwheel;
-	oplk_pi_in->odom_rwheel = msg.odom_rwheel;
-}
+// 	oplk_pi_in->mm_x_pos = msg.mm_x_pos;
+// 	oplk_pi_in->mm_y_pos = msg.mm_y_pos;
+// 	oplk_pi_in->mm_z_pos = msg.mm_z_pos;
+// 	oplk_pi_in->mm_x_orient = msg.mm_x_orient;
+// 	oplk_pi_in->mm_y_orient = msg.mm_y_orient;
+// 	oplk_pi_in->mm_w_orient = msg.mm_w_orient;
+// 	oplk_pi_in->odom_lwheel = msg.odom_lwheel;
+// 	oplk_pi_in->odom_rwheel = msg.odom_rwheel;
+// }
 
 void set_powerlink_in_struct(POWERLINK_IN *data)
 {
 	// oplk_pi_in->DigitalOutput = data->DigitalOutput;
+	ROS_INFO("set_epl_in_struct:\n	x_pos=%ld | y_pos=%ld | z_pos=%ld \n	x_orient=%ld | y_orient=%ld | z_orient=%ld | w_orient=%ld\n	odom_lwheel=%ld | odom_rwheel=%ld",\
+	data->mm_x_pos, data->mm_y_pos, data->mm_z_pos, \
+	data->mm_x_orient, data->mm_y_orient,data->mm_z_orient, data->mm_w_orient, \
+	data->odom_lwheel, data->odom_rwheel);
 
 	oplk_pi_in->mm_x_pos = data->mm_x_pos;
 	oplk_pi_in->mm_y_pos = data->mm_y_pos;
 	oplk_pi_in->mm_z_pos = data->mm_z_pos;
 	oplk_pi_in->mm_x_orient = data->mm_x_orient;
 	oplk_pi_in->mm_y_orient = data->mm_y_orient;
+	oplk_pi_in->mm_z_orient = data->mm_z_orient;
 	oplk_pi_in->mm_w_orient = data->mm_w_orient;
 	oplk_pi_in->odom_lwheel = data->odom_lwheel;
 	oplk_pi_in->odom_rwheel = data->odom_rwheel;
 }
 
-void get_powerlink_out(rosepl_wrapper_cn::PowerlinkOut *msg)
-{
-	// msg->DigitalInput = oplk_pi_out->DigitalInput;
+// void get_powerlink_out(rosepl_wrapper_cn::PowerlinkOut *msg)
+// {
+// 	// msg->DigitalInput = oplk_pi_out->DigitalInput;
 
-	msg->cmdvel_lwheel = oplk_pi_out->cmdvel_lwheel;
-	msg->cmdvel_rwheel = oplk_pi_out->cmdvel_rwheel;
-}
+// 	msg->cmdvel_lwheel = oplk_pi_out->cmdvel_lwheel;
+// 	msg->cmdvel_rwheel = oplk_pi_out->cmdvel_rwheel;
+// }
 
 void get_powerlink_out_struct(POWERLINK_OUT *data)
 {
 	// data->DigitalInput = oplk_pi_out->DigitalInput;
-	
+	ROS_INFO("get_epl_out_struct:\n	cmdvel_lwheel=%ld | cmdvel_rwheel=%ld",
+	data->cmdvel_lwheel, data->cmdvel_rwheel);
+
 	data->cmdvel_lwheel = oplk_pi_out->cmdvel_lwheel;
 	data->cmdvel_rwheel = oplk_pi_out->cmdvel_rwheel;
 }

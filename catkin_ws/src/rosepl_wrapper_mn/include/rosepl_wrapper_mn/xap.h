@@ -7,22 +7,22 @@
 # define COMPUTED_PI_OUT_SIZE 72
 typedef struct
 {
-	unsigned mm_x_pos:64;
-	unsigned mm_y_pos:64;
-	unsigned mm_z_pos:64;
-	unsigned mm_x_orient:64;
-	unsigned mm_y_orient:64;
-	unsigned mm_z_orient:64;
-	unsigned mm_w_orient:64;
-	unsigned odom_lwheel:64;
-	unsigned odom_rwheel:64;
+	int64_t mm_x_pos;
+	int64_t mm_y_pos;
+	int64_t mm_z_pos;
+	int64_t mm_x_orient;
+	int64_t mm_y_orient;
+	int64_t mm_z_orient;
+	int64_t mm_w_orient;
+	int64_t odom_lwheel;
+	int64_t odom_rwheel;
 } PI_OUT;
 
 # define COMPUTED_PI_IN_SIZE 16
 typedef struct
 {
-	unsigned cmdvel_lwheel:64;
-	unsigned cmdvel_rwheel:64;
+	int64_t cmdvel_lwheel;
+	int64_t cmdvel_rwheel;
 } PI_IN;
 
 #endif

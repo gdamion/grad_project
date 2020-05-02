@@ -1,0 +1,21 @@
+In file included from [01m[K/opt/ros/melodic/include/ros/ros.h:40:0[m[K,
+                 from [01m[K/home/al/grad_project/catkin_ws/src/rosepl_wrapper_cn/src/wrapper.cpp:10[m[K:
+[01m[K/home/al/grad_project/catkin_ws/src/rosepl_wrapper_cn/src/wrapper.cpp:[m[K In function ‘[01m[Kvoid coord_callback(const ConstPtr&)[m[K’:
+[01m[K/home/al/grad_project/catkin_ws/src/rosepl_wrapper_cn/src/wrapper.cpp:146:11:[m[K [01;35m[Kwarning: [m[Kunknown escape sequence: '\m'
+  ROS_INFO([01;35m[K"[m[KOdom callback: \nmm_x_pos = %ld | mm_y_pos = %ld | mm_z_pos = %ld\mm_x_orient = %ld, mm_y_orient = %ld | mm_z_orient = %ld | mm_w_orient = %ld",\
+           [01;35m[K^[m[K
+[01m[K/opt/ros/melodic/include/ros/console.h:348:165:[m[K [01;36m[Knote: [m[Kin definition of macro ‘[01m[KROSCONSOLE_PRINT_AT_LOCATION_WITH_FILTER[m[K’
+     ::ros::console::print(filter, __rosconsole_define_location__loc.logger_, __rosconsole_define_location__loc.level_, __FILE__, __LINE__, __ROSCONSOLE_FUNCTION__, [01;36m[K__VA_ARGS__[m[K)
+                                                                                                                                                                     [01;36m[K^~~~~~~~~~~[m[K
+[01m[K/opt/ros/melodic/include/ros/console.h:387:7:[m[K [01;36m[Knote: [m[Kin expansion of macro ‘[01m[KROSCONSOLE_PRINT_AT_LOCATION[m[K’
+       [01;36m[KROSCONSOLE_PRINT_AT_LOCATION[m[K(__VA_ARGS__); \
+       [01;36m[K^~~~~~~~~~~~~~~~~~~~~~~~~~~~[m[K
+[01m[K/opt/ros/melodic/include/ros/console.h:572:35:[m[K [01;36m[Knote: [m[Kin expansion of macro ‘[01m[KROS_LOG_COND[m[K’
+ #define ROS_LOG(level, name, ...) [01;36m[KROS_LOG_COND[m[K(true, level, name, __VA_ARGS__)
+                                   [01;36m[K^~~~~~~~~~~~[m[K
+[01m[K/opt/ros/melodic/include/rosconsole/macros_generated.h:110:23:[m[K [01;36m[Knote: [m[Kin expansion of macro ‘[01m[KROS_LOG[m[K’
+ #define ROS_INFO(...) [01;36m[KROS_LOG[m[K(::ros::console::levels::Info, ROSCONSOLE_DEFAULT_NAME, __VA_ARGS__)
+                       [01;36m[K^~~~~~~[m[K
+[01m[K/home/al/grad_project/catkin_ws/src/rosepl_wrapper_cn/src/wrapper.cpp:146:2:[m[K [01;36m[Knote: [m[Kin expansion of macro ‘[01m[KROS_INFO[m[K’
+  [01;36m[KR[m[KOS_INFO("Odom callback: \nmm_x_pos = %ld | mm_y_pos = %ld | mm_z_pos = %ld\mm_x_orient = %ld, mm_y_orient = %ld | mm_z_orient = %ld | mm_w_orient = %ld",\
+  [01;36m[K^[m[K
