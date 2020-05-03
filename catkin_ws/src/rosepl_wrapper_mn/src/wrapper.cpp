@@ -262,6 +262,8 @@ void oplk_handler(int sig)
 		set_powerlink_in_struct(powerlink_in.buffer_a);
 		send_sig(SIGUSR2);
 	}
+	ROS_INFO("oplk_pi_in:\n	cmdvel_lwheel=%ld | cmdvel_rwheel=%ld",\
+	oplk_pi_in->cmdvel_lwheel, oplk_pi_in->cmdvel_rwheel);
 }
 
 void send_sig(int sig)

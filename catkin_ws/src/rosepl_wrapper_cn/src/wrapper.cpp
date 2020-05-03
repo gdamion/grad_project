@@ -268,6 +268,11 @@ void oplk_handler(int sig)
 		set_powerlink_in_struct(powerlink_in.buffer_a);
 		send_sig(SIGUSR2);
 	}
+
+	ROS_INFO("oplk_pi_in:\n	x_pos=%ld | y_pos=%ld | z_pos=%ld \n	x_orient=%ld | y_orient=%ld | z_orient=%ld | w_orient=%ld\n	odom_lwheel=%ld | odom_rwheel=%ld",\
+	oplk_pi_in->mm_x_pos, oplk_pi_in->mm_y_pos, oplk_pi_in->mm_z_pos, \
+	oplk_pi_in->mm_x_orient, oplk_pi_in->mm_y_orient, oplk_pi_in->mm_z_orient, oplk_pi_in->mm_w_orient, \
+	oplk_pi_in->odom_lwheel, oplk_pi_in->odom_rwheel);
 }
 
 void send_sig(int sig)
