@@ -113,7 +113,7 @@ void set_powerlink_in_struct(POWERLINK_IN *data)
 
 // 	oplk_pi_in->cmdvel_lwheel = data->cmdvel_lwheel;
 // 	oplk_pi_in->cmdvel_rwheel = data->cmdvel_rwheel;
-// }
+}
 
 // void get_powerlink_out(rosepl_wrapper_mn::PowerlinkOut *msg)
 // {
