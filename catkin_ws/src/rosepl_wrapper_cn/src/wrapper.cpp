@@ -119,7 +119,7 @@ int main(int argc, char **argv)
 
 		ros::spinOnce();
 	}
-	
+
 	return 0;
 }
 
@@ -128,6 +128,7 @@ void odom_callback(const nav_msgs::Odometry::ConstPtr& msg)
 	// set_powerlink_in(*msg);
 	oplk_pi_in->odom_lwheel = (int64_t)(msg->pose.pose.position.x * COEF_FLOAT_POINT);
 	oplk_pi_in->odom_rwheel = (int64_t)(msg->pose.pose.position.y * COEF_FLOAT_POINT);
+
 	ROS_INFO("Odom callback: odom_lwheel = %ld | odom_rwheel = %ld",\
 		oplk_pi_in->odom_lwheel, oplk_pi_in->odom_rwheel);
 }
@@ -142,6 +143,7 @@ void coord_callback(const gazebo_msgs::ModelStates::ConstPtr& msg)
 	oplk_pi_in->mm_y_orient = (int64_t)(msg->pose[0].orientation.y * COEF_FLOAT_POINT);
 	oplk_pi_in->mm_z_orient = (int64_t)(msg->pose[0].orientation.z * COEF_FLOAT_POINT);
 	oplk_pi_in->mm_w_orient = (int64_t)(msg->pose[0].orientation.w * COEF_FLOAT_POINT);
+
 	ROS_INFO("Coord callback:\n	mm_x_pos = %ld | mm_y_pos = %ld | mm_z_pos = %ld \n	mm_x_orient = %ld, mm_y_orient = %ld | mm_z_orient = %ld | mm_w_orient = %ld",\
 			oplk_pi_in->mm_x_pos, oplk_pi_in->mm_y_pos, oplk_pi_in->mm_z_pos, \
 			oplk_pi_in->mm_x_orient, oplk_pi_in->mm_y_orient, oplk_pi_in->mm_z_orient, oplk_pi_in->mm_w_orient);
@@ -245,6 +247,7 @@ bool sdo_transfer_handler(rosepl_wrapper_cn::SdoTransfer::Request &req, rosepl_w
 
 void oplk_handler(int sig)
 {
+	// ROS_INFO("OPLK_HANDLER");
 	if (!ready)
 	{
 		return;

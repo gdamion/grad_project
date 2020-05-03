@@ -138,7 +138,7 @@ void get_powerlink_out_struct(POWERLINK_OUT *data)
 {
 	// data->DigitalInput = oplk_pi_out->DigitalInput;
 	ROS_INFO("get_epl_out_struct:\n	cmdvel_lwheel=%ld | cmdvel_rwheel=%ld",
-	data->cmdvel_lwheel, data->cmdvel_rwheel);
+	oplk_pi_out->cmdvel_lwheel, oplk_pi_out ->cmdvel_rwheel);
 
 	data->cmdvel_lwheel = oplk_pi_out->cmdvel_lwheel;
 	data->cmdvel_rwheel = oplk_pi_out->cmdvel_rwheel;

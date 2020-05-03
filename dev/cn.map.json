@@ -1,0 +1,37 @@
+{
+  "ros_project": "raspberry",
+  "xap_path": "/home/chuh/projects/test_epl_ros/EPL-ROS/epl_ros_generator/cn_xap.h",
+  "epl_launcher": "/demo_mn_console",
+  "in": [
+    {
+      "name": "MyDO",
+      "alias": "DigitalOutput",
+      "index": "0x2000",
+      "subindex": 0,
+      "size": 8,
+      "type": "int",
+      "attributes": [
+        "unsigned"
+      ],
+      "messages": [
+        "PowerlinkIn"
+      ]
+    }
+  ],
+  "out": [
+    {
+      "name": "MyDI",
+      "alias": "DigitalInput",
+      "index": "0x2000",
+      "subindex": 0,
+      "size": 8,
+      "type": "int",
+      "attributes": [
+        "unsigned"
+      ],
+      "messages": [
+        "PowerlinkOut"
+      ]
+    }
+  ]
+}
