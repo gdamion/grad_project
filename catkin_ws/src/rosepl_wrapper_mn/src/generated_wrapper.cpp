@@ -108,7 +108,7 @@ void set_powerlink_in_struct(POWERLINK_IN *data)
     // oplk_pi_in->CN1_DigitalOutput_00h_AU8_DigitalOutput = data->CN1_DigitalOutput_00h_AU8_DigitalOutput;
     // oplk_pi_in->CN32_DigitalOutput_00h_AU8_DigitalOutput = data->CN32_DigitalOutput_00h_AU8_DigitalOutput;
     // oplk_pi_in->CN110_DigitalOutput_00h_AU8_DigitalOutput = data->CN110_DigitalOutput_00h_AU8_DigitalOutput;
-	ROS_INFO("set_epl_in_struct:\n	cmdvel_lwheel=%ld | cmdvel_rwheel=%ld",
+	ROS_INFO("set_powerlink_in_struct:\n	cmdvel_lwheel=%ld | cmdvel_rwheel=%ld",
 	data->cmdvel_lwheel, data->cmdvel_rwheel);
 
 	oplk_pi_in->cmdvel_lwheel = data->cmdvel_lwheel;
@@ -136,7 +136,7 @@ void get_powerlink_out_struct(POWERLINK_OUT *data)
     // data->CN1_DigitalInput_00h_AU8_DigitalInput = oplk_pi_out->CN1_DigitalInput_00h_AU8_DigitalInput;
     // data->CN32_DigitalInput_00h_AU8_DigitalInput = oplk_pi_out->CN32_DigitalInput_00h_AU8_DigitalInput;
     // data->CN110_DigitalInput_00h_AU8_DigitalInput = oplk_pi_out->CN110_DigitalInput_00h_AU8_DigitalInput;
-	ROS_INFO("set_epl_in_struct:\n	x_pos=%ld | y_pos=%ld | z_pos=%ld \n	x_orient=%ld | y_orient=%ld | z_orient=%ld | w_orient=%ld\n	odom_lwheel=%ld | odom_rwheel=%ld",\
+	ROS_INFO("get_powerlink_out_struct:\n	x_pos=%ld | y_pos=%ld | z_pos=%ld \n	x_orient=%ld | y_orient=%ld | z_orient=%ld | w_orient=%ld\n	odom_lwheel=%ld | odom_rwheel=%ld",\
 	oplk_pi_out->mm_x_pos, oplk_pi_out->mm_y_pos, oplk_pi_out->mm_z_pos, \
 	oplk_pi_out->mm_x_orient, oplk_pi_out->mm_y_orient, oplk_pi_out->mm_z_orient, oplk_pi_out->mm_w_orient, \
 	oplk_pi_out->odom_lwheel, oplk_pi_out->odom_rwheel);
