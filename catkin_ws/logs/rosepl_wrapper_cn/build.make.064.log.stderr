@@ -1,0 +1,6 @@
+CMakeFiles/rosepl_wrapper_cn_node.dir/src/wrapper.cpp.o: In function `powerlink_in_callback(boost::shared_ptr<rosepl_wrapper_cn::PowerlinkIn_<std::allocator<void> > const> const&)':
+wrapper.cpp:(.text+0x155b): undefined reference to `set_powerlink_in(rosepl_wrapper_cn::PowerlinkIn_<std::allocator<void> >)'
+collect2: error: ld returned 1 exit status
+make[2]: *** [/home/al/grad_project/catkin_ws/devel/lib/rosepl_wrapper_cn/rosepl_wrapper_cn_node] Error 1
+make[1]: *** [CMakeFiles/rosepl_wrapper_cn_node.dir/all] Error 2
+make: *** [all] Error 2

@@ -20,5 +20,5 @@ sleep 1
 
 # Run rosepl_mn_console
 cd /home/al/grad_project/openPOWERLINK_V2/apps/rosepl_mn_console/build/linux
-echo $CN_WRAPPER_PID
+echo $MN_WRAPPER_PID
 sudo ./rosepl_mn_console -w $MN_WRAPPER_PID

@@ -1,0 +1,28 @@
+[  0%] Built target std_msgs_generate_messages_nodejs
+[  0%] Built target std_msgs_generate_messages_eus
+[  0%] Built target std_msgs_generate_messages_cpp
+[  0%] Built target std_msgs_generate_messages_py
+[  0%] Built target _rosepl_wrapper_cn_generate_messages_check_deps_PowerlinkOut
+[  0%] Built target std_msgs_generate_messages_lisp
+[  0%] Built target _rosepl_wrapper_cn_generate_messages_check_deps_SdoTransfer
+[  0%] Built target _rosepl_wrapper_cn_generate_messages_check_deps_SignalSync
+[  0%] Built target _rosepl_wrapper_cn_generate_messages_check_deps_PowerlinkIn
+[ 14%] Built target rosepl_wrapper_cn_generate_messages_lisp
+[ 50%] Built target rosepl_wrapper_cn_generate_messages_eus
+[ 53%] Built target rosepl_wrapper_cn_generate_messages_py
+[ 82%] Built target rosepl_wrapper_cn_generate_messages_cpp
+[ 82%] Built target rosepl_wrapper_cn_generate_messages_nodejs
+[35m[1mScanning dependencies of target rosepl_wrapper_cn_node[0m
+[ 82%] Built target rosepl_wrapper_cn_generate_messages
+[ 89%] [32mBuilding CXX object CMakeFiles/rosepl_wrapper_cn_node.dir/src/wrapper.cpp.o[0m
+[ 89%] [32mBuilding CXX object CMakeFiles/rosepl_wrapper_cn_node.dir/src/generated_wrapper.cpp.o[0m
+[ 92%] [32m[1mLinking CXX executable /home/al/grad_project/catkin_ws/devel/lib/rosepl_wrapper_cn/rosepl_wrapper_cn_node[0m
+CMakeFiles/rosepl_wrapper_cn_node.dir/src/wrapper.cpp.o: In function `powerlink_in_callback(boost::shared_ptr<rosepl_wrapper_cn::PowerlinkIn_<std::allocator<void> > const> const&)':
+wrapper.cpp:(.text+0x155b): undefined reference to `set_powerlink_in(rosepl_wrapper_cn::PowerlinkIn_<std::allocator<void> >)'
+collect2: error: ld returned 1 exit status
+CMakeFiles/rosepl_wrapper_cn_node.dir/build.make:190: recipe for target '/home/al/grad_project/catkin_ws/devel/lib/rosepl_wrapper_cn/rosepl_wrapper_cn_node' failed
+make[2]: *** [/home/al/grad_project/catkin_ws/devel/lib/rosepl_wrapper_cn/rosepl_wrapper_cn_node] Error 1
+CMakeFiles/Makefile2:1220: recipe for target 'CMakeFiles/rosepl_wrapper_cn_node.dir/all' failed
+make[1]: *** [CMakeFiles/rosepl_wrapper_cn_node.dir/all] Error 2
+Makefile:140: recipe for target 'all' failed
+make: *** [all] Error 2
