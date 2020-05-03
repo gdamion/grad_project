@@ -273,6 +273,8 @@ void oplk_handler(int sig)
 	oplk_pi_in->mm_x_pos, oplk_pi_in->mm_y_pos, oplk_pi_in->mm_z_pos, \
 	oplk_pi_in->mm_x_orient, oplk_pi_in->mm_y_orient, oplk_pi_in->mm_z_orient, oplk_pi_in->mm_w_orient, \
 	oplk_pi_in->odom_lwheel, oplk_pi_in->odom_rwheel);
+	ROS_INFO("oplk_pi_out:\n	cmdvel_lwheel=%ld | cmdvel_rwheel=%ld",\
+	oplk_pi_out->cmdvel_lwheel, oplk_pi_out->cmdvel_rwheel);
 }
 
 void send_sig(int sig)
