@@ -149,10 +149,10 @@ void coord_callback(const gazebo_msgs::ModelStates::ConstPtr& msg)
 			oplk_pi_in->mm_x_orient, oplk_pi_in->mm_y_orient, oplk_pi_in->mm_z_orient, oplk_pi_in->mm_w_orient);
 }
 
-// void powerlink_in_callback(const rosepl_wrapper_cn::PowerlinkIn::ConstPtr& msg)
-// {
-// 	set_powerlink_in(*msg);
-// }
+void powerlink_in_callback(const rosepl_wrapper_cn::PowerlinkIn::ConstPtr& msg)
+{
+	set_powerlink_in(*msg);
+}
 
 void shutdown_handler(int sig)
 {

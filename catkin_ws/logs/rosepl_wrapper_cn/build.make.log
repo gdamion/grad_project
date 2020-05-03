@@ -1,20 +1,19 @@
-[  0%] Built target std_msgs_generate_messages_nodejs
 [  0%] Built target std_msgs_generate_messages_cpp
 [  0%] Built target std_msgs_generate_messages_py
 [  0%] Built target std_msgs_generate_messages_eus
-[  0%] Built target std_msgs_generate_messages_lisp
-[  0%] Built target _rosepl_wrapper_cn_generate_messages_check_deps_PowerlinkOut
-[  0%] Built target _rosepl_wrapper_cn_generate_messages_check_deps_SdoTransfer
+[  0%] Built target std_msgs_generate_messages_nodejs
 [  0%] Built target _rosepl_wrapper_cn_generate_messages_check_deps_SignalSync
+[  0%] Built target _rosepl_wrapper_cn_generate_messages_check_deps_PowerlinkOut
+[  0%] Built target std_msgs_generate_messages_lisp
 [  0%] Built target _rosepl_wrapper_cn_generate_messages_check_deps_PowerlinkIn
-[ 21%] Built target rosepl_wrapper_cn_generate_messages_py
-[ 35%] Built target rosepl_wrapper_cn_generate_messages_cpp
-[ 50%] Built target rosepl_wrapper_cn_generate_messages_nodejs
-[ 67%] Built target rosepl_wrapper_cn_generate_messages_eus
-[ 82%] Built target rosepl_wrapper_cn_generate_messages_lisp
+[  0%] Built target _rosepl_wrapper_cn_generate_messages_check_deps_SdoTransfer
+[ 14%] Built target rosepl_wrapper_cn_generate_messages_nodejs
+[ 39%] Built target rosepl_wrapper_cn_generate_messages_lisp
+[ 50%] Built target rosepl_wrapper_cn_generate_messages_py
+[ 82%] Built target rosepl_wrapper_cn_generate_messages_cpp
+[ 82%] Built target rosepl_wrapper_cn_generate_messages_eus
 [35m[1mScanning dependencies of target rosepl_wrapper_cn_node[0m
 [ 82%] Built target rosepl_wrapper_cn_generate_messages
 [ 85%] [32mBuilding CXX object CMakeFiles/rosepl_wrapper_cn_node.dir/src/generated_wrapper.cpp.o[0m
-[ 89%] [32mBuilding CXX object CMakeFiles/rosepl_wrapper_cn_node.dir/src/wrapper.cpp.o[0m
-[ 92%] [32m[1mLinking CXX executable /home/al/grad_project/catkin_ws/devel/lib/rosepl_wrapper_cn/rosepl_wrapper_cn_node[0m
+[ 89%] [32m[1mLinking CXX executable /home/al/grad_project/catkin_ws/devel/lib/rosepl_wrapper_cn/rosepl_wrapper_cn_node[0m
 [100%] Built target rosepl_wrapper_cn_node
