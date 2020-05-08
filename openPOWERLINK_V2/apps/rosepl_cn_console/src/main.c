@@ -254,7 +254,7 @@ static tOplkError initPowerlink(UINT32 cycleLen_p,
 
     initParam.fAsyncOnly              = FALSE;
     initParam.featureFlags            = UINT_MAX;
-    initParam.cycleLen                = cycleLen_p;             // required for error detection
+    initParam.cycleLen                = 5000;//cycleLen_p;             // required for error detection
     initParam.isochrTxMaxPayload      = C_DLL_ISOCHR_MAX_PAYL;  // const
     initParam.isochrRxMaxPayload      = C_DLL_ISOCHR_MAX_PAYL;  // const
     initParam.presMaxLatency          = 50000;                  // const; only required for IdentRes
