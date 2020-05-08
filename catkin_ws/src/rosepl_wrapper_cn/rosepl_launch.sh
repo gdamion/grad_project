@@ -9,7 +9,7 @@ else
     roscore &
 fi
 
-sleep 3
+sleep 5
 
 # Run rosepl_wrapper_cn node
 cd /home/al/grad_project/catkin_ws/devel/lib/rosepl_wrapper_cn
