@@ -279,6 +279,9 @@ tOplkError processSync(void)
 	if (ret != kErrorOk)
 		return ret;
 
+	test_pi_in = (PI_IN*)shmImageIn;
+	test_pi_out = (PI_OUT*)pProcessImageOut_l;
+
 	printf("shmImageIn BEFORE oplk_pi_in:\n	cmdvel_lwheel=%ld | cmdvel_rwheel=%ld\n",\
 	test_pi_out->CN1_M0A_cmdvel_lwheel1, test_pi_out->CN1_M0B_cmdvel_rwheel2);
 	printf("pProcessImageOut_l BEFORE oplk_pi_out:\n	x_pos=%ld | y_pos=%ld | z_pos=%ld \n	x_orient=%ld | y_orient=%ld | z_orient=%ld | w_orient=%ld\n	odom_lwheel=%ld | odom_rwheel=%ld\n",\
