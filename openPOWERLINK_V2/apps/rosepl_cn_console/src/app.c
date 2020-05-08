@@ -268,6 +268,8 @@ The function implements the synchronous data handler.
 tOplkError processSync(void)
 {
     tOplkError      ret = kErrorOk;
+    PI_IN *test_pi_in;
+    PI_OUT *test_pi_out;
 
     if (oplk_waitSyncEvent(100000) != kErrorOk)
         return ret;
@@ -276,8 +278,25 @@ tOplkError processSync(void)
     if (ret != kErrorOk)
         return ret;
 
-    memcpy(pProcessImageIn_l, shmImageIn, sizeof(PI_IN));
-    memcpy(shmImageOut, pProcessImageOut_l, sizeof(PI_OUT));
+	printf("shmImageIn BEFORE oplk_pi_in:\n	cmdvel_lwheel=%ld | cmdvel_rwheel=%ld\n",\
+	test_pi_in->CN1_M0A_cmdvel_lwheel1, test_pi_in->CN1_M0B_cmdvel_rwheel2);
+	printf("pProcessImageOut_l BEFORE oplk_pi_out:\n	x_pos=%ld | y_pos=%ld | z_pos=%ld \n	x_orient=%ld | y_orient=%ld | z_orient=%ld | w_orient=%ld\n	odom_lwheel=%ld | odom_rwheel=%ld\n",\
+	test_pi_out->CN1_M01_mm_x_pos1, test_pi_out->CN1_M02_mm_y_pos2, test_pi_out->CN1_M03_mm_z_pos3, \
+	test_pi_out->CN1_M04_mm_x_orient4, test_pi_out->CN1_M05_mm_y_orient5, test_pi_out->CN1_M06_mm_z_orient6, test_pi_out->CN1_M07_mm_w_orient7, \
+	test_pi_out->CN1_M08_odom_lwheel8, test_pi_out->CN1_M09_odom_rwheel9);
+
+    memcpy(pProcessImageIn_l, shmImageIn, IN_SIZE);
+    memcpy(shmImageOut, pProcessImageOut_l, OUT_SIZE);
+
+    test_pi_in = (PI_IN*)pProcessImageIn_l;
+    test_pi_out = (PI_OUT*)shmImageOut;
+
+	printf("pProcessImageIn_l AFTER oplk_pi_in:\n	cmdvel_lwheel=%ld | cmdvel_rwheel=%ld\n",\
+	test_pi_in->CN1_M0A_cmdvel_lwheel1, test_pi_in->CN1_M0B_cmdvel_rwheel2);
+	printf("shmImageOut AFTER oplk_pi_out:\n	x_pos=%ld | y_pos=%ld | z_pos=%ld \n	x_orient=%ld | y_orient=%ld | z_orient=%ld | w_orient=%ld\n	odom_lwheel=%ld | odom_rwheel=%ld\n",\
+	test_pi_out->CN1_M01_mm_x_pos1, test_pi_out->CN1_M02_mm_y_pos2, test_pi_out->CN1_M03_mm_z_pos3, \
+	test_pi_out->CN1_M04_mm_x_orient4, test_pi_out->CN1_M05_mm_y_orient5, test_pi_out->CN1_M06_mm_z_orient6, test_pi_out->CN1_M07_mm_w_orient7, \
+	test_pi_out->CN1_M08_odom_lwheel8, test_pi_out->CN1_M09_odom_rwheel9);
 
     if(kill(wrapper_pid, SIGUSR1))
     {

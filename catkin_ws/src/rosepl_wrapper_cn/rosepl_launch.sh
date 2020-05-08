@@ -14,7 +14,7 @@ sleep 5
 # Run rosepl_wrapper_cn node
 cd /home/al/grad_project/catkin_ws/devel/lib/rosepl_wrapper_cn
 ./rosepl_wrapper_cn_node & CN_WRAPPER_PID=$!
-# echo $MN_WRAPPER_PID > ~/grad_project/dev/ros_wrapper.pid
+# echo $CN_WRAPPER_PID > ~/grad_project/dev/ros_wrapper.pid
 
 sleep 1
 
