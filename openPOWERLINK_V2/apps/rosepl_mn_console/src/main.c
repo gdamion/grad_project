@@ -392,7 +392,7 @@ static tOplkError initPowerlink(UINT32 cycleLen_p,
         return ret;
     }
 
-    printf("mn initPowerlink: cdc filename is set\n");
+    printf("mn initPowerlink: cdc %s filename is set\n", cdcFileName_p);
     printf("mn initPowerlink: function ret value = %u\n", kErrorOk);
     return kErrorOk;
 }

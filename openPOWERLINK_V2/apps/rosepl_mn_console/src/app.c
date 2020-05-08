@@ -299,7 +299,7 @@ static tOplkError initProcessImage(void)
     printf("mn initProcessImage: process image allocated, ret = %u\n", ret);
 
     pProcessImageIn_l = (PI_IN*)oplk_getProcessImageIn();
-    pProcessImageOut_l = (const PI_OUT*)oplk_getProcessImageOut();
+    pProcessImageOut_l = (PI_OUT*)oplk_getProcessImageOut();
 
     ret = obdpi_setupProcessImage();
     printf("mn initProcessImage: function ret value = %u\n", ret);
