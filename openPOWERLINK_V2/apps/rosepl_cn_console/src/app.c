@@ -267,11 +267,12 @@ The function implements the synchronous data handler.
 //------------------------------------------------------------------------------
 tOplkError processSync(void)
 {
-	tOplkError	  ret = kErrorOk;
-	PI_IN *test_pi_in;
-	PI_OUT *test_pi_out;
+	tOplkError	ret = kErrorOk;
+	PI_IN		*test_pi_in;
+	PI_OUT		*test_pi_out;
 
-	if (oplk_waitSyncEvent(100000) != kErrorOk)
+	ret = oplk_waitSyncEvent(100000);
+	if (ret != kErrorOk)
 		return ret;
 
 	ret = oplk_exchangeProcessImageOut();

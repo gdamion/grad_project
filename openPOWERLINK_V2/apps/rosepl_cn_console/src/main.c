@@ -71,7 +71,7 @@ SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 //------------------------------------------------------------------------------
 // const defines
 //------------------------------------------------------------------------------
-#define CYCLE_LEN           50000
+#define CYCLE_LEN           5000
 #define NODEID              1                   // could be changed by command param
 #define IP_ADDR             0xc0a86401          // 192.168.100.1
 #define DEFAULT_GATEWAY     0xC0A864FE          // 192.168.100.C_ADR_RT1_DEF_NODE_ID
@@ -254,7 +254,7 @@ static tOplkError initPowerlink(UINT32 cycleLen_p,
 
     initParam.fAsyncOnly              = FALSE;
     initParam.featureFlags            = UINT_MAX;
-    initParam.cycleLen                = 5000;//cycleLen_p;             // required for error detection
+    initParam.cycleLen                = cycleLen_p;//5000             // required for error detection
     initParam.isochrTxMaxPayload      = C_DLL_ISOCHR_MAX_PAYL;  // const
     initParam.isochrRxMaxPayload      = C_DLL_ISOCHR_MAX_PAYL;  // const
     initParam.presMaxLatency          = 50000;                  // const; only required for IdentRes
