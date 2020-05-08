@@ -1,4 +1,0 @@
-[01m[K/home/al/grad_project/catkin_ws/src/rosepl_wrapper_cn/src/generated_wrapper.cpp:[m[K In function ‘[01m[Kvoid set_powerlink_in_struct(POWERLINK_IN*)[m[K’:
-[01m[K/home/al/grad_project/catkin_ws/src/rosepl_wrapper_cn/src/generated_wrapper.cpp:116:38:[m[K [01;35m[Kwarning: [m[Kformat ‘[01m[K%ld[m[K’ expects a matching ‘[01m[Klong int[m[K’ argument [[01;35m[K-Wformat=[m[K]
-  data->odom_lwheel, data->odom_rwheel[01;35m[K)[m[K;
-                                      [01;35m[K^[m[K
