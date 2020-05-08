@@ -345,7 +345,7 @@ static tOplkError initPowerlink(UINT32 cycleLen_p,
         return ret;
     }
 
-    printf("mn initPowerlink: Object directory created\n");
+    printf("mn initPowerlink: Object dictionary created\n");
 
     // initialize POWERLINK stack
     ret = oplk_initialize();
@@ -434,7 +434,8 @@ static void loopMain(void)
                 ret);
         return;
     }
-
+    printf("Start POWERLINK stack... ok\n");
+    printf("Digital I/O interface with openPOWERLINK is ready!\n");
     printf("\n-------------------------------\n");
     printf("Press Esc to leave the program\n");
     printf("Press r to reset the node\n");
@@ -459,17 +460,17 @@ static void loopMain(void)
                     }
                     break;
 
-                case 'c':
-                    ret = oplk_execNmtCommand(kNmtEventNmtCycleError);
-                    if (ret != kErrorOk)
-                    {
-                        fprintf(stderr,
-                                "oplk_execNmtCommand() failed with \"%s\" (0x%04x)\n",
-                                debugstr_getRetValStr(ret),
-                                ret);
-                        fExit = TRUE;
-                    }
-                    break;
+                // case 'c':
+                //     ret = oplk_execNmtCommand(kNmtEventNmtCycleError);
+                //     if (ret != kErrorOk)
+                //     {
+                //         fprintf(stderr,
+                //                 "oplk_execNmtCommand() failed with \"%s\" (0x%04x)\n",
+                //                 debugstr_getRetValStr(ret),
+                //                 ret);
+                //         fExit = TRUE;
+                //     }
+                //     break;
 
                 case 0x1B:
                     fExit = TRUE;

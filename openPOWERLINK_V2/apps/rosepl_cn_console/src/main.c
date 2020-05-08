@@ -353,7 +353,7 @@ This function implements the main loop of the demo application.
 static void loopMain(void)
 {
     tOplkError  ret;
-    // char        cKey = 0;
+    char        cKey = 0;
     BOOL        fExit = FALSE;
 
 #if !defined(CONFIG_KERNELSTACK_DIRECTLINK)
@@ -371,51 +371,47 @@ static void loopMain(void)
 
     printf("Start POWERLINK stack... ok\n");
     printf("Digital I/O interface with openPOWERLINK is ready!\n");
-    // printf("\n-------------------------------\n");
-    // printf("Press Esc to leave the program\n");
-    // printf("Press r to reset the node\n");
+    printf("\n-------------------------------\n");
+    printf("Press Esc to leave the program\n");
+    printf("Press r to reset the node\n");
     // printf("Press i to increase the digital input\n");
     // printf("Press d to decrease the digital input\n");
     // printf("Press p to print the digital outputs\n");
-    // printf("-------------------------------\n\n");
+    printf("-------------------------------\n\n");
 
     // setupInputs();
 
     // wait for key hit
     while (!fExit)
     {
-        // if (console_kbhit())
-        // {
-        //     cKey = (char)console_getch();
+        if (console_kbhit())
+        {
+            cKey = (char)console_getch();
 
-        //     switch (cKey)
-        //     {
-        //         case 'r':
-        //             ret = oplk_execNmtCommand(kNmtEventSwReset);
-        //             if (ret != kErrorOk)
-        //                 fExit = TRUE;
-        //             break;
+            switch (cKey)
+            {
+                case 'r':
+                    ret = oplk_execNmtCommand(kNmtEventSwReset);
+                    if (ret != kErrorOk)
+                    {
+                        fprintf(stderr,
+                                "oplk_execNmtCommand() failed with \"%s\" (0x%04x)\n",
+                                debugstr_getRetValStr(ret),
+                                ret);
+                        fExit = TRUE;
+                    }
+                    if (ret != kErrorOk)
+                        fExit = TRUE;
+                    break;
 
-        //         case 'i':
-        //             increaseInputs();
-        //             break;
+                case 0x1B:
+                    fExit = TRUE;
+                    break;
 
-        //         case 'd':
-        //             decreaseInputs();
-        //             break;
-
-        //         case 'p':
-        //             printOutputs();
-        //             break;
-
-        //         case 0x1B:
-        //             fExit = TRUE;
-        //             break;
-
-        //         default:
-        //             break;
-        //     }
-        // }
+                default:
+                    break;
+            }
+        }
 
         if (system_getTermSignalState() != FALSE)
         {

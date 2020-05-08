@@ -1,5 +1,4 @@
 file(REMOVE_RECURSE
-  "mnobd.cdc"
   "CMakeFiles/rosepl_mn_console.dir/src/main.c.o"
   "CMakeFiles/rosepl_mn_console.dir/src/app.c.o"
   "CMakeFiles/rosepl_mn_console.dir/src/event.c.o"
