@@ -92,6 +92,8 @@ static tOplkError processErrorWarningEvent(const tEventError* pInternalError_p,
                                            void* pUserArg_p);
 static tOplkError processPdoChangeEvent(const tOplkApiEventPdoChange* pPdoChange_p,
                                         void* pUserArg_p);
+// static tOplkError processUserObdAccessEvent(const tOplkApiEventUserObdAccess* pUserObdAccess_p,
+//                                         void* pUserArg_p);
 
 //============================================================================//
 //            P U B L I C   F U N C T I O N S                                 //
@@ -149,6 +151,10 @@ tOplkError processEvents(tOplkApiEventType eventType_p,
         case kOplkApiEventPdoChange:
             ret = processPdoChangeEvent(&pEventArg_p->pdoChange, pUserArg_p);
             break;
+
+        // case kOplkApiEventUserObdAccess:
+        //     ret = processUserObdAccessEvent(&pEventArg_p->userObdAccess, pUserArg_p);
+        //     break;
 
         default:
             break;
@@ -294,4 +300,8 @@ static tOplkError processPdoChangeEvent(const tOplkApiEventPdoChange* pPdoChange
     return kErrorOk;
 }
 
-/// \}
+// static tOplkError processUserObdAccessEvent(const tOplkApiEventUserObdAccess* pUserObdAccess_p,
+//                                         void* pUserArg_p)
+// {
+//     return kErrorOk;
+// }

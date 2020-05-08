@@ -425,7 +425,63 @@ OBD_BEGIN()
     /*************************************************************************
      * Manufacturer Specific Profile Area (0x2000 - 0x5FFF)
      *************************************************************************/
+
     OBD_BEGIN_PART_MANUFACTURER()
+
+        OBD_BEGIN_INDEX_RAM(0x2001, 0x02, FALSE)
+            OBD_SUBINDEX_RAM_VAR(0x2001, 0x00, kObdTypeUInt8, kObdAccConst, tObdUnsigned8, NumberOfEntries, 0x01)
+            OBD_SUBINDEX_RAM_USERDEF(0x2001, 0x01, kObdTypeInt64, kObdAccVPR, tObdInteger64, CN1_M01_mm_x_pos1, 0x2A)
+        OBD_END_INDEX(0x2001)
+
+        OBD_BEGIN_INDEX_RAM(0x2002, 0x02, FALSE)
+            OBD_SUBINDEX_RAM_VAR(0x2002, 0x00, kObdTypeUInt8, kObdAccConst, tObdUnsigned8, NumberOfEntries, 0x01)
+            OBD_SUBINDEX_RAM_USERDEF(0x2002, 0x01, kObdTypeInt64, kObdAccVPR, tObdInteger64, CN1_M02_mm_y_pos2, 0x2A)
+        OBD_END_INDEX(0x2002)
+
+        OBD_BEGIN_INDEX_RAM(0x2003, 0x02, FALSE)
+            OBD_SUBINDEX_RAM_VAR(0x2003, 0x00, kObdTypeUInt8, kObdAccConst, tObdUnsigned8, NumberOfEntries, 0x01)
+            OBD_SUBINDEX_RAM_USERDEF(0x2003, 0x01, kObdTypeInt64, kObdAccVPR, tObdInteger64, CN1_M03_mm_z_pos3, 0x2A)
+        OBD_END_INDEX(0x2003)
+
+        OBD_BEGIN_INDEX_RAM(0x2004, 0x02, FALSE)
+            OBD_SUBINDEX_RAM_VAR(0x2004, 0x00, kObdTypeUInt8, kObdAccConst, tObdUnsigned8, NumberOfEntries, 0x01)
+            OBD_SUBINDEX_RAM_USERDEF(0x2004, 0x01, kObdTypeInt64, kObdAccVPR, tObdInteger64, CN1_M04_mm_x_orient4, 0x2A)
+        OBD_END_INDEX(0x2004)
+
+        OBD_BEGIN_INDEX_RAM(0x2005, 0x02, FALSE)
+            OBD_SUBINDEX_RAM_VAR(0x2005, 0x00, kObdTypeUInt8, kObdAccConst, tObdUnsigned8, NumberOfEntries, 0x01)
+            OBD_SUBINDEX_RAM_USERDEF(0x2005, 0x01, kObdTypeInt64, kObdAccVPR, tObdInteger64, CN1_M05_mm_y_orient5, 0x2A)
+        OBD_END_INDEX(0x2005)
+
+        OBD_BEGIN_INDEX_RAM(0x2006, 0x02, FALSE)
+            OBD_SUBINDEX_RAM_VAR(0x2006, 0x00, kObdTypeUInt8, kObdAccConst, tObdUnsigned8, NumberOfEntries, 0x01)
+            OBD_SUBINDEX_RAM_USERDEF(0x2006, 0x01, kObdTypeInt64, kObdAccVPR, tObdInteger64, CN1_M06_mm_z_orient6, 0x2A)
+        OBD_END_INDEX(0x2006)
+
+        OBD_BEGIN_INDEX_RAM(0x2007, 0x02, FALSE)
+            OBD_SUBINDEX_RAM_VAR(0x2007, 0x00, kObdTypeUInt8, kObdAccConst, tObdUnsigned8, NumberOfEntries, 0x01)
+            OBD_SUBINDEX_RAM_USERDEF(0x2007, 0x01, kObdTypeInt64, kObdAccVPR, tObdInteger64, CN1_M07_mm_w_orient7, 0x2A)
+        OBD_END_INDEX(0x2007)
+
+        OBD_BEGIN_INDEX_RAM(0x2008, 0x02, FALSE)
+            OBD_SUBINDEX_RAM_VAR(0x2008, 0x00, kObdTypeUInt8, kObdAccConst, tObdUnsigned8, NumberOfEntries, 0x01)
+            OBD_SUBINDEX_RAM_USERDEF(0x2008, 0x01, kObdTypeInt64, kObdAccVPR, tObdInteger64, CN1_M08_odom_lwheel8, 0x2A)
+        OBD_END_INDEX(0x2008)
+
+        OBD_BEGIN_INDEX_RAM(0x2009, 0x02, FALSE)
+            OBD_SUBINDEX_RAM_VAR(0x2009, 0x00, kObdTypeUInt8, kObdAccConst, tObdUnsigned8, NumberOfEntries, 0x01)
+            OBD_SUBINDEX_RAM_USERDEF(0x2009, 0x01, kObdTypeInt64, kObdAccVPR, tObdInteger64, CN1_M09_odom_rwheel9, 0x2A)
+        OBD_END_INDEX(0x2009)
+
+        OBD_BEGIN_INDEX_RAM(0x200A, 0x02, FALSE)
+            OBD_SUBINDEX_RAM_VAR(0x200A, 0x00, kObdTypeUInt8, kObdAccConst, tObdUnsigned8, NumberOfEntries, 0x01)
+            OBD_SUBINDEX_RAM_USERDEF(0x200A, 0x01, kObdTypeInt64, kObdAccVPR, tObdInteger64, CN1_M0A_cmdvel_lwheel1, 0x2A)
+        OBD_END_INDEX(0x200A)
+
+        OBD_BEGIN_INDEX_RAM(0x200B, 0x02, FALSE)
+            OBD_SUBINDEX_RAM_VAR(0x200B, 0x00, kObdTypeUInt8, kObdAccConst, tObdUnsigned8, NumberOfEntries, 0x01)
+            OBD_SUBINDEX_RAM_USERDEF(0x200B, 0x01, kObdTypeInt64, kObdAccVPR, tObdInteger64, CN1_M0B_cmdvel_rwheel2, 0x2A)
+        OBD_END_INDEX(0x200B)
 
     OBD_END_PART()
 

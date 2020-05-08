@@ -14,13 +14,13 @@ typedef struct
 	int64_t CN1_M07_mm_w_orient7;
 	int64_t CN1_M08_odom_lwheel8;
 	int64_t CN1_M09_odom_rwheel9;
-} PI_IN;
+} PI_OUT;
 
 # define COMPUTED_PI_IN_SIZE 16
 typedef struct
 {
 	int64_t CN1_M0A_cmdvel_lwheel1;
 	int64_t CN1_M0B_cmdvel_rwheel2;
-} PI_OUT;
+} PI_IN;
 
 #endif

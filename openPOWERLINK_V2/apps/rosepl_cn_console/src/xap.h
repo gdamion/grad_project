@@ -2,7 +2,7 @@
 #ifndef XAP_h
 #define XAP_h
 
-# define COMPUTED_PI_OUT_SIZE 72
+# define COMPUTED_PI_IN_SIZE 72
 typedef struct
 {
 	int64_t CN1_M01_mm_x_pos1;
@@ -16,7 +16,7 @@ typedef struct
 	int64_t CN1_M09_odom_rwheel9;
 } PI_IN;
 
-# define COMPUTED_PI_IN_SIZE 16
+# define COMPUTED_PI_OUT_SIZE 16
 typedef struct
 {
 	int64_t CN1_M0A_cmdvel_lwheel1;
