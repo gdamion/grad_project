@@ -266,12 +266,12 @@ tOplkError processSync(void)
 	test_pi_in = (PI_IN*)pProcessImageIn_l;
 	test_pi_out = (PI_OUT*)shmImageOut;
 
-	// printf("pProcessImageIn_l AFTER:\n	cmdvel_lwheel=%ld | cmdvel_rwheel=%ld\n",\
-	// test_pi_in->CN1_M0A_cmdvel_lwheel1, test_pi_in->CN1_M0B_cmdvel_rwheel2);
-	// printf("shmImageOut AFTER:\n	x_pos=%ld | y_pos=%ld | z_pos=%ld \n	x_orient=%ld | y_orient=%ld | z_orient=%ld | w_orient=%ld\n	odom_lwheel=%ld | odom_rwheel=%ld\n",\
-	// test_pi_out->CN1_M01_mm_x_pos1, test_pi_out->CN1_M02_mm_y_pos2, test_pi_out->CN1_M03_mm_z_pos3, \
-	// test_pi_out->CN1_M04_mm_x_orient4, test_pi_out->CN1_M05_mm_y_orient5, test_pi_out->CN1_M06_mm_z_orient6, test_pi_out->CN1_M07_mm_w_orient7, \
-	// test_pi_out->CN1_M08_odom_lwheel8, test_pi_out->CN1_M09_odom_rwheel9);
+	printf("pProcessImageIn_l AFTER:\n	cmdvel_lwheel=%ld | cmdvel_rwheel=%ld\n",\
+	test_pi_in->CN1_M0A_cmdvel_lwheel1, test_pi_in->CN1_M0B_cmdvel_rwheel2);
+	printf("shmImageOut AFTER:\n	x_pos=%ld | y_pos=%ld | z_pos=%ld \n	x_orient=%ld | y_orient=%ld | z_orient=%ld | w_orient=%ld\n	odom_lwheel=%ld | odom_rwheel=%ld\n",\
+	test_pi_out->CN1_M01_mm_x_pos1, test_pi_out->CN1_M02_mm_y_pos2, test_pi_out->CN1_M03_mm_z_pos3, \
+	test_pi_out->CN1_M04_mm_x_orient4, test_pi_out->CN1_M05_mm_y_orient5, test_pi_out->CN1_M06_mm_z_orient6, test_pi_out->CN1_M07_mm_w_orient7, \
+	test_pi_out->CN1_M08_odom_lwheel8, test_pi_out->CN1_M09_odom_rwheel9);
 
 	if(kill(wrapper_pid, SIGUSR1))
 	{
