@@ -243,7 +243,7 @@
             <SubObject subIndex="03" name="Threshold_U32" objectType="7" dataType="0007" accessType="rw" PDOmapping="no" defaultValue="15"/>
           </Object>
           <Object index="1C14" name="DLL_CNLossOfSocTolerance_U32" objectType="7" dataType="0007" accessType="rw" defaultValue="100000"/>
-          <Object index="1F82" name="NMT_FeatureFlags_U32" objectType="7" dataType="0007" accessType="const" PDOmapping="no" defaultValue="0x40F47"/>
+          <Object index="1F82" name="NMT_FeatureFlags_U32" objectType="7" dataType="0007" accessType="const" PDOmapping="no" defaultValue="0x00000005"/>
           <Object index="1F83" name="NMT_EPLVersion_U8" objectType="7" dataType="0005" accessType="const" PDOmapping="no" defaultValue="0x20"/>
           <Object index="1F8C" name="NMT_CurrNMTState_U8" objectType="7" dataType="0005" accessType="ro"/>
           <Object index="1F93" name="NMT_EPLNodeID_REC" objectType="9">
@@ -283,15 +283,15 @@
       <TransportLayers/>
       <NetworkManagement>
         <GeneralFeatures
-          DLLFeatureMN="true"
+          DLLFeatureMN="false"
           NMTBootTimeNotActive="3000000"
+          NMTCycleTimeMin="0"
           NMTCycleTimeMax="4294967295"
-          NMTCycleTimeMin="400"
           NMTErrorEntries="2"
-          NWLIPSupport="true"
+          NWLIPSupport="false"
           SDOServer="true"
-          SDOMaxConnections="100"
-          SDOMaxParallelConnections="100"
+          SDOMaxConnections="1"
+          SDOMaxParallelConnections="1"
           SDOCmdWriteAllByIndex="false"
           SDOCmdReadAllByIndex="false"
           SDOCmdWriteByName="false"
@@ -299,15 +299,14 @@
           SDOCmdWriteMultParam="false"
           NMTFlushArpEntry="false"
           NMTNetHostNameSet="false"
-          PDORPDOChannels="256"
-          PDORPDOChannelObjects="64"
-          PDOTPDOChannelObjects="64"
+          PDORPDOChannels="1"
+          PDORPDOChannelObjects="9"
           PDOSelfReceipt="false"
-          CFMConfigManager="true"
+          PDOTPDOChannelObjects="2"
         />
         <CNFeatures
-         DLLCNFeatureMultiplex="true"
-          DLLCNPResChaining="true"
+          DLLCNFeatureMultiplex="false"
+          DLLCNPResChaining="false"
           NMTCNSoC2PReq="0"
         />
         <Diagnostic/>

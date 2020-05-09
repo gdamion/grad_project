@@ -334,77 +334,77 @@ static tOplkError initProcessImage(void)
 	fprintf(stderr, "\nLinking process vars... START\n");
 
 	varEntries = 1;
-	ret = oplk_linkProcessImageObject(0x2001, 0x01, offsetof(PI_IN, CN1_M01_mm_x_pos1),
+	ret = oplk_linkProcessImageObject(0x1600, 0x01, offsetof(PI_IN, CN1_M01_mm_x_pos1),
 									  FALSE, sizeof(pProcessImageIn_l->CN1_M01_mm_x_pos1), &varEntries);
 	if (ret != kErrorOk)
 		goto error_label;
 	printf("Linking process vars... 1\n");
 
 	varEntries = 1;
-	ret = oplk_linkProcessImageObject(0x2002, 0x01, offsetof(PI_IN, CN1_M02_mm_y_pos2),
+	ret = oplk_linkProcessImageObject(0x1600, 0x02, offsetof(PI_IN, CN1_M02_mm_y_pos2),
 									  FALSE, sizeof(pProcessImageIn_l->CN1_M02_mm_y_pos2), &varEntries);
 	if (ret != kErrorOk)
 		goto error_label;
 	printf("Linking process vars... 2\n");
 
 	varEntries = 1;
-	ret = oplk_linkProcessImageObject(0x2003, 0x01, offsetof(PI_IN, CN1_M03_mm_z_pos3),
+	ret = oplk_linkProcessImageObject(0x1600, 0x03, offsetof(PI_IN, CN1_M03_mm_z_pos3),
 									  FALSE, sizeof(pProcessImageIn_l->CN1_M03_mm_z_pos3), &varEntries);
 	if (ret != kErrorOk)
 		goto error_label;
 	printf("Linking process vars... 3\n");
 
 	varEntries = 1;
-	ret = oplk_linkProcessImageObject(0x2004, 0x01, offsetof(PI_IN, CN1_M04_mm_x_orient4),
+	ret = oplk_linkProcessImageObject(0x1600, 0x04, offsetof(PI_IN, CN1_M04_mm_x_orient4),
 									  FALSE, sizeof(pProcessImageIn_l->CN1_M04_mm_x_orient4), &varEntries);
 	if (ret != kErrorOk)
 		goto error_label;
 	printf("Linking process vars... 4\n");
 
 	varEntries = 1;
-	ret = oplk_linkProcessImageObject(0x2005, 0x01, offsetof(PI_IN, CN1_M05_mm_y_orient5),
+	ret = oplk_linkProcessImageObject(0x1600, 0x05, offsetof(PI_IN, CN1_M05_mm_y_orient5),
 									  FALSE, sizeof(pProcessImageIn_l->CN1_M05_mm_y_orient5), &varEntries);
 	if (ret != kErrorOk)
 		goto error_label;
 	printf("Linking process vars... 5\n");
 
 	varEntries = 1;
-	ret = oplk_linkProcessImageObject(0x2006, 0x01, offsetof(PI_IN, CN1_M06_mm_z_orient6),
+	ret = oplk_linkProcessImageObject(0x1600, 0x06, offsetof(PI_IN, CN1_M06_mm_z_orient6),
 									  FALSE, sizeof(pProcessImageIn_l->CN1_M06_mm_z_orient6), &varEntries);
 	if (ret != kErrorOk)
 		goto error_label;
 	printf("Linking process vars... 6\n");
 
 	varEntries = 1;
-	ret = oplk_linkProcessImageObject(0x2007, 0x01, offsetof(PI_IN, CN1_M07_mm_w_orient7),
+	ret = oplk_linkProcessImageObject(0x1600, 0x07, offsetof(PI_IN, CN1_M07_mm_w_orient7),
 									  FALSE, sizeof(pProcessImageIn_l->CN1_M07_mm_w_orient7), &varEntries);
 	if (ret != kErrorOk)
 		goto error_label;
 	printf("Linking process vars... 7\n");
 
 	varEntries = 1;
-	ret = oplk_linkProcessImageObject(0x2008, 0x01, offsetof(PI_IN, CN1_M08_odom_lwheel8),
+	ret = oplk_linkProcessImageObject(0x1600, 0x08, offsetof(PI_IN, CN1_M08_odom_lwheel8),
 									  FALSE, sizeof(pProcessImageIn_l->CN1_M08_odom_lwheel8), &varEntries);
 	if (ret != kErrorOk)
 		goto error_label;
 	printf("Linking process vars... 8\n");
 
 	varEntries = 1;
-	ret = oplk_linkProcessImageObject(0x2009, 0x01, offsetof(PI_IN, CN1_M09_odom_rwheel9),
+	ret = oplk_linkProcessImageObject(0x1600, 0x09, offsetof(PI_IN, CN1_M09_odom_rwheel9),
 									  FALSE, sizeof(pProcessImageIn_l->CN1_M09_odom_rwheel9), &varEntries);
 	if (ret != kErrorOk)
 		goto error_label;
 	printf("Linking process vars... 9\n");
 
 	varEntries = 1;
-	ret = oplk_linkProcessImageObject(0x200A, 0x01, offsetof(PI_OUT, CN1_M0A_cmdvel_lwheel1),
+	ret = oplk_linkProcessImageObject(0x1a00, 0x01, offsetof(PI_OUT, CN1_M0A_cmdvel_lwheel1),
 									  TRUE, sizeof(pProcessImageOut_l->CN1_M0A_cmdvel_lwheel1), &varEntries);
 	if (ret != kErrorOk)
 		goto error_label;
 	printf("Linking process vars... 10\n");
 
 	varEntries = 1;
-	ret = oplk_linkProcessImageObject(0x200B, 0x01, offsetof(PI_OUT, CN1_M0B_cmdvel_rwheel2),
+	ret = oplk_linkProcessImageObject(0x1a00, 0x02, offsetof(PI_OUT, CN1_M0B_cmdvel_rwheel2),
 									  TRUE, sizeof(pProcessImageOut_l->CN1_M0B_cmdvel_rwheel2), &varEntries);
 
 	error_label:
