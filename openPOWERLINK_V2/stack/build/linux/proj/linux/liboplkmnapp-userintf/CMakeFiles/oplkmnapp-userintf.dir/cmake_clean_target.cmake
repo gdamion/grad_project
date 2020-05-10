@@ -1,3 +1,3 @@
 file(REMOVE_RECURSE
-  "liboplkmnapp-userintf.a"
+  "liboplkmnapp-userintf_d.a"
 )

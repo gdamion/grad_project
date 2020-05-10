@@ -1,3 +1,3 @@
 file(REMOVE_RECURSE
-  "liboplkcn-sim.a"
+  "liboplkcn-sim_d.a"
 )

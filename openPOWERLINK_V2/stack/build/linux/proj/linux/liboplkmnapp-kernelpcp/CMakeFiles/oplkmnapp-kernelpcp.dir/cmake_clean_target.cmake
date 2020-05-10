@@ -1,3 +1,3 @@
 file(REMOVE_RECURSE
-  "liboplkmnapp-kernelpcp.a"
+  "liboplkmnapp-kernelpcp_d.a"
 )

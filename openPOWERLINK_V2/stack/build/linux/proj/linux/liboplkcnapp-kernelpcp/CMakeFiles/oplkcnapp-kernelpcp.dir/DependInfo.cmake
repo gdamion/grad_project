@@ -59,6 +59,8 @@ set(CMAKE_C_COMPILER_ID "GNU")
 # Preprocessor definitions for this target.
 set(CMAKE_TARGET_DEFINITIONS_C
   "CONFIG_CN"
+  "DEBUG"
+  "DEF_DEBUG_LVL=0xC0000000L"
   "_GNU_SOURCE"
   "_POSIX_C_SOURCE=200112L"
   "__LINUX_ZYNQ__"

@@ -372,8 +372,8 @@ static void loopMain(void)
     printf("Start POWERLINK stack... ok\n");
     printf("Digital I/O interface with openPOWERLINK is ready!\n");
     printf("\n-------------------------------\n");
-    printf("Press Esc to leave the program\n");
-    printf("Press r to reset the node\n");
+    // printf("Press Esc to leave the program\n");
+    // printf("Press r to reset the node\n");
     // printf("Press i to increase the digital input\n");
     // printf("Press d to decrease the digital input\n");
     // printf("Press p to print the digital outputs\n");

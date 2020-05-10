@@ -1313,64 +1313,64 @@ oplkmnapp__kernelintf_OBJECTS = \
 # External object files for target oplkmnapp-kernelintf
 oplkmnapp__kernelintf_EXTERNAL_OBJECTS =
 
-proj/linux/liboplkmnapp-kernelintf/liboplkmnapp-kernelintf.a: proj/linux/liboplkmnapp-kernelintf/CMakeFiles/oplkmnapp-kernelintf.dir/__/__/__/src/user/api/generic.c.o
-proj/linux/liboplkmnapp-kernelintf/liboplkmnapp-kernelintf.a: proj/linux/liboplkmnapp-kernelintf/CMakeFiles/oplkmnapp-kernelintf.dir/__/__/__/src/user/api/processimage.c.o
-proj/linux/liboplkmnapp-kernelintf/liboplkmnapp-kernelintf.a: proj/linux/liboplkmnapp-kernelintf/CMakeFiles/oplkmnapp-kernelintf.dir/__/__/__/src/user/api/sdotest.c.o
-proj/linux/liboplkmnapp-kernelintf/liboplkmnapp-kernelintf.a: proj/linux/liboplkmnapp-kernelintf/CMakeFiles/oplkmnapp-kernelintf.dir/__/__/__/src/user/api/service.c.o
-proj/linux/liboplkmnapp-kernelintf/liboplkmnapp-kernelintf.a: proj/linux/liboplkmnapp-kernelintf/CMakeFiles/oplkmnapp-kernelintf.dir/__/__/__/src/user/obd/obdu.c.o
-proj/linux/liboplkmnapp-kernelintf/liboplkmnapp-kernelintf.a: proj/linux/liboplkmnapp-kernelintf/CMakeFiles/oplkmnapp-kernelintf.dir/__/__/__/src/user/obd/obdal.c.o
-proj/linux/liboplkmnapp-kernelintf/liboplkmnapp-kernelintf.a: proj/linux/liboplkmnapp-kernelintf/CMakeFiles/oplkmnapp-kernelintf.dir/__/__/__/src/user/dll/dllucal.c.o
-proj/linux/liboplkmnapp-kernelintf/liboplkmnapp-kernelintf.a: proj/linux/liboplkmnapp-kernelintf/CMakeFiles/oplkmnapp-kernelintf.dir/__/__/__/src/user/event/eventu.c.o
-proj/linux/liboplkmnapp-kernelintf/liboplkmnapp-kernelintf.a: proj/linux/liboplkmnapp-kernelintf/CMakeFiles/oplkmnapp-kernelintf.dir/__/__/__/src/user/nmt/nmtu.c.o
-proj/linux/liboplkmnapp-kernelintf/liboplkmnapp-kernelintf.a: proj/linux/liboplkmnapp-kernelintf/CMakeFiles/oplkmnapp-kernelintf.dir/__/__/__/src/user/nmt/nmtcnu.c.o
-proj/linux/liboplkmnapp-kernelintf/liboplkmnapp-kernelintf.a: proj/linux/liboplkmnapp-kernelintf/CMakeFiles/oplkmnapp-kernelintf.dir/__/__/__/src/user/nmt/nmtmnu.c.o
-proj/linux/liboplkmnapp-kernelintf/liboplkmnapp-kernelintf.a: proj/linux/liboplkmnapp-kernelintf/CMakeFiles/oplkmnapp-kernelintf.dir/__/__/__/src/user/nmt/identu.c.o
-proj/linux/liboplkmnapp-kernelintf/liboplkmnapp-kernelintf.a: proj/linux/liboplkmnapp-kernelintf/CMakeFiles/oplkmnapp-kernelintf.dir/__/__/__/src/user/nmt/statusu.c.o
-proj/linux/liboplkmnapp-kernelintf/liboplkmnapp-kernelintf.a: proj/linux/liboplkmnapp-kernelintf/CMakeFiles/oplkmnapp-kernelintf.dir/__/__/__/src/user/nmt/syncu.c.o
-proj/linux/liboplkmnapp-kernelintf/liboplkmnapp-kernelintf.a: proj/linux/liboplkmnapp-kernelintf/CMakeFiles/oplkmnapp-kernelintf.dir/__/__/__/src/user/pdo/pdou.c.o
-proj/linux/liboplkmnapp-kernelintf/liboplkmnapp-kernelintf.a: proj/linux/liboplkmnapp-kernelintf/CMakeFiles/oplkmnapp-kernelintf.dir/__/__/__/src/user/pdo/pdoucal.c.o
-proj/linux/liboplkmnapp-kernelintf/liboplkmnapp-kernelintf.a: proj/linux/liboplkmnapp-kernelintf/CMakeFiles/oplkmnapp-kernelintf.dir/__/__/__/src/user/pdo/pdoucal-triplebufshm.c.o
-proj/linux/liboplkmnapp-kernelintf/liboplkmnapp-kernelintf.a: proj/linux/liboplkmnapp-kernelintf/CMakeFiles/oplkmnapp-kernelintf.dir/__/__/__/src/user/sdo/sdotest-com.c.o
-proj/linux/liboplkmnapp-kernelintf/liboplkmnapp-kernelintf.a: proj/linux/liboplkmnapp-kernelintf/CMakeFiles/oplkmnapp-kernelintf.dir/__/__/__/src/user/sdo/sdotest-seq.c.o
-proj/linux/liboplkmnapp-kernelintf/liboplkmnapp-kernelintf.a: proj/linux/liboplkmnapp-kernelintf/CMakeFiles/oplkmnapp-kernelintf.dir/__/__/__/src/user/sdo/sdocom-dummy.c.o
-proj/linux/liboplkmnapp-kernelintf/liboplkmnapp-kernelintf.a: proj/linux/liboplkmnapp-kernelintf/CMakeFiles/oplkmnapp-kernelintf.dir/__/__/__/src/user/sdo/sdocom.c.o
-proj/linux/liboplkmnapp-kernelintf/liboplkmnapp-kernelintf.a: proj/linux/liboplkmnapp-kernelintf/CMakeFiles/oplkmnapp-kernelintf.dir/__/__/__/src/user/sdo/sdocom-std.c.o
-proj/linux/liboplkmnapp-kernelintf/liboplkmnapp-kernelintf.a: proj/linux/liboplkmnapp-kernelintf/CMakeFiles/oplkmnapp-kernelintf.dir/__/__/__/src/user/sdo/sdocomsrv.c.o
-proj/linux/liboplkmnapp-kernelintf/liboplkmnapp-kernelintf.a: proj/linux/liboplkmnapp-kernelintf/CMakeFiles/oplkmnapp-kernelintf.dir/__/__/__/src/user/sdo/sdocomclt.c.o
-proj/linux/liboplkmnapp-kernelintf/liboplkmnapp-kernelintf.a: proj/linux/liboplkmnapp-kernelintf/CMakeFiles/oplkmnapp-kernelintf.dir/__/__/__/src/user/sdo/sdoseq.c.o
-proj/linux/liboplkmnapp-kernelintf/liboplkmnapp-kernelintf.a: proj/linux/liboplkmnapp-kernelintf/CMakeFiles/oplkmnapp-kernelintf.dir/__/__/__/src/user/sdo/sdoasnd.c.o
-proj/linux/liboplkmnapp-kernelintf/liboplkmnapp-kernelintf.a: proj/linux/liboplkmnapp-kernelintf/CMakeFiles/oplkmnapp-kernelintf.dir/__/__/__/src/user/sdo/sdoudp.c.o
-proj/linux/liboplkmnapp-kernelintf/liboplkmnapp-kernelintf.a: proj/linux/liboplkmnapp-kernelintf/CMakeFiles/oplkmnapp-kernelintf.dir/__/__/__/src/user/timesync/timesyncu.c.o
-proj/linux/liboplkmnapp-kernelintf/liboplkmnapp-kernelintf.a: proj/linux/liboplkmnapp-kernelintf/CMakeFiles/oplkmnapp-kernelintf.dir/__/__/__/src/user/errhnd/errhndu.c.o
-proj/linux/liboplkmnapp-kernelintf/liboplkmnapp-kernelintf.a: proj/linux/liboplkmnapp-kernelintf/CMakeFiles/oplkmnapp-kernelintf.dir/__/__/__/src/user/ctrl/ctrlu.c.o
-proj/linux/liboplkmnapp-kernelintf/liboplkmnapp-kernelintf.a: proj/linux/liboplkmnapp-kernelintf/CMakeFiles/oplkmnapp-kernelintf.dir/__/__/__/src/user/sdo/sdoudp-linux.c.o
-proj/linux/liboplkmnapp-kernelintf/liboplkmnapp-kernelintf.a: proj/linux/liboplkmnapp-kernelintf/CMakeFiles/oplkmnapp-kernelintf.dir/__/__/__/src/user/obd/obdcdc.c.o
-proj/linux/liboplkmnapp-kernelintf/liboplkmnapp-kernelintf.a: proj/linux/liboplkmnapp-kernelintf/CMakeFiles/oplkmnapp-kernelintf.dir/__/__/__/src/user/cfmu.c.o
-proj/linux/liboplkmnapp-kernelintf/liboplkmnapp-kernelintf.a: proj/linux/liboplkmnapp-kernelintf/CMakeFiles/oplkmnapp-kernelintf.dir/__/__/__/src/user/ctrl/ctrlucal-ioctl.c.o
-proj/linux/liboplkmnapp-kernelintf/liboplkmnapp-kernelintf.a: proj/linux/liboplkmnapp-kernelintf/CMakeFiles/oplkmnapp-kernelintf.dir/__/__/__/src/user/dll/dllucal-ioctl.c.o
-proj/linux/liboplkmnapp-kernelintf/liboplkmnapp-kernelintf.a: proj/linux/liboplkmnapp-kernelintf/CMakeFiles/oplkmnapp-kernelintf.dir/__/__/__/src/user/errhnd/errhnducal-ioctl.c.o
-proj/linux/liboplkmnapp-kernelintf/liboplkmnapp-kernelintf.a: proj/linux/liboplkmnapp-kernelintf/CMakeFiles/oplkmnapp-kernelintf.dir/__/__/__/src/user/event/eventucal-linuxioctl.c.o
-proj/linux/liboplkmnapp-kernelintf/liboplkmnapp-kernelintf.a: proj/linux/liboplkmnapp-kernelintf/CMakeFiles/oplkmnapp-kernelintf.dir/__/__/__/src/user/timesync/timesyncucal-ioctl.c.o
-proj/linux/liboplkmnapp-kernelintf/liboplkmnapp-kernelintf.a: proj/linux/liboplkmnapp-kernelintf/CMakeFiles/oplkmnapp-kernelintf.dir/__/__/__/src/user/pdo/pdoucalmem-linuxmmap.c.o
-proj/linux/liboplkmnapp-kernelintf/liboplkmnapp-kernelintf.a: proj/linux/liboplkmnapp-kernelintf/CMakeFiles/oplkmnapp-kernelintf.dir/__/__/__/src/user/timer/timer-linuxuser.c.o
-proj/linux/liboplkmnapp-kernelintf/liboplkmnapp-kernelintf.a: proj/linux/liboplkmnapp-kernelintf/CMakeFiles/oplkmnapp-kernelintf.dir/__/__/__/src/common/debugstr.c.o
-proj/linux/liboplkmnapp-kernelintf/liboplkmnapp-kernelintf.a: proj/linux/liboplkmnapp-kernelintf/CMakeFiles/oplkmnapp-kernelintf.dir/__/__/__/src/arch/linux/ftracedebug.c.o
-proj/linux/liboplkmnapp-kernelintf/liboplkmnapp-kernelintf.a: proj/linux/liboplkmnapp-kernelintf/CMakeFiles/oplkmnapp-kernelintf.dir/home/al/grad_project/openPOWERLINK_V2/contrib/trace/trace-printf.c.o
-proj/linux/liboplkmnapp-kernelintf/liboplkmnapp-kernelintf.a: proj/linux/liboplkmnapp-kernelintf/CMakeFiles/oplkmnapp-kernelintf.dir/__/__/__/src/arch/linux/target-linux.c.o
-proj/linux/liboplkmnapp-kernelintf/liboplkmnapp-kernelintf.a: proj/linux/liboplkmnapp-kernelintf/CMakeFiles/oplkmnapp-kernelintf.dir/__/__/__/src/arch/linux/target-mutex.c.o
-proj/linux/liboplkmnapp-kernelintf/liboplkmnapp-kernelintf.a: proj/linux/liboplkmnapp-kernelintf/CMakeFiles/oplkmnapp-kernelintf.dir/__/__/__/src/arch/linux/netif-linux.c.o
-proj/linux/liboplkmnapp-kernelintf/liboplkmnapp-kernelintf.a: proj/linux/liboplkmnapp-kernelintf/CMakeFiles/oplkmnapp-kernelintf.dir/__/__/__/src/common/circbuf/circbuffer.c.o
-proj/linux/liboplkmnapp-kernelintf/liboplkmnapp-kernelintf.a: proj/linux/liboplkmnapp-kernelintf/CMakeFiles/oplkmnapp-kernelintf.dir/__/__/__/src/common/circbuf/circbuf-posixshm.c.o
-proj/linux/liboplkmnapp-kernelintf/liboplkmnapp-kernelintf.a: proj/linux/liboplkmnapp-kernelintf/CMakeFiles/oplkmnapp-kernelintf.dir/__/__/__/src/common/memmap/memmap-null.c.o
-proj/linux/liboplkmnapp-kernelintf/liboplkmnapp-kernelintf.a: proj/linux/liboplkmnapp-kernelintf/CMakeFiles/oplkmnapp-kernelintf.dir/__/__/__/src/common/ami/amix86.c.o
-proj/linux/liboplkmnapp-kernelintf/liboplkmnapp-kernelintf.a: proj/linux/liboplkmnapp-kernelintf/CMakeFiles/oplkmnapp-kernelintf.dir/build.make
-proj/linux/liboplkmnapp-kernelintf/liboplkmnapp-kernelintf.a: proj/linux/liboplkmnapp-kernelintf/CMakeFiles/oplkmnapp-kernelintf.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/al/grad_project/openPOWERLINK_V2/stack/build/linux/CMakeFiles --progress-num=$(CMAKE_PROGRESS_51) "Linking C static library liboplkmnapp-kernelintf.a"
+proj/linux/liboplkmnapp-kernelintf/liboplkmnapp-kernelintf_d.a: proj/linux/liboplkmnapp-kernelintf/CMakeFiles/oplkmnapp-kernelintf.dir/__/__/__/src/user/api/generic.c.o
+proj/linux/liboplkmnapp-kernelintf/liboplkmnapp-kernelintf_d.a: proj/linux/liboplkmnapp-kernelintf/CMakeFiles/oplkmnapp-kernelintf.dir/__/__/__/src/user/api/processimage.c.o
+proj/linux/liboplkmnapp-kernelintf/liboplkmnapp-kernelintf_d.a: proj/linux/liboplkmnapp-kernelintf/CMakeFiles/oplkmnapp-kernelintf.dir/__/__/__/src/user/api/sdotest.c.o
+proj/linux/liboplkmnapp-kernelintf/liboplkmnapp-kernelintf_d.a: proj/linux/liboplkmnapp-kernelintf/CMakeFiles/oplkmnapp-kernelintf.dir/__/__/__/src/user/api/service.c.o
+proj/linux/liboplkmnapp-kernelintf/liboplkmnapp-kernelintf_d.a: proj/linux/liboplkmnapp-kernelintf/CMakeFiles/oplkmnapp-kernelintf.dir/__/__/__/src/user/obd/obdu.c.o
+proj/linux/liboplkmnapp-kernelintf/liboplkmnapp-kernelintf_d.a: proj/linux/liboplkmnapp-kernelintf/CMakeFiles/oplkmnapp-kernelintf.dir/__/__/__/src/user/obd/obdal.c.o
+proj/linux/liboplkmnapp-kernelintf/liboplkmnapp-kernelintf_d.a: proj/linux/liboplkmnapp-kernelintf/CMakeFiles/oplkmnapp-kernelintf.dir/__/__/__/src/user/dll/dllucal.c.o
+proj/linux/liboplkmnapp-kernelintf/liboplkmnapp-kernelintf_d.a: proj/linux/liboplkmnapp-kernelintf/CMakeFiles/oplkmnapp-kernelintf.dir/__/__/__/src/user/event/eventu.c.o
+proj/linux/liboplkmnapp-kernelintf/liboplkmnapp-kernelintf_d.a: proj/linux/liboplkmnapp-kernelintf/CMakeFiles/oplkmnapp-kernelintf.dir/__/__/__/src/user/nmt/nmtu.c.o
+proj/linux/liboplkmnapp-kernelintf/liboplkmnapp-kernelintf_d.a: proj/linux/liboplkmnapp-kernelintf/CMakeFiles/oplkmnapp-kernelintf.dir/__/__/__/src/user/nmt/nmtcnu.c.o
+proj/linux/liboplkmnapp-kernelintf/liboplkmnapp-kernelintf_d.a: proj/linux/liboplkmnapp-kernelintf/CMakeFiles/oplkmnapp-kernelintf.dir/__/__/__/src/user/nmt/nmtmnu.c.o
+proj/linux/liboplkmnapp-kernelintf/liboplkmnapp-kernelintf_d.a: proj/linux/liboplkmnapp-kernelintf/CMakeFiles/oplkmnapp-kernelintf.dir/__/__/__/src/user/nmt/identu.c.o
+proj/linux/liboplkmnapp-kernelintf/liboplkmnapp-kernelintf_d.a: proj/linux/liboplkmnapp-kernelintf/CMakeFiles/oplkmnapp-kernelintf.dir/__/__/__/src/user/nmt/statusu.c.o
+proj/linux/liboplkmnapp-kernelintf/liboplkmnapp-kernelintf_d.a: proj/linux/liboplkmnapp-kernelintf/CMakeFiles/oplkmnapp-kernelintf.dir/__/__/__/src/user/nmt/syncu.c.o
+proj/linux/liboplkmnapp-kernelintf/liboplkmnapp-kernelintf_d.a: proj/linux/liboplkmnapp-kernelintf/CMakeFiles/oplkmnapp-kernelintf.dir/__/__/__/src/user/pdo/pdou.c.o
+proj/linux/liboplkmnapp-kernelintf/liboplkmnapp-kernelintf_d.a: proj/linux/liboplkmnapp-kernelintf/CMakeFiles/oplkmnapp-kernelintf.dir/__/__/__/src/user/pdo/pdoucal.c.o
+proj/linux/liboplkmnapp-kernelintf/liboplkmnapp-kernelintf_d.a: proj/linux/liboplkmnapp-kernelintf/CMakeFiles/oplkmnapp-kernelintf.dir/__/__/__/src/user/pdo/pdoucal-triplebufshm.c.o
+proj/linux/liboplkmnapp-kernelintf/liboplkmnapp-kernelintf_d.a: proj/linux/liboplkmnapp-kernelintf/CMakeFiles/oplkmnapp-kernelintf.dir/__/__/__/src/user/sdo/sdotest-com.c.o
+proj/linux/liboplkmnapp-kernelintf/liboplkmnapp-kernelintf_d.a: proj/linux/liboplkmnapp-kernelintf/CMakeFiles/oplkmnapp-kernelintf.dir/__/__/__/src/user/sdo/sdotest-seq.c.o
+proj/linux/liboplkmnapp-kernelintf/liboplkmnapp-kernelintf_d.a: proj/linux/liboplkmnapp-kernelintf/CMakeFiles/oplkmnapp-kernelintf.dir/__/__/__/src/user/sdo/sdocom-dummy.c.o
+proj/linux/liboplkmnapp-kernelintf/liboplkmnapp-kernelintf_d.a: proj/linux/liboplkmnapp-kernelintf/CMakeFiles/oplkmnapp-kernelintf.dir/__/__/__/src/user/sdo/sdocom.c.o
+proj/linux/liboplkmnapp-kernelintf/liboplkmnapp-kernelintf_d.a: proj/linux/liboplkmnapp-kernelintf/CMakeFiles/oplkmnapp-kernelintf.dir/__/__/__/src/user/sdo/sdocom-std.c.o
+proj/linux/liboplkmnapp-kernelintf/liboplkmnapp-kernelintf_d.a: proj/linux/liboplkmnapp-kernelintf/CMakeFiles/oplkmnapp-kernelintf.dir/__/__/__/src/user/sdo/sdocomsrv.c.o
+proj/linux/liboplkmnapp-kernelintf/liboplkmnapp-kernelintf_d.a: proj/linux/liboplkmnapp-kernelintf/CMakeFiles/oplkmnapp-kernelintf.dir/__/__/__/src/user/sdo/sdocomclt.c.o
+proj/linux/liboplkmnapp-kernelintf/liboplkmnapp-kernelintf_d.a: proj/linux/liboplkmnapp-kernelintf/CMakeFiles/oplkmnapp-kernelintf.dir/__/__/__/src/user/sdo/sdoseq.c.o
+proj/linux/liboplkmnapp-kernelintf/liboplkmnapp-kernelintf_d.a: proj/linux/liboplkmnapp-kernelintf/CMakeFiles/oplkmnapp-kernelintf.dir/__/__/__/src/user/sdo/sdoasnd.c.o
+proj/linux/liboplkmnapp-kernelintf/liboplkmnapp-kernelintf_d.a: proj/linux/liboplkmnapp-kernelintf/CMakeFiles/oplkmnapp-kernelintf.dir/__/__/__/src/user/sdo/sdoudp.c.o
+proj/linux/liboplkmnapp-kernelintf/liboplkmnapp-kernelintf_d.a: proj/linux/liboplkmnapp-kernelintf/CMakeFiles/oplkmnapp-kernelintf.dir/__/__/__/src/user/timesync/timesyncu.c.o
+proj/linux/liboplkmnapp-kernelintf/liboplkmnapp-kernelintf_d.a: proj/linux/liboplkmnapp-kernelintf/CMakeFiles/oplkmnapp-kernelintf.dir/__/__/__/src/user/errhnd/errhndu.c.o
+proj/linux/liboplkmnapp-kernelintf/liboplkmnapp-kernelintf_d.a: proj/linux/liboplkmnapp-kernelintf/CMakeFiles/oplkmnapp-kernelintf.dir/__/__/__/src/user/ctrl/ctrlu.c.o
+proj/linux/liboplkmnapp-kernelintf/liboplkmnapp-kernelintf_d.a: proj/linux/liboplkmnapp-kernelintf/CMakeFiles/oplkmnapp-kernelintf.dir/__/__/__/src/user/sdo/sdoudp-linux.c.o
+proj/linux/liboplkmnapp-kernelintf/liboplkmnapp-kernelintf_d.a: proj/linux/liboplkmnapp-kernelintf/CMakeFiles/oplkmnapp-kernelintf.dir/__/__/__/src/user/obd/obdcdc.c.o
+proj/linux/liboplkmnapp-kernelintf/liboplkmnapp-kernelintf_d.a: proj/linux/liboplkmnapp-kernelintf/CMakeFiles/oplkmnapp-kernelintf.dir/__/__/__/src/user/cfmu.c.o
+proj/linux/liboplkmnapp-kernelintf/liboplkmnapp-kernelintf_d.a: proj/linux/liboplkmnapp-kernelintf/CMakeFiles/oplkmnapp-kernelintf.dir/__/__/__/src/user/ctrl/ctrlucal-ioctl.c.o
+proj/linux/liboplkmnapp-kernelintf/liboplkmnapp-kernelintf_d.a: proj/linux/liboplkmnapp-kernelintf/CMakeFiles/oplkmnapp-kernelintf.dir/__/__/__/src/user/dll/dllucal-ioctl.c.o
+proj/linux/liboplkmnapp-kernelintf/liboplkmnapp-kernelintf_d.a: proj/linux/liboplkmnapp-kernelintf/CMakeFiles/oplkmnapp-kernelintf.dir/__/__/__/src/user/errhnd/errhnducal-ioctl.c.o
+proj/linux/liboplkmnapp-kernelintf/liboplkmnapp-kernelintf_d.a: proj/linux/liboplkmnapp-kernelintf/CMakeFiles/oplkmnapp-kernelintf.dir/__/__/__/src/user/event/eventucal-linuxioctl.c.o
+proj/linux/liboplkmnapp-kernelintf/liboplkmnapp-kernelintf_d.a: proj/linux/liboplkmnapp-kernelintf/CMakeFiles/oplkmnapp-kernelintf.dir/__/__/__/src/user/timesync/timesyncucal-ioctl.c.o
+proj/linux/liboplkmnapp-kernelintf/liboplkmnapp-kernelintf_d.a: proj/linux/liboplkmnapp-kernelintf/CMakeFiles/oplkmnapp-kernelintf.dir/__/__/__/src/user/pdo/pdoucalmem-linuxmmap.c.o
+proj/linux/liboplkmnapp-kernelintf/liboplkmnapp-kernelintf_d.a: proj/linux/liboplkmnapp-kernelintf/CMakeFiles/oplkmnapp-kernelintf.dir/__/__/__/src/user/timer/timer-linuxuser.c.o
+proj/linux/liboplkmnapp-kernelintf/liboplkmnapp-kernelintf_d.a: proj/linux/liboplkmnapp-kernelintf/CMakeFiles/oplkmnapp-kernelintf.dir/__/__/__/src/common/debugstr.c.o
+proj/linux/liboplkmnapp-kernelintf/liboplkmnapp-kernelintf_d.a: proj/linux/liboplkmnapp-kernelintf/CMakeFiles/oplkmnapp-kernelintf.dir/__/__/__/src/arch/linux/ftracedebug.c.o
+proj/linux/liboplkmnapp-kernelintf/liboplkmnapp-kernelintf_d.a: proj/linux/liboplkmnapp-kernelintf/CMakeFiles/oplkmnapp-kernelintf.dir/home/al/grad_project/openPOWERLINK_V2/contrib/trace/trace-printf.c.o
+proj/linux/liboplkmnapp-kernelintf/liboplkmnapp-kernelintf_d.a: proj/linux/liboplkmnapp-kernelintf/CMakeFiles/oplkmnapp-kernelintf.dir/__/__/__/src/arch/linux/target-linux.c.o
+proj/linux/liboplkmnapp-kernelintf/liboplkmnapp-kernelintf_d.a: proj/linux/liboplkmnapp-kernelintf/CMakeFiles/oplkmnapp-kernelintf.dir/__/__/__/src/arch/linux/target-mutex.c.o
+proj/linux/liboplkmnapp-kernelintf/liboplkmnapp-kernelintf_d.a: proj/linux/liboplkmnapp-kernelintf/CMakeFiles/oplkmnapp-kernelintf.dir/__/__/__/src/arch/linux/netif-linux.c.o
+proj/linux/liboplkmnapp-kernelintf/liboplkmnapp-kernelintf_d.a: proj/linux/liboplkmnapp-kernelintf/CMakeFiles/oplkmnapp-kernelintf.dir/__/__/__/src/common/circbuf/circbuffer.c.o
+proj/linux/liboplkmnapp-kernelintf/liboplkmnapp-kernelintf_d.a: proj/linux/liboplkmnapp-kernelintf/CMakeFiles/oplkmnapp-kernelintf.dir/__/__/__/src/common/circbuf/circbuf-posixshm.c.o
+proj/linux/liboplkmnapp-kernelintf/liboplkmnapp-kernelintf_d.a: proj/linux/liboplkmnapp-kernelintf/CMakeFiles/oplkmnapp-kernelintf.dir/__/__/__/src/common/memmap/memmap-null.c.o
+proj/linux/liboplkmnapp-kernelintf/liboplkmnapp-kernelintf_d.a: proj/linux/liboplkmnapp-kernelintf/CMakeFiles/oplkmnapp-kernelintf.dir/__/__/__/src/common/ami/amix86.c.o
+proj/linux/liboplkmnapp-kernelintf/liboplkmnapp-kernelintf_d.a: proj/linux/liboplkmnapp-kernelintf/CMakeFiles/oplkmnapp-kernelintf.dir/build.make
+proj/linux/liboplkmnapp-kernelintf/liboplkmnapp-kernelintf_d.a: proj/linux/liboplkmnapp-kernelintf/CMakeFiles/oplkmnapp-kernelintf.dir/link.txt
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/al/grad_project/openPOWERLINK_V2/stack/build/linux/CMakeFiles --progress-num=$(CMAKE_PROGRESS_51) "Linking C static library liboplkmnapp-kernelintf_d.a"
 	cd /home/al/grad_project/openPOWERLINK_V2/stack/build/linux/proj/linux/liboplkmnapp-kernelintf && $(CMAKE_COMMAND) -P CMakeFiles/oplkmnapp-kernelintf.dir/cmake_clean_target.cmake
 	cd /home/al/grad_project/openPOWERLINK_V2/stack/build/linux/proj/linux/liboplkmnapp-kernelintf && $(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/oplkmnapp-kernelintf.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
-proj/linux/liboplkmnapp-kernelintf/CMakeFiles/oplkmnapp-kernelintf.dir/build: proj/linux/liboplkmnapp-kernelintf/liboplkmnapp-kernelintf.a
+proj/linux/liboplkmnapp-kernelintf/CMakeFiles/oplkmnapp-kernelintf.dir/build: proj/linux/liboplkmnapp-kernelintf/liboplkmnapp-kernelintf_d.a
 
 .PHONY : proj/linux/liboplkmnapp-kernelintf/CMakeFiles/oplkmnapp-kernelintf.dir/build
 

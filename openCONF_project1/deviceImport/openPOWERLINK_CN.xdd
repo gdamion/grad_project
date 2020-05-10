@@ -1140,6 +1140,19 @@
           </Object>
           <Object index="1F99" name="NMT_CNBasicEthernetTimeout_U32" objectType="7" dataType="0007" accessType="rw" PDOmapping="no" defaultValue="5000000"/>
           <Object index="1F9E" name="NMT_ResetCmd_U8" objectType="7" dataType="0005" accessType="rw" PDOmapping="no" defaultValue="255"/>
+
+          <!-- Manufacturer Specific Profile Area (0x2000 - 0x5FFF) -->
+          <Object index="2001" name="mm_x_pos1" objectType="7" dataType="0015" accessType="rw" PDOmapping="optional" />
+          <Object index="2002" name="mm_y_pos2" objectType="7" dataType="0015" accessType="rw" PDOmapping="optional" />
+          <Object index="2003" name="mm_z_pos3" objectType="7" dataType="0015" accessType="rw" PDOmapping="optional" />
+          <Object index="2004" name="mm_x_orient4" objectType="7" dataType="0015" accessType="rw" PDOmapping="optional" />
+          <Object index="2005" name="mm_y_orient5" objectType="7" dataType="0015" accessType="rw" PDOmapping="optional" />
+          <Object index="2006" name="mm_z_orient6" objectType="7" dataType="0015" accessType="rw" PDOmapping="optional" />
+          <Object index="2007" name="mm_w_orient7" objectType="7" dataType="0015" accessType="rw" PDOmapping="optional" />
+          <Object index="2008" name="odom_lwheel14" objectType="7" dataType="0015" accessType="rw" PDOmapping="optional" />
+          <Object index="2009" name="odom_rwheel15" objectType="7" dataType="0015" accessType="rw" PDOmapping="optional" />
+          <Object index="200A" name="cmdvel_lwheel1" objectType="7" dataType="0015" accessType="rw" PDOmapping="optional" />
+          <Object index="200B" name="cmdvel_rwheel2" objectType="7" dataType="0015" accessType="rw" PDOmapping="optional" />
         </ObjectList>
       </ApplicationLayers>
       <TransportLayers/>

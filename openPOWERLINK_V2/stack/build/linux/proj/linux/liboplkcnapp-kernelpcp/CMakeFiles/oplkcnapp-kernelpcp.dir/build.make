@@ -1288,63 +1288,63 @@ oplkcnapp__kernelpcp_OBJECTS = \
 # External object files for target oplkcnapp-kernelpcp
 oplkcnapp__kernelpcp_EXTERNAL_OBJECTS =
 
-proj/linux/liboplkcnapp-kernelpcp/liboplkcnapp-kernelpcp.a: proj/linux/liboplkcnapp-kernelpcp/CMakeFiles/oplkcnapp-kernelpcp.dir/__/__/__/src/user/api/generic.c.o
-proj/linux/liboplkcnapp-kernelpcp/liboplkcnapp-kernelpcp.a: proj/linux/liboplkcnapp-kernelpcp/CMakeFiles/oplkcnapp-kernelpcp.dir/__/__/__/src/user/api/processimage.c.o
-proj/linux/liboplkcnapp-kernelpcp/liboplkcnapp-kernelpcp.a: proj/linux/liboplkcnapp-kernelpcp/CMakeFiles/oplkcnapp-kernelpcp.dir/__/__/__/src/user/api/sdotest.c.o
-proj/linux/liboplkcnapp-kernelpcp/liboplkcnapp-kernelpcp.a: proj/linux/liboplkcnapp-kernelpcp/CMakeFiles/oplkcnapp-kernelpcp.dir/__/__/__/src/user/api/service.c.o
-proj/linux/liboplkcnapp-kernelpcp/liboplkcnapp-kernelpcp.a: proj/linux/liboplkcnapp-kernelpcp/CMakeFiles/oplkcnapp-kernelpcp.dir/__/__/__/src/user/obd/obdu.c.o
-proj/linux/liboplkcnapp-kernelpcp/liboplkcnapp-kernelpcp.a: proj/linux/liboplkcnapp-kernelpcp/CMakeFiles/oplkcnapp-kernelpcp.dir/__/__/__/src/user/obd/obdal.c.o
-proj/linux/liboplkcnapp-kernelpcp/liboplkcnapp-kernelpcp.a: proj/linux/liboplkcnapp-kernelpcp/CMakeFiles/oplkcnapp-kernelpcp.dir/__/__/__/src/user/dll/dllucal.c.o
-proj/linux/liboplkcnapp-kernelpcp/liboplkcnapp-kernelpcp.a: proj/linux/liboplkcnapp-kernelpcp/CMakeFiles/oplkcnapp-kernelpcp.dir/__/__/__/src/user/event/eventu.c.o
-proj/linux/liboplkcnapp-kernelpcp/liboplkcnapp-kernelpcp.a: proj/linux/liboplkcnapp-kernelpcp/CMakeFiles/oplkcnapp-kernelpcp.dir/__/__/__/src/user/nmt/nmtu.c.o
-proj/linux/liboplkcnapp-kernelpcp/liboplkcnapp-kernelpcp.a: proj/linux/liboplkcnapp-kernelpcp/CMakeFiles/oplkcnapp-kernelpcp.dir/__/__/__/src/user/nmt/nmtcnu.c.o
-proj/linux/liboplkcnapp-kernelpcp/liboplkcnapp-kernelpcp.a: proj/linux/liboplkcnapp-kernelpcp/CMakeFiles/oplkcnapp-kernelpcp.dir/__/__/__/src/user/nmt/nmtmnu.c.o
-proj/linux/liboplkcnapp-kernelpcp/liboplkcnapp-kernelpcp.a: proj/linux/liboplkcnapp-kernelpcp/CMakeFiles/oplkcnapp-kernelpcp.dir/__/__/__/src/user/nmt/identu.c.o
-proj/linux/liboplkcnapp-kernelpcp/liboplkcnapp-kernelpcp.a: proj/linux/liboplkcnapp-kernelpcp/CMakeFiles/oplkcnapp-kernelpcp.dir/__/__/__/src/user/nmt/statusu.c.o
-proj/linux/liboplkcnapp-kernelpcp/liboplkcnapp-kernelpcp.a: proj/linux/liboplkcnapp-kernelpcp/CMakeFiles/oplkcnapp-kernelpcp.dir/__/__/__/src/user/nmt/syncu.c.o
-proj/linux/liboplkcnapp-kernelpcp/liboplkcnapp-kernelpcp.a: proj/linux/liboplkcnapp-kernelpcp/CMakeFiles/oplkcnapp-kernelpcp.dir/__/__/__/src/user/pdo/pdou.c.o
-proj/linux/liboplkcnapp-kernelpcp/liboplkcnapp-kernelpcp.a: proj/linux/liboplkcnapp-kernelpcp/CMakeFiles/oplkcnapp-kernelpcp.dir/__/__/__/src/user/pdo/pdoucal.c.o
-proj/linux/liboplkcnapp-kernelpcp/liboplkcnapp-kernelpcp.a: proj/linux/liboplkcnapp-kernelpcp/CMakeFiles/oplkcnapp-kernelpcp.dir/__/__/__/src/user/pdo/pdoucal-triplebufshm.c.o
-proj/linux/liboplkcnapp-kernelpcp/liboplkcnapp-kernelpcp.a: proj/linux/liboplkcnapp-kernelpcp/CMakeFiles/oplkcnapp-kernelpcp.dir/__/__/__/src/user/sdo/sdotest-com.c.o
-proj/linux/liboplkcnapp-kernelpcp/liboplkcnapp-kernelpcp.a: proj/linux/liboplkcnapp-kernelpcp/CMakeFiles/oplkcnapp-kernelpcp.dir/__/__/__/src/user/sdo/sdotest-seq.c.o
-proj/linux/liboplkcnapp-kernelpcp/liboplkcnapp-kernelpcp.a: proj/linux/liboplkcnapp-kernelpcp/CMakeFiles/oplkcnapp-kernelpcp.dir/__/__/__/src/user/sdo/sdocom-dummy.c.o
-proj/linux/liboplkcnapp-kernelpcp/liboplkcnapp-kernelpcp.a: proj/linux/liboplkcnapp-kernelpcp/CMakeFiles/oplkcnapp-kernelpcp.dir/__/__/__/src/user/sdo/sdocom.c.o
-proj/linux/liboplkcnapp-kernelpcp/liboplkcnapp-kernelpcp.a: proj/linux/liboplkcnapp-kernelpcp/CMakeFiles/oplkcnapp-kernelpcp.dir/__/__/__/src/user/sdo/sdocom-std.c.o
-proj/linux/liboplkcnapp-kernelpcp/liboplkcnapp-kernelpcp.a: proj/linux/liboplkcnapp-kernelpcp/CMakeFiles/oplkcnapp-kernelpcp.dir/__/__/__/src/user/sdo/sdocomsrv.c.o
-proj/linux/liboplkcnapp-kernelpcp/liboplkcnapp-kernelpcp.a: proj/linux/liboplkcnapp-kernelpcp/CMakeFiles/oplkcnapp-kernelpcp.dir/__/__/__/src/user/sdo/sdocomclt.c.o
-proj/linux/liboplkcnapp-kernelpcp/liboplkcnapp-kernelpcp.a: proj/linux/liboplkcnapp-kernelpcp/CMakeFiles/oplkcnapp-kernelpcp.dir/__/__/__/src/user/sdo/sdoseq.c.o
-proj/linux/liboplkcnapp-kernelpcp/liboplkcnapp-kernelpcp.a: proj/linux/liboplkcnapp-kernelpcp/CMakeFiles/oplkcnapp-kernelpcp.dir/__/__/__/src/user/sdo/sdoasnd.c.o
-proj/linux/liboplkcnapp-kernelpcp/liboplkcnapp-kernelpcp.a: proj/linux/liboplkcnapp-kernelpcp/CMakeFiles/oplkcnapp-kernelpcp.dir/__/__/__/src/user/sdo/sdoudp.c.o
-proj/linux/liboplkcnapp-kernelpcp/liboplkcnapp-kernelpcp.a: proj/linux/liboplkcnapp-kernelpcp/CMakeFiles/oplkcnapp-kernelpcp.dir/__/__/__/src/user/timesync/timesyncu.c.o
-proj/linux/liboplkcnapp-kernelpcp/liboplkcnapp-kernelpcp.a: proj/linux/liboplkcnapp-kernelpcp/CMakeFiles/oplkcnapp-kernelpcp.dir/__/__/__/src/user/errhnd/errhndu.c.o
-proj/linux/liboplkcnapp-kernelpcp/liboplkcnapp-kernelpcp.a: proj/linux/liboplkcnapp-kernelpcp/CMakeFiles/oplkcnapp-kernelpcp.dir/__/__/__/src/user/ctrl/ctrlu.c.o
-proj/linux/liboplkcnapp-kernelpcp/liboplkcnapp-kernelpcp.a: proj/linux/liboplkcnapp-kernelpcp/CMakeFiles/oplkcnapp-kernelpcp.dir/__/__/__/src/user/sdo/sdoudp-linux.c.o
-proj/linux/liboplkcnapp-kernelpcp/liboplkcnapp-kernelpcp.a: proj/linux/liboplkcnapp-kernelpcp/CMakeFiles/oplkcnapp-kernelpcp.dir/__/__/__/src/user/ctrl/ctrlucal-linuxdpshm.c.o
-proj/linux/liboplkcnapp-kernelpcp/liboplkcnapp-kernelpcp.a: proj/linux/liboplkcnapp-kernelpcp/CMakeFiles/oplkcnapp-kernelpcp.dir/__/__/__/src/user/dll/dllucal-ioctl.c.o
-proj/linux/liboplkcnapp-kernelpcp/liboplkcnapp-kernelpcp.a: proj/linux/liboplkcnapp-kernelpcp/CMakeFiles/oplkcnapp-kernelpcp.dir/__/__/__/src/user/errhnd/errhnducal-ioctl.c.o
-proj/linux/liboplkcnapp-kernelpcp/liboplkcnapp-kernelpcp.a: proj/linux/liboplkcnapp-kernelpcp/CMakeFiles/oplkcnapp-kernelpcp.dir/__/__/__/src/user/event/eventucal-linuxdpshm.c.o
-proj/linux/liboplkcnapp-kernelpcp/liboplkcnapp-kernelpcp.a: proj/linux/liboplkcnapp-kernelpcp/CMakeFiles/oplkcnapp-kernelpcp.dir/__/__/__/src/user/event/eventucalintf-circbuf.c.o
-proj/linux/liboplkcnapp-kernelpcp/liboplkcnapp-kernelpcp.a: proj/linux/liboplkcnapp-kernelpcp/CMakeFiles/oplkcnapp-kernelpcp.dir/__/__/__/src/user/timesync/timesyncucal-linuxdpshm.c.o
-proj/linux/liboplkcnapp-kernelpcp/liboplkcnapp-kernelpcp.a: proj/linux/liboplkcnapp-kernelpcp/CMakeFiles/oplkcnapp-kernelpcp.dir/__/__/__/src/user/pdo/pdoucalmem-linuxdpshm.c.o
-proj/linux/liboplkcnapp-kernelpcp/liboplkcnapp-kernelpcp.a: proj/linux/liboplkcnapp-kernelpcp/CMakeFiles/oplkcnapp-kernelpcp.dir/__/__/__/src/user/timer/timer-linuxuser.c.o
-proj/linux/liboplkcnapp-kernelpcp/liboplkcnapp-kernelpcp.a: proj/linux/liboplkcnapp-kernelpcp/CMakeFiles/oplkcnapp-kernelpcp.dir/__/__/__/src/common/debugstr.c.o
-proj/linux/liboplkcnapp-kernelpcp/liboplkcnapp-kernelpcp.a: proj/linux/liboplkcnapp-kernelpcp/CMakeFiles/oplkcnapp-kernelpcp.dir/__/__/__/src/arch/linux/ftracedebug.c.o
-proj/linux/liboplkcnapp-kernelpcp/liboplkcnapp-kernelpcp.a: proj/linux/liboplkcnapp-kernelpcp/CMakeFiles/oplkcnapp-kernelpcp.dir/home/al/grad_project/openPOWERLINK_V2/contrib/trace/trace-printf.c.o
-proj/linux/liboplkcnapp-kernelpcp/liboplkcnapp-kernelpcp.a: proj/linux/liboplkcnapp-kernelpcp/CMakeFiles/oplkcnapp-kernelpcp.dir/__/__/__/src/arch/linux/target-linux.c.o
-proj/linux/liboplkcnapp-kernelpcp/liboplkcnapp-kernelpcp.a: proj/linux/liboplkcnapp-kernelpcp/CMakeFiles/oplkcnapp-kernelpcp.dir/__/__/__/src/arch/linux/target-mutex.c.o
-proj/linux/liboplkcnapp-kernelpcp/liboplkcnapp-kernelpcp.a: proj/linux/liboplkcnapp-kernelpcp/CMakeFiles/oplkcnapp-kernelpcp.dir/__/__/__/src/arch/linux/netif-linux.c.o
-proj/linux/liboplkcnapp-kernelpcp/liboplkcnapp-kernelpcp.a: proj/linux/liboplkcnapp-kernelpcp/CMakeFiles/oplkcnapp-kernelpcp.dir/__/__/__/src/common/circbuf/circbuffer.c.o
-proj/linux/liboplkcnapp-kernelpcp/liboplkcnapp-kernelpcp.a: proj/linux/liboplkcnapp-kernelpcp/CMakeFiles/oplkcnapp-kernelpcp.dir/__/__/__/src/common/circbuf/circbuf-posixshm.c.o
-proj/linux/liboplkcnapp-kernelpcp/liboplkcnapp-kernelpcp.a: proj/linux/liboplkcnapp-kernelpcp/CMakeFiles/oplkcnapp-kernelpcp.dir/__/__/__/src/common/memmap/memmap-linuxdpshm.c.o
-proj/linux/liboplkcnapp-kernelpcp/liboplkcnapp-kernelpcp.a: proj/linux/liboplkcnapp-kernelpcp/CMakeFiles/oplkcnapp-kernelpcp.dir/__/__/__/src/common/ami/amix86.c.o
-proj/linux/liboplkcnapp-kernelpcp/liboplkcnapp-kernelpcp.a: proj/linux/liboplkcnapp-kernelpcp/CMakeFiles/oplkcnapp-kernelpcp.dir/build.make
-proj/linux/liboplkcnapp-kernelpcp/liboplkcnapp-kernelpcp.a: proj/linux/liboplkcnapp-kernelpcp/CMakeFiles/oplkcnapp-kernelpcp.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/al/grad_project/openPOWERLINK_V2/stack/build/linux/CMakeFiles --progress-num=$(CMAKE_PROGRESS_50) "Linking C static library liboplkcnapp-kernelpcp.a"
+proj/linux/liboplkcnapp-kernelpcp/liboplkcnapp-kernelpcp_d.a: proj/linux/liboplkcnapp-kernelpcp/CMakeFiles/oplkcnapp-kernelpcp.dir/__/__/__/src/user/api/generic.c.o
+proj/linux/liboplkcnapp-kernelpcp/liboplkcnapp-kernelpcp_d.a: proj/linux/liboplkcnapp-kernelpcp/CMakeFiles/oplkcnapp-kernelpcp.dir/__/__/__/src/user/api/processimage.c.o
+proj/linux/liboplkcnapp-kernelpcp/liboplkcnapp-kernelpcp_d.a: proj/linux/liboplkcnapp-kernelpcp/CMakeFiles/oplkcnapp-kernelpcp.dir/__/__/__/src/user/api/sdotest.c.o
+proj/linux/liboplkcnapp-kernelpcp/liboplkcnapp-kernelpcp_d.a: proj/linux/liboplkcnapp-kernelpcp/CMakeFiles/oplkcnapp-kernelpcp.dir/__/__/__/src/user/api/service.c.o
+proj/linux/liboplkcnapp-kernelpcp/liboplkcnapp-kernelpcp_d.a: proj/linux/liboplkcnapp-kernelpcp/CMakeFiles/oplkcnapp-kernelpcp.dir/__/__/__/src/user/obd/obdu.c.o
+proj/linux/liboplkcnapp-kernelpcp/liboplkcnapp-kernelpcp_d.a: proj/linux/liboplkcnapp-kernelpcp/CMakeFiles/oplkcnapp-kernelpcp.dir/__/__/__/src/user/obd/obdal.c.o
+proj/linux/liboplkcnapp-kernelpcp/liboplkcnapp-kernelpcp_d.a: proj/linux/liboplkcnapp-kernelpcp/CMakeFiles/oplkcnapp-kernelpcp.dir/__/__/__/src/user/dll/dllucal.c.o
+proj/linux/liboplkcnapp-kernelpcp/liboplkcnapp-kernelpcp_d.a: proj/linux/liboplkcnapp-kernelpcp/CMakeFiles/oplkcnapp-kernelpcp.dir/__/__/__/src/user/event/eventu.c.o
+proj/linux/liboplkcnapp-kernelpcp/liboplkcnapp-kernelpcp_d.a: proj/linux/liboplkcnapp-kernelpcp/CMakeFiles/oplkcnapp-kernelpcp.dir/__/__/__/src/user/nmt/nmtu.c.o
+proj/linux/liboplkcnapp-kernelpcp/liboplkcnapp-kernelpcp_d.a: proj/linux/liboplkcnapp-kernelpcp/CMakeFiles/oplkcnapp-kernelpcp.dir/__/__/__/src/user/nmt/nmtcnu.c.o
+proj/linux/liboplkcnapp-kernelpcp/liboplkcnapp-kernelpcp_d.a: proj/linux/liboplkcnapp-kernelpcp/CMakeFiles/oplkcnapp-kernelpcp.dir/__/__/__/src/user/nmt/nmtmnu.c.o
+proj/linux/liboplkcnapp-kernelpcp/liboplkcnapp-kernelpcp_d.a: proj/linux/liboplkcnapp-kernelpcp/CMakeFiles/oplkcnapp-kernelpcp.dir/__/__/__/src/user/nmt/identu.c.o
+proj/linux/liboplkcnapp-kernelpcp/liboplkcnapp-kernelpcp_d.a: proj/linux/liboplkcnapp-kernelpcp/CMakeFiles/oplkcnapp-kernelpcp.dir/__/__/__/src/user/nmt/statusu.c.o
+proj/linux/liboplkcnapp-kernelpcp/liboplkcnapp-kernelpcp_d.a: proj/linux/liboplkcnapp-kernelpcp/CMakeFiles/oplkcnapp-kernelpcp.dir/__/__/__/src/user/nmt/syncu.c.o
+proj/linux/liboplkcnapp-kernelpcp/liboplkcnapp-kernelpcp_d.a: proj/linux/liboplkcnapp-kernelpcp/CMakeFiles/oplkcnapp-kernelpcp.dir/__/__/__/src/user/pdo/pdou.c.o
+proj/linux/liboplkcnapp-kernelpcp/liboplkcnapp-kernelpcp_d.a: proj/linux/liboplkcnapp-kernelpcp/CMakeFiles/oplkcnapp-kernelpcp.dir/__/__/__/src/user/pdo/pdoucal.c.o
+proj/linux/liboplkcnapp-kernelpcp/liboplkcnapp-kernelpcp_d.a: proj/linux/liboplkcnapp-kernelpcp/CMakeFiles/oplkcnapp-kernelpcp.dir/__/__/__/src/user/pdo/pdoucal-triplebufshm.c.o
+proj/linux/liboplkcnapp-kernelpcp/liboplkcnapp-kernelpcp_d.a: proj/linux/liboplkcnapp-kernelpcp/CMakeFiles/oplkcnapp-kernelpcp.dir/__/__/__/src/user/sdo/sdotest-com.c.o
+proj/linux/liboplkcnapp-kernelpcp/liboplkcnapp-kernelpcp_d.a: proj/linux/liboplkcnapp-kernelpcp/CMakeFiles/oplkcnapp-kernelpcp.dir/__/__/__/src/user/sdo/sdotest-seq.c.o
+proj/linux/liboplkcnapp-kernelpcp/liboplkcnapp-kernelpcp_d.a: proj/linux/liboplkcnapp-kernelpcp/CMakeFiles/oplkcnapp-kernelpcp.dir/__/__/__/src/user/sdo/sdocom-dummy.c.o
+proj/linux/liboplkcnapp-kernelpcp/liboplkcnapp-kernelpcp_d.a: proj/linux/liboplkcnapp-kernelpcp/CMakeFiles/oplkcnapp-kernelpcp.dir/__/__/__/src/user/sdo/sdocom.c.o
+proj/linux/liboplkcnapp-kernelpcp/liboplkcnapp-kernelpcp_d.a: proj/linux/liboplkcnapp-kernelpcp/CMakeFiles/oplkcnapp-kernelpcp.dir/__/__/__/src/user/sdo/sdocom-std.c.o
+proj/linux/liboplkcnapp-kernelpcp/liboplkcnapp-kernelpcp_d.a: proj/linux/liboplkcnapp-kernelpcp/CMakeFiles/oplkcnapp-kernelpcp.dir/__/__/__/src/user/sdo/sdocomsrv.c.o
+proj/linux/liboplkcnapp-kernelpcp/liboplkcnapp-kernelpcp_d.a: proj/linux/liboplkcnapp-kernelpcp/CMakeFiles/oplkcnapp-kernelpcp.dir/__/__/__/src/user/sdo/sdocomclt.c.o
+proj/linux/liboplkcnapp-kernelpcp/liboplkcnapp-kernelpcp_d.a: proj/linux/liboplkcnapp-kernelpcp/CMakeFiles/oplkcnapp-kernelpcp.dir/__/__/__/src/user/sdo/sdoseq.c.o
+proj/linux/liboplkcnapp-kernelpcp/liboplkcnapp-kernelpcp_d.a: proj/linux/liboplkcnapp-kernelpcp/CMakeFiles/oplkcnapp-kernelpcp.dir/__/__/__/src/user/sdo/sdoasnd.c.o
+proj/linux/liboplkcnapp-kernelpcp/liboplkcnapp-kernelpcp_d.a: proj/linux/liboplkcnapp-kernelpcp/CMakeFiles/oplkcnapp-kernelpcp.dir/__/__/__/src/user/sdo/sdoudp.c.o
+proj/linux/liboplkcnapp-kernelpcp/liboplkcnapp-kernelpcp_d.a: proj/linux/liboplkcnapp-kernelpcp/CMakeFiles/oplkcnapp-kernelpcp.dir/__/__/__/src/user/timesync/timesyncu.c.o
+proj/linux/liboplkcnapp-kernelpcp/liboplkcnapp-kernelpcp_d.a: proj/linux/liboplkcnapp-kernelpcp/CMakeFiles/oplkcnapp-kernelpcp.dir/__/__/__/src/user/errhnd/errhndu.c.o
+proj/linux/liboplkcnapp-kernelpcp/liboplkcnapp-kernelpcp_d.a: proj/linux/liboplkcnapp-kernelpcp/CMakeFiles/oplkcnapp-kernelpcp.dir/__/__/__/src/user/ctrl/ctrlu.c.o
+proj/linux/liboplkcnapp-kernelpcp/liboplkcnapp-kernelpcp_d.a: proj/linux/liboplkcnapp-kernelpcp/CMakeFiles/oplkcnapp-kernelpcp.dir/__/__/__/src/user/sdo/sdoudp-linux.c.o
+proj/linux/liboplkcnapp-kernelpcp/liboplkcnapp-kernelpcp_d.a: proj/linux/liboplkcnapp-kernelpcp/CMakeFiles/oplkcnapp-kernelpcp.dir/__/__/__/src/user/ctrl/ctrlucal-linuxdpshm.c.o
+proj/linux/liboplkcnapp-kernelpcp/liboplkcnapp-kernelpcp_d.a: proj/linux/liboplkcnapp-kernelpcp/CMakeFiles/oplkcnapp-kernelpcp.dir/__/__/__/src/user/dll/dllucal-ioctl.c.o
+proj/linux/liboplkcnapp-kernelpcp/liboplkcnapp-kernelpcp_d.a: proj/linux/liboplkcnapp-kernelpcp/CMakeFiles/oplkcnapp-kernelpcp.dir/__/__/__/src/user/errhnd/errhnducal-ioctl.c.o
+proj/linux/liboplkcnapp-kernelpcp/liboplkcnapp-kernelpcp_d.a: proj/linux/liboplkcnapp-kernelpcp/CMakeFiles/oplkcnapp-kernelpcp.dir/__/__/__/src/user/event/eventucal-linuxdpshm.c.o
+proj/linux/liboplkcnapp-kernelpcp/liboplkcnapp-kernelpcp_d.a: proj/linux/liboplkcnapp-kernelpcp/CMakeFiles/oplkcnapp-kernelpcp.dir/__/__/__/src/user/event/eventucalintf-circbuf.c.o
+proj/linux/liboplkcnapp-kernelpcp/liboplkcnapp-kernelpcp_d.a: proj/linux/liboplkcnapp-kernelpcp/CMakeFiles/oplkcnapp-kernelpcp.dir/__/__/__/src/user/timesync/timesyncucal-linuxdpshm.c.o
+proj/linux/liboplkcnapp-kernelpcp/liboplkcnapp-kernelpcp_d.a: proj/linux/liboplkcnapp-kernelpcp/CMakeFiles/oplkcnapp-kernelpcp.dir/__/__/__/src/user/pdo/pdoucalmem-linuxdpshm.c.o
+proj/linux/liboplkcnapp-kernelpcp/liboplkcnapp-kernelpcp_d.a: proj/linux/liboplkcnapp-kernelpcp/CMakeFiles/oplkcnapp-kernelpcp.dir/__/__/__/src/user/timer/timer-linuxuser.c.o
+proj/linux/liboplkcnapp-kernelpcp/liboplkcnapp-kernelpcp_d.a: proj/linux/liboplkcnapp-kernelpcp/CMakeFiles/oplkcnapp-kernelpcp.dir/__/__/__/src/common/debugstr.c.o
+proj/linux/liboplkcnapp-kernelpcp/liboplkcnapp-kernelpcp_d.a: proj/linux/liboplkcnapp-kernelpcp/CMakeFiles/oplkcnapp-kernelpcp.dir/__/__/__/src/arch/linux/ftracedebug.c.o
+proj/linux/liboplkcnapp-kernelpcp/liboplkcnapp-kernelpcp_d.a: proj/linux/liboplkcnapp-kernelpcp/CMakeFiles/oplkcnapp-kernelpcp.dir/home/al/grad_project/openPOWERLINK_V2/contrib/trace/trace-printf.c.o
+proj/linux/liboplkcnapp-kernelpcp/liboplkcnapp-kernelpcp_d.a: proj/linux/liboplkcnapp-kernelpcp/CMakeFiles/oplkcnapp-kernelpcp.dir/__/__/__/src/arch/linux/target-linux.c.o
+proj/linux/liboplkcnapp-kernelpcp/liboplkcnapp-kernelpcp_d.a: proj/linux/liboplkcnapp-kernelpcp/CMakeFiles/oplkcnapp-kernelpcp.dir/__/__/__/src/arch/linux/target-mutex.c.o
+proj/linux/liboplkcnapp-kernelpcp/liboplkcnapp-kernelpcp_d.a: proj/linux/liboplkcnapp-kernelpcp/CMakeFiles/oplkcnapp-kernelpcp.dir/__/__/__/src/arch/linux/netif-linux.c.o
+proj/linux/liboplkcnapp-kernelpcp/liboplkcnapp-kernelpcp_d.a: proj/linux/liboplkcnapp-kernelpcp/CMakeFiles/oplkcnapp-kernelpcp.dir/__/__/__/src/common/circbuf/circbuffer.c.o
+proj/linux/liboplkcnapp-kernelpcp/liboplkcnapp-kernelpcp_d.a: proj/linux/liboplkcnapp-kernelpcp/CMakeFiles/oplkcnapp-kernelpcp.dir/__/__/__/src/common/circbuf/circbuf-posixshm.c.o
+proj/linux/liboplkcnapp-kernelpcp/liboplkcnapp-kernelpcp_d.a: proj/linux/liboplkcnapp-kernelpcp/CMakeFiles/oplkcnapp-kernelpcp.dir/__/__/__/src/common/memmap/memmap-linuxdpshm.c.o
+proj/linux/liboplkcnapp-kernelpcp/liboplkcnapp-kernelpcp_d.a: proj/linux/liboplkcnapp-kernelpcp/CMakeFiles/oplkcnapp-kernelpcp.dir/__/__/__/src/common/ami/amix86.c.o
+proj/linux/liboplkcnapp-kernelpcp/liboplkcnapp-kernelpcp_d.a: proj/linux/liboplkcnapp-kernelpcp/CMakeFiles/oplkcnapp-kernelpcp.dir/build.make
+proj/linux/liboplkcnapp-kernelpcp/liboplkcnapp-kernelpcp_d.a: proj/linux/liboplkcnapp-kernelpcp/CMakeFiles/oplkcnapp-kernelpcp.dir/link.txt
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/al/grad_project/openPOWERLINK_V2/stack/build/linux/CMakeFiles --progress-num=$(CMAKE_PROGRESS_50) "Linking C static library liboplkcnapp-kernelpcp_d.a"
 	cd /home/al/grad_project/openPOWERLINK_V2/stack/build/linux/proj/linux/liboplkcnapp-kernelpcp && $(CMAKE_COMMAND) -P CMakeFiles/oplkcnapp-kernelpcp.dir/cmake_clean_target.cmake
 	cd /home/al/grad_project/openPOWERLINK_V2/stack/build/linux/proj/linux/liboplkcnapp-kernelpcp && $(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/oplkcnapp-kernelpcp.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
-proj/linux/liboplkcnapp-kernelpcp/CMakeFiles/oplkcnapp-kernelpcp.dir/build: proj/linux/liboplkcnapp-kernelpcp/liboplkcnapp-kernelpcp.a
+proj/linux/liboplkcnapp-kernelpcp/CMakeFiles/oplkcnapp-kernelpcp.dir/build: proj/linux/liboplkcnapp-kernelpcp/liboplkcnapp-kernelpcp_d.a
 
 .PHONY : proj/linux/liboplkcnapp-kernelpcp/CMakeFiles/oplkcnapp-kernelpcp.dir/build
 

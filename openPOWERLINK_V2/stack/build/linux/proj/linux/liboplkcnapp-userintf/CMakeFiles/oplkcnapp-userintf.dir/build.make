@@ -1363,66 +1363,66 @@ oplkcnapp__userintf_OBJECTS = \
 # External object files for target oplkcnapp-userintf
 oplkcnapp__userintf_EXTERNAL_OBJECTS =
 
-proj/linux/liboplkcnapp-userintf/liboplkcnapp-userintf.a: proj/linux/liboplkcnapp-userintf/CMakeFiles/oplkcnapp-userintf.dir/__/__/__/src/user/api/generic.c.o
-proj/linux/liboplkcnapp-userintf/liboplkcnapp-userintf.a: proj/linux/liboplkcnapp-userintf/CMakeFiles/oplkcnapp-userintf.dir/__/__/__/src/user/api/processimage.c.o
-proj/linux/liboplkcnapp-userintf/liboplkcnapp-userintf.a: proj/linux/liboplkcnapp-userintf/CMakeFiles/oplkcnapp-userintf.dir/__/__/__/src/user/api/sdotest.c.o
-proj/linux/liboplkcnapp-userintf/liboplkcnapp-userintf.a: proj/linux/liboplkcnapp-userintf/CMakeFiles/oplkcnapp-userintf.dir/__/__/__/src/user/api/service.c.o
-proj/linux/liboplkcnapp-userintf/liboplkcnapp-userintf.a: proj/linux/liboplkcnapp-userintf/CMakeFiles/oplkcnapp-userintf.dir/__/__/__/src/user/obd/obdu.c.o
-proj/linux/liboplkcnapp-userintf/liboplkcnapp-userintf.a: proj/linux/liboplkcnapp-userintf/CMakeFiles/oplkcnapp-userintf.dir/__/__/__/src/user/obd/obdal.c.o
-proj/linux/liboplkcnapp-userintf/liboplkcnapp-userintf.a: proj/linux/liboplkcnapp-userintf/CMakeFiles/oplkcnapp-userintf.dir/__/__/__/src/user/dll/dllucal.c.o
-proj/linux/liboplkcnapp-userintf/liboplkcnapp-userintf.a: proj/linux/liboplkcnapp-userintf/CMakeFiles/oplkcnapp-userintf.dir/__/__/__/src/user/event/eventu.c.o
-proj/linux/liboplkcnapp-userintf/liboplkcnapp-userintf.a: proj/linux/liboplkcnapp-userintf/CMakeFiles/oplkcnapp-userintf.dir/__/__/__/src/user/nmt/nmtu.c.o
-proj/linux/liboplkcnapp-userintf/liboplkcnapp-userintf.a: proj/linux/liboplkcnapp-userintf/CMakeFiles/oplkcnapp-userintf.dir/__/__/__/src/user/nmt/nmtcnu.c.o
-proj/linux/liboplkcnapp-userintf/liboplkcnapp-userintf.a: proj/linux/liboplkcnapp-userintf/CMakeFiles/oplkcnapp-userintf.dir/__/__/__/src/user/nmt/nmtmnu.c.o
-proj/linux/liboplkcnapp-userintf/liboplkcnapp-userintf.a: proj/linux/liboplkcnapp-userintf/CMakeFiles/oplkcnapp-userintf.dir/__/__/__/src/user/nmt/identu.c.o
-proj/linux/liboplkcnapp-userintf/liboplkcnapp-userintf.a: proj/linux/liboplkcnapp-userintf/CMakeFiles/oplkcnapp-userintf.dir/__/__/__/src/user/nmt/statusu.c.o
-proj/linux/liboplkcnapp-userintf/liboplkcnapp-userintf.a: proj/linux/liboplkcnapp-userintf/CMakeFiles/oplkcnapp-userintf.dir/__/__/__/src/user/nmt/syncu.c.o
-proj/linux/liboplkcnapp-userintf/liboplkcnapp-userintf.a: proj/linux/liboplkcnapp-userintf/CMakeFiles/oplkcnapp-userintf.dir/__/__/__/src/user/pdo/pdou.c.o
-proj/linux/liboplkcnapp-userintf/liboplkcnapp-userintf.a: proj/linux/liboplkcnapp-userintf/CMakeFiles/oplkcnapp-userintf.dir/__/__/__/src/user/pdo/pdoucal.c.o
-proj/linux/liboplkcnapp-userintf/liboplkcnapp-userintf.a: proj/linux/liboplkcnapp-userintf/CMakeFiles/oplkcnapp-userintf.dir/__/__/__/src/user/pdo/pdoucal-triplebufshm.c.o
-proj/linux/liboplkcnapp-userintf/liboplkcnapp-userintf.a: proj/linux/liboplkcnapp-userintf/CMakeFiles/oplkcnapp-userintf.dir/__/__/__/src/user/sdo/sdotest-com.c.o
-proj/linux/liboplkcnapp-userintf/liboplkcnapp-userintf.a: proj/linux/liboplkcnapp-userintf/CMakeFiles/oplkcnapp-userintf.dir/__/__/__/src/user/sdo/sdotest-seq.c.o
-proj/linux/liboplkcnapp-userintf/liboplkcnapp-userintf.a: proj/linux/liboplkcnapp-userintf/CMakeFiles/oplkcnapp-userintf.dir/__/__/__/src/user/sdo/sdocom-dummy.c.o
-proj/linux/liboplkcnapp-userintf/liboplkcnapp-userintf.a: proj/linux/liboplkcnapp-userintf/CMakeFiles/oplkcnapp-userintf.dir/__/__/__/src/user/sdo/sdocom.c.o
-proj/linux/liboplkcnapp-userintf/liboplkcnapp-userintf.a: proj/linux/liboplkcnapp-userintf/CMakeFiles/oplkcnapp-userintf.dir/__/__/__/src/user/sdo/sdocom-std.c.o
-proj/linux/liboplkcnapp-userintf/liboplkcnapp-userintf.a: proj/linux/liboplkcnapp-userintf/CMakeFiles/oplkcnapp-userintf.dir/__/__/__/src/user/sdo/sdocomsrv.c.o
-proj/linux/liboplkcnapp-userintf/liboplkcnapp-userintf.a: proj/linux/liboplkcnapp-userintf/CMakeFiles/oplkcnapp-userintf.dir/__/__/__/src/user/sdo/sdocomclt.c.o
-proj/linux/liboplkcnapp-userintf/liboplkcnapp-userintf.a: proj/linux/liboplkcnapp-userintf/CMakeFiles/oplkcnapp-userintf.dir/__/__/__/src/user/sdo/sdoseq.c.o
-proj/linux/liboplkcnapp-userintf/liboplkcnapp-userintf.a: proj/linux/liboplkcnapp-userintf/CMakeFiles/oplkcnapp-userintf.dir/__/__/__/src/user/sdo/sdoasnd.c.o
-proj/linux/liboplkcnapp-userintf/liboplkcnapp-userintf.a: proj/linux/liboplkcnapp-userintf/CMakeFiles/oplkcnapp-userintf.dir/__/__/__/src/user/sdo/sdoudp.c.o
-proj/linux/liboplkcnapp-userintf/liboplkcnapp-userintf.a: proj/linux/liboplkcnapp-userintf/CMakeFiles/oplkcnapp-userintf.dir/__/__/__/src/user/timesync/timesyncu.c.o
-proj/linux/liboplkcnapp-userintf/liboplkcnapp-userintf.a: proj/linux/liboplkcnapp-userintf/CMakeFiles/oplkcnapp-userintf.dir/__/__/__/src/user/errhnd/errhndu.c.o
-proj/linux/liboplkcnapp-userintf/liboplkcnapp-userintf.a: proj/linux/liboplkcnapp-userintf/CMakeFiles/oplkcnapp-userintf.dir/__/__/__/src/user/ctrl/ctrlu.c.o
-proj/linux/liboplkcnapp-userintf/liboplkcnapp-userintf.a: proj/linux/liboplkcnapp-userintf/CMakeFiles/oplkcnapp-userintf.dir/__/__/__/src/user/sdo/sdoudp-linux.c.o
-proj/linux/liboplkcnapp-userintf/liboplkcnapp-userintf.a: proj/linux/liboplkcnapp-userintf/CMakeFiles/oplkcnapp-userintf.dir/__/__/__/src/user/ctrl/ctrlucal-mem.c.o
-proj/linux/liboplkcnapp-userintf/liboplkcnapp-userintf.a: proj/linux/liboplkcnapp-userintf/CMakeFiles/oplkcnapp-userintf.dir/__/__/__/src/common/ctrl/ctrlcal-posixshm.c.o
-proj/linux/liboplkcnapp-userintf/liboplkcnapp-userintf.a: proj/linux/liboplkcnapp-userintf/CMakeFiles/oplkcnapp-userintf.dir/__/__/__/src/user/dll/dllucal-circbuf.c.o
-proj/linux/liboplkcnapp-userintf/liboplkcnapp-userintf.a: proj/linux/liboplkcnapp-userintf/CMakeFiles/oplkcnapp-userintf.dir/__/__/__/src/user/errhnd/errhnducal-posixshm.c.o
-proj/linux/liboplkcnapp-userintf/liboplkcnapp-userintf.a: proj/linux/liboplkcnapp-userintf/CMakeFiles/oplkcnapp-userintf.dir/__/__/__/src/user/event/eventucal-linux.c.o
-proj/linux/liboplkcnapp-userintf/liboplkcnapp-userintf.a: proj/linux/liboplkcnapp-userintf/CMakeFiles/oplkcnapp-userintf.dir/__/__/__/src/user/event/eventucalintf-circbuf.c.o
-proj/linux/liboplkcnapp-userintf/liboplkcnapp-userintf.a: proj/linux/liboplkcnapp-userintf/CMakeFiles/oplkcnapp-userintf.dir/__/__/__/src/user/pdo/pdoucalmem-posixshm.c.o
-proj/linux/liboplkcnapp-userintf/liboplkcnapp-userintf.a: proj/linux/liboplkcnapp-userintf/CMakeFiles/oplkcnapp-userintf.dir/__/__/__/src/user/timesync/timesyncucal-bsdsem.c.o
-proj/linux/liboplkcnapp-userintf/liboplkcnapp-userintf.a: proj/linux/liboplkcnapp-userintf/CMakeFiles/oplkcnapp-userintf.dir/__/__/__/src/user/timer/timer-linuxuser.c.o
-proj/linux/liboplkcnapp-userintf/liboplkcnapp-userintf.a: proj/linux/liboplkcnapp-userintf/CMakeFiles/oplkcnapp-userintf.dir/__/__/__/src/common/debugstr.c.o
-proj/linux/liboplkcnapp-userintf/liboplkcnapp-userintf.a: proj/linux/liboplkcnapp-userintf/CMakeFiles/oplkcnapp-userintf.dir/__/__/__/src/arch/linux/ftracedebug.c.o
-proj/linux/liboplkcnapp-userintf/liboplkcnapp-userintf.a: proj/linux/liboplkcnapp-userintf/CMakeFiles/oplkcnapp-userintf.dir/home/al/grad_project/openPOWERLINK_V2/contrib/trace/trace-printf.c.o
-proj/linux/liboplkcnapp-userintf/liboplkcnapp-userintf.a: proj/linux/liboplkcnapp-userintf/CMakeFiles/oplkcnapp-userintf.dir/__/__/__/src/arch/linux/target-linux.c.o
-proj/linux/liboplkcnapp-userintf/liboplkcnapp-userintf.a: proj/linux/liboplkcnapp-userintf/CMakeFiles/oplkcnapp-userintf.dir/__/__/__/src/arch/linux/target-mutex.c.o
-proj/linux/liboplkcnapp-userintf/liboplkcnapp-userintf.a: proj/linux/liboplkcnapp-userintf/CMakeFiles/oplkcnapp-userintf.dir/__/__/__/src/arch/linux/netif-linux.c.o
-proj/linux/liboplkcnapp-userintf/liboplkcnapp-userintf.a: proj/linux/liboplkcnapp-userintf/CMakeFiles/oplkcnapp-userintf.dir/__/__/__/src/user/obd/obdconf-fileio.c.o
-proj/linux/liboplkcnapp-userintf/liboplkcnapp-userintf.a: proj/linux/liboplkcnapp-userintf/CMakeFiles/oplkcnapp-userintf.dir/__/__/__/src/user/obd/obdconfcrc-generic.c.o
-proj/linux/liboplkcnapp-userintf/liboplkcnapp-userintf.a: proj/linux/liboplkcnapp-userintf/CMakeFiles/oplkcnapp-userintf.dir/__/__/__/src/common/circbuf/circbuffer.c.o
-proj/linux/liboplkcnapp-userintf/liboplkcnapp-userintf.a: proj/linux/liboplkcnapp-userintf/CMakeFiles/oplkcnapp-userintf.dir/__/__/__/src/common/circbuf/circbuf-posixshm.c.o
-proj/linux/liboplkcnapp-userintf/liboplkcnapp-userintf.a: proj/linux/liboplkcnapp-userintf/CMakeFiles/oplkcnapp-userintf.dir/__/__/__/src/common/memmap/memmap-null.c.o
-proj/linux/liboplkcnapp-userintf/liboplkcnapp-userintf.a: proj/linux/liboplkcnapp-userintf/CMakeFiles/oplkcnapp-userintf.dir/__/__/__/src/common/ami/amix86.c.o
-proj/linux/liboplkcnapp-userintf/liboplkcnapp-userintf.a: proj/linux/liboplkcnapp-userintf/CMakeFiles/oplkcnapp-userintf.dir/build.make
-proj/linux/liboplkcnapp-userintf/liboplkcnapp-userintf.a: proj/linux/liboplkcnapp-userintf/CMakeFiles/oplkcnapp-userintf.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/al/grad_project/openPOWERLINK_V2/stack/build/linux/CMakeFiles --progress-num=$(CMAKE_PROGRESS_53) "Linking C static library liboplkcnapp-userintf.a"
+proj/linux/liboplkcnapp-userintf/liboplkcnapp-userintf_d.a: proj/linux/liboplkcnapp-userintf/CMakeFiles/oplkcnapp-userintf.dir/__/__/__/src/user/api/generic.c.o
+proj/linux/liboplkcnapp-userintf/liboplkcnapp-userintf_d.a: proj/linux/liboplkcnapp-userintf/CMakeFiles/oplkcnapp-userintf.dir/__/__/__/src/user/api/processimage.c.o
+proj/linux/liboplkcnapp-userintf/liboplkcnapp-userintf_d.a: proj/linux/liboplkcnapp-userintf/CMakeFiles/oplkcnapp-userintf.dir/__/__/__/src/user/api/sdotest.c.o
+proj/linux/liboplkcnapp-userintf/liboplkcnapp-userintf_d.a: proj/linux/liboplkcnapp-userintf/CMakeFiles/oplkcnapp-userintf.dir/__/__/__/src/user/api/service.c.o
+proj/linux/liboplkcnapp-userintf/liboplkcnapp-userintf_d.a: proj/linux/liboplkcnapp-userintf/CMakeFiles/oplkcnapp-userintf.dir/__/__/__/src/user/obd/obdu.c.o
+proj/linux/liboplkcnapp-userintf/liboplkcnapp-userintf_d.a: proj/linux/liboplkcnapp-userintf/CMakeFiles/oplkcnapp-userintf.dir/__/__/__/src/user/obd/obdal.c.o
+proj/linux/liboplkcnapp-userintf/liboplkcnapp-userintf_d.a: proj/linux/liboplkcnapp-userintf/CMakeFiles/oplkcnapp-userintf.dir/__/__/__/src/user/dll/dllucal.c.o
+proj/linux/liboplkcnapp-userintf/liboplkcnapp-userintf_d.a: proj/linux/liboplkcnapp-userintf/CMakeFiles/oplkcnapp-userintf.dir/__/__/__/src/user/event/eventu.c.o
+proj/linux/liboplkcnapp-userintf/liboplkcnapp-userintf_d.a: proj/linux/liboplkcnapp-userintf/CMakeFiles/oplkcnapp-userintf.dir/__/__/__/src/user/nmt/nmtu.c.o
+proj/linux/liboplkcnapp-userintf/liboplkcnapp-userintf_d.a: proj/linux/liboplkcnapp-userintf/CMakeFiles/oplkcnapp-userintf.dir/__/__/__/src/user/nmt/nmtcnu.c.o
+proj/linux/liboplkcnapp-userintf/liboplkcnapp-userintf_d.a: proj/linux/liboplkcnapp-userintf/CMakeFiles/oplkcnapp-userintf.dir/__/__/__/src/user/nmt/nmtmnu.c.o
+proj/linux/liboplkcnapp-userintf/liboplkcnapp-userintf_d.a: proj/linux/liboplkcnapp-userintf/CMakeFiles/oplkcnapp-userintf.dir/__/__/__/src/user/nmt/identu.c.o
+proj/linux/liboplkcnapp-userintf/liboplkcnapp-userintf_d.a: proj/linux/liboplkcnapp-userintf/CMakeFiles/oplkcnapp-userintf.dir/__/__/__/src/user/nmt/statusu.c.o
+proj/linux/liboplkcnapp-userintf/liboplkcnapp-userintf_d.a: proj/linux/liboplkcnapp-userintf/CMakeFiles/oplkcnapp-userintf.dir/__/__/__/src/user/nmt/syncu.c.o
+proj/linux/liboplkcnapp-userintf/liboplkcnapp-userintf_d.a: proj/linux/liboplkcnapp-userintf/CMakeFiles/oplkcnapp-userintf.dir/__/__/__/src/user/pdo/pdou.c.o
+proj/linux/liboplkcnapp-userintf/liboplkcnapp-userintf_d.a: proj/linux/liboplkcnapp-userintf/CMakeFiles/oplkcnapp-userintf.dir/__/__/__/src/user/pdo/pdoucal.c.o
+proj/linux/liboplkcnapp-userintf/liboplkcnapp-userintf_d.a: proj/linux/liboplkcnapp-userintf/CMakeFiles/oplkcnapp-userintf.dir/__/__/__/src/user/pdo/pdoucal-triplebufshm.c.o
+proj/linux/liboplkcnapp-userintf/liboplkcnapp-userintf_d.a: proj/linux/liboplkcnapp-userintf/CMakeFiles/oplkcnapp-userintf.dir/__/__/__/src/user/sdo/sdotest-com.c.o
+proj/linux/liboplkcnapp-userintf/liboplkcnapp-userintf_d.a: proj/linux/liboplkcnapp-userintf/CMakeFiles/oplkcnapp-userintf.dir/__/__/__/src/user/sdo/sdotest-seq.c.o
+proj/linux/liboplkcnapp-userintf/liboplkcnapp-userintf_d.a: proj/linux/liboplkcnapp-userintf/CMakeFiles/oplkcnapp-userintf.dir/__/__/__/src/user/sdo/sdocom-dummy.c.o
+proj/linux/liboplkcnapp-userintf/liboplkcnapp-userintf_d.a: proj/linux/liboplkcnapp-userintf/CMakeFiles/oplkcnapp-userintf.dir/__/__/__/src/user/sdo/sdocom.c.o
+proj/linux/liboplkcnapp-userintf/liboplkcnapp-userintf_d.a: proj/linux/liboplkcnapp-userintf/CMakeFiles/oplkcnapp-userintf.dir/__/__/__/src/user/sdo/sdocom-std.c.o
+proj/linux/liboplkcnapp-userintf/liboplkcnapp-userintf_d.a: proj/linux/liboplkcnapp-userintf/CMakeFiles/oplkcnapp-userintf.dir/__/__/__/src/user/sdo/sdocomsrv.c.o
+proj/linux/liboplkcnapp-userintf/liboplkcnapp-userintf_d.a: proj/linux/liboplkcnapp-userintf/CMakeFiles/oplkcnapp-userintf.dir/__/__/__/src/user/sdo/sdocomclt.c.o
+proj/linux/liboplkcnapp-userintf/liboplkcnapp-userintf_d.a: proj/linux/liboplkcnapp-userintf/CMakeFiles/oplkcnapp-userintf.dir/__/__/__/src/user/sdo/sdoseq.c.o
+proj/linux/liboplkcnapp-userintf/liboplkcnapp-userintf_d.a: proj/linux/liboplkcnapp-userintf/CMakeFiles/oplkcnapp-userintf.dir/__/__/__/src/user/sdo/sdoasnd.c.o
+proj/linux/liboplkcnapp-userintf/liboplkcnapp-userintf_d.a: proj/linux/liboplkcnapp-userintf/CMakeFiles/oplkcnapp-userintf.dir/__/__/__/src/user/sdo/sdoudp.c.o
+proj/linux/liboplkcnapp-userintf/liboplkcnapp-userintf_d.a: proj/linux/liboplkcnapp-userintf/CMakeFiles/oplkcnapp-userintf.dir/__/__/__/src/user/timesync/timesyncu.c.o
+proj/linux/liboplkcnapp-userintf/liboplkcnapp-userintf_d.a: proj/linux/liboplkcnapp-userintf/CMakeFiles/oplkcnapp-userintf.dir/__/__/__/src/user/errhnd/errhndu.c.o
+proj/linux/liboplkcnapp-userintf/liboplkcnapp-userintf_d.a: proj/linux/liboplkcnapp-userintf/CMakeFiles/oplkcnapp-userintf.dir/__/__/__/src/user/ctrl/ctrlu.c.o
+proj/linux/liboplkcnapp-userintf/liboplkcnapp-userintf_d.a: proj/linux/liboplkcnapp-userintf/CMakeFiles/oplkcnapp-userintf.dir/__/__/__/src/user/sdo/sdoudp-linux.c.o
+proj/linux/liboplkcnapp-userintf/liboplkcnapp-userintf_d.a: proj/linux/liboplkcnapp-userintf/CMakeFiles/oplkcnapp-userintf.dir/__/__/__/src/user/ctrl/ctrlucal-mem.c.o
+proj/linux/liboplkcnapp-userintf/liboplkcnapp-userintf_d.a: proj/linux/liboplkcnapp-userintf/CMakeFiles/oplkcnapp-userintf.dir/__/__/__/src/common/ctrl/ctrlcal-posixshm.c.o
+proj/linux/liboplkcnapp-userintf/liboplkcnapp-userintf_d.a: proj/linux/liboplkcnapp-userintf/CMakeFiles/oplkcnapp-userintf.dir/__/__/__/src/user/dll/dllucal-circbuf.c.o
+proj/linux/liboplkcnapp-userintf/liboplkcnapp-userintf_d.a: proj/linux/liboplkcnapp-userintf/CMakeFiles/oplkcnapp-userintf.dir/__/__/__/src/user/errhnd/errhnducal-posixshm.c.o
+proj/linux/liboplkcnapp-userintf/liboplkcnapp-userintf_d.a: proj/linux/liboplkcnapp-userintf/CMakeFiles/oplkcnapp-userintf.dir/__/__/__/src/user/event/eventucal-linux.c.o
+proj/linux/liboplkcnapp-userintf/liboplkcnapp-userintf_d.a: proj/linux/liboplkcnapp-userintf/CMakeFiles/oplkcnapp-userintf.dir/__/__/__/src/user/event/eventucalintf-circbuf.c.o
+proj/linux/liboplkcnapp-userintf/liboplkcnapp-userintf_d.a: proj/linux/liboplkcnapp-userintf/CMakeFiles/oplkcnapp-userintf.dir/__/__/__/src/user/pdo/pdoucalmem-posixshm.c.o
+proj/linux/liboplkcnapp-userintf/liboplkcnapp-userintf_d.a: proj/linux/liboplkcnapp-userintf/CMakeFiles/oplkcnapp-userintf.dir/__/__/__/src/user/timesync/timesyncucal-bsdsem.c.o
+proj/linux/liboplkcnapp-userintf/liboplkcnapp-userintf_d.a: proj/linux/liboplkcnapp-userintf/CMakeFiles/oplkcnapp-userintf.dir/__/__/__/src/user/timer/timer-linuxuser.c.o
+proj/linux/liboplkcnapp-userintf/liboplkcnapp-userintf_d.a: proj/linux/liboplkcnapp-userintf/CMakeFiles/oplkcnapp-userintf.dir/__/__/__/src/common/debugstr.c.o
+proj/linux/liboplkcnapp-userintf/liboplkcnapp-userintf_d.a: proj/linux/liboplkcnapp-userintf/CMakeFiles/oplkcnapp-userintf.dir/__/__/__/src/arch/linux/ftracedebug.c.o
+proj/linux/liboplkcnapp-userintf/liboplkcnapp-userintf_d.a: proj/linux/liboplkcnapp-userintf/CMakeFiles/oplkcnapp-userintf.dir/home/al/grad_project/openPOWERLINK_V2/contrib/trace/trace-printf.c.o
+proj/linux/liboplkcnapp-userintf/liboplkcnapp-userintf_d.a: proj/linux/liboplkcnapp-userintf/CMakeFiles/oplkcnapp-userintf.dir/__/__/__/src/arch/linux/target-linux.c.o
+proj/linux/liboplkcnapp-userintf/liboplkcnapp-userintf_d.a: proj/linux/liboplkcnapp-userintf/CMakeFiles/oplkcnapp-userintf.dir/__/__/__/src/arch/linux/target-mutex.c.o
+proj/linux/liboplkcnapp-userintf/liboplkcnapp-userintf_d.a: proj/linux/liboplkcnapp-userintf/CMakeFiles/oplkcnapp-userintf.dir/__/__/__/src/arch/linux/netif-linux.c.o
+proj/linux/liboplkcnapp-userintf/liboplkcnapp-userintf_d.a: proj/linux/liboplkcnapp-userintf/CMakeFiles/oplkcnapp-userintf.dir/__/__/__/src/user/obd/obdconf-fileio.c.o
+proj/linux/liboplkcnapp-userintf/liboplkcnapp-userintf_d.a: proj/linux/liboplkcnapp-userintf/CMakeFiles/oplkcnapp-userintf.dir/__/__/__/src/user/obd/obdconfcrc-generic.c.o
+proj/linux/liboplkcnapp-userintf/liboplkcnapp-userintf_d.a: proj/linux/liboplkcnapp-userintf/CMakeFiles/oplkcnapp-userintf.dir/__/__/__/src/common/circbuf/circbuffer.c.o
+proj/linux/liboplkcnapp-userintf/liboplkcnapp-userintf_d.a: proj/linux/liboplkcnapp-userintf/CMakeFiles/oplkcnapp-userintf.dir/__/__/__/src/common/circbuf/circbuf-posixshm.c.o
+proj/linux/liboplkcnapp-userintf/liboplkcnapp-userintf_d.a: proj/linux/liboplkcnapp-userintf/CMakeFiles/oplkcnapp-userintf.dir/__/__/__/src/common/memmap/memmap-null.c.o
+proj/linux/liboplkcnapp-userintf/liboplkcnapp-userintf_d.a: proj/linux/liboplkcnapp-userintf/CMakeFiles/oplkcnapp-userintf.dir/__/__/__/src/common/ami/amix86.c.o
+proj/linux/liboplkcnapp-userintf/liboplkcnapp-userintf_d.a: proj/linux/liboplkcnapp-userintf/CMakeFiles/oplkcnapp-userintf.dir/build.make
+proj/linux/liboplkcnapp-userintf/liboplkcnapp-userintf_d.a: proj/linux/liboplkcnapp-userintf/CMakeFiles/oplkcnapp-userintf.dir/link.txt
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/al/grad_project/openPOWERLINK_V2/stack/build/linux/CMakeFiles --progress-num=$(CMAKE_PROGRESS_53) "Linking C static library liboplkcnapp-userintf_d.a"
 	cd /home/al/grad_project/openPOWERLINK_V2/stack/build/linux/proj/linux/liboplkcnapp-userintf && $(CMAKE_COMMAND) -P CMakeFiles/oplkcnapp-userintf.dir/cmake_clean_target.cmake
 	cd /home/al/grad_project/openPOWERLINK_V2/stack/build/linux/proj/linux/liboplkcnapp-userintf && $(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/oplkcnapp-userintf.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
-proj/linux/liboplkcnapp-userintf/CMakeFiles/oplkcnapp-userintf.dir/build: proj/linux/liboplkcnapp-userintf/liboplkcnapp-userintf.a
+proj/linux/liboplkcnapp-userintf/CMakeFiles/oplkcnapp-userintf.dir/build: proj/linux/liboplkcnapp-userintf/liboplkcnapp-userintf_d.a
 
 .PHONY : proj/linux/liboplkcnapp-userintf/CMakeFiles/oplkcnapp-userintf.dir/build
 

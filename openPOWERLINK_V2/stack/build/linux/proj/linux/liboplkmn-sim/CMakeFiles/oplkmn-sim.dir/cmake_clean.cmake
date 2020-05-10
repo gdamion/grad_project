@@ -85,8 +85,8 @@ file(REMOVE_RECURSE
   "CMakeFiles/oplkmn-sim.dir/home/al/grad_project/openPOWERLINK_V2/sim/src/sim-processsync.c.o"
   "CMakeFiles/oplkmn-sim.dir/home/al/grad_project/openPOWERLINK_V2/sim/src/sim-timer.c.o"
   "CMakeFiles/oplkmn-sim.dir/__/__/__/src/common/ami/amix86.c.o"
-  "liboplkmn-sim.pdb"
-  "liboplkmn-sim.a"
+  "liboplkmn-sim_d.pdb"
+  "liboplkmn-sim_d.a"
 )
 
 # Per-language clean rules from dependency scanning.

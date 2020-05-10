@@ -1,3 +1,3 @@
 file(REMOVE_RECURSE
-  "liboplkmn-sim.a"
+  "liboplkmn-sim_d.a"
 )

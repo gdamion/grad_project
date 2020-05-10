@@ -39,8 +39,8 @@ file(REMOVE_RECURSE
   "CMakeFiles/oplkmndrv-pcap.dir/__/__/__/src/common/circbuf/circbuffer.c.o"
   "CMakeFiles/oplkmndrv-pcap.dir/__/__/__/src/common/circbuf/circbuf-posixshm.c.o"
   "CMakeFiles/oplkmndrv-pcap.dir/__/__/__/src/common/ami/amix86.c.o"
-  "liboplkmndrv-pcap.pdb"
-  "liboplkmndrv-pcap.a"
+  "liboplkmndrv-pcap_d.pdb"
+  "liboplkmndrv-pcap_d.a"
 )
 
 # Per-language clean rules from dependency scanning.

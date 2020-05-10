@@ -49,8 +49,8 @@ file(REMOVE_RECURSE
   "CMakeFiles/oplkmnapp-kernelintf.dir/__/__/__/src/common/circbuf/circbuf-posixshm.c.o"
   "CMakeFiles/oplkmnapp-kernelintf.dir/__/__/__/src/common/memmap/memmap-null.c.o"
   "CMakeFiles/oplkmnapp-kernelintf.dir/__/__/__/src/common/ami/amix86.c.o"
-  "liboplkmnapp-kernelintf.pdb"
-  "liboplkmnapp-kernelintf.a"
+  "liboplkmnapp-kernelintf_d.pdb"
+  "liboplkmnapp-kernelintf_d.a"
 )
 
 # Per-language clean rules from dependency scanning.

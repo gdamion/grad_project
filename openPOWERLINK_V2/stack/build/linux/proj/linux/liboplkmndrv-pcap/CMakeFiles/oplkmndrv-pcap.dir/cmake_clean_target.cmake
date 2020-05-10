@@ -1,3 +1,3 @@
 file(REMOVE_RECURSE
-  "liboplkmndrv-pcap.a"
+  "liboplkmndrv-pcap_d.a"
 )

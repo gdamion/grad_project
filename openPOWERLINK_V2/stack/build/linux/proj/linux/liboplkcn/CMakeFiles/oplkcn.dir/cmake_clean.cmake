@@ -80,8 +80,8 @@ file(REMOVE_RECURSE
   "CMakeFiles/oplkcn.dir/__/__/__/src/kernel/edrv/edrvcyclic.c.o"
   "CMakeFiles/oplkcn.dir/__/__/__/src/kernel/edrv/edrv-rawsock_linux.c.o"
   "CMakeFiles/oplkcn.dir/__/__/__/src/common/ami/amix86.c.o"
-  "liboplkcn.pdb"
-  "liboplkcn.a"
+  "liboplkcn_d.pdb"
+  "liboplkcn_d.a"
 )
 
 # Per-language clean rules from dependency scanning.

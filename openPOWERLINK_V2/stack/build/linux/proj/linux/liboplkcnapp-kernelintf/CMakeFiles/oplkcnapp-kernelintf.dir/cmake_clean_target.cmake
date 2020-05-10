@@ -1,3 +1,3 @@
 file(REMOVE_RECURSE
-  "liboplkcnapp-kernelintf.a"
+  "liboplkcnapp-kernelintf_d.a"
 )
