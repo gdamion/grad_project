@@ -53,8 +53,12 @@ OBD_BEGIN()
 
         // Object 1001h: ERR_ErrorRegister_U8
         OBD_BEGIN_INDEX_RAM(0x1001, 0x01, FALSE)
-            OBD_SUBINDEX_RAM_VAR(0x1001, 0x00, kObdTypeUInt8, kObdAccR, tObdUnsigned8, ERR_ErrorRegister_U8, 0x00)
+            OBD_SUBINDEX_RAM_VAR(0x1001, 0x00, kObdTypeUInt8, kObdAccVPR, tObdUnsigned8, ERR_ErrorRegister_U8, 0x00)
         OBD_END_INDEX(0x1001)
+
+        // OBD_BEGIN_INDEX_RAM(0x1001, 0x01, FALSE)
+        //     OBD_SUBINDEX_RAM_VAR(0x1001, 0x00, kObdTypeUInt8, kObdAccR, tObdUnsigned8, ERR_ErrorRegister_U8, 0x00)
+        // OBD_END_INDEX(0x1001)
 
 /*
         // Object 1003h: ERR_History_ADOM
