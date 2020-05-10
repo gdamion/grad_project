@@ -74,7 +74,7 @@ SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 //------------------------------------------------------------------------------
 // const defines
 //------------------------------------------------------------------------------
-#define CYCLE_LEN           50000                //UINT_MAX
+#define CYCLE_LEN           5000                //UINT_MAX
 #define NODEID              0xF0                //=> MN
 #define IP_ADDR             0xc0a86401          // 192.168.100.1
 #define SUBNET_MASK         0xFFFFFF00          // 255.255.255.0
@@ -301,8 +301,8 @@ static tOplkError initPowerlink(UINT32 cycleLen_p,
     initParam.isochrTxMaxPayload      = 256;              // const
     initParam.isochrRxMaxPayload      = 256;              // const
     initParam.presMaxLatency          = 50000;            // const; only required for IdentRes
-    initParam.preqActPayloadLimit     = 36;               // required for initialisation (+28 bytes)
-    initParam.presActPayloadLimit     = 36;               // required for initialisation of Pres frame (+28 bytes)
+    initParam.preqActPayloadLimit     = 256;               // required for initialisation (+28 bytes)
+    initParam.presActPayloadLimit     = 256;               // required for initialisation of Pres frame (+28 bytes)
     initParam.asndMaxLatency          = 150000;           // const; only required for IdentRes
     initParam.multiplCylceCnt         = 0;                // required for error detection
     initParam.asyncMtu                = 1500;             // required to set up max frame size

@@ -1,10 +1,10 @@
 
 "use strict";
 
-let PowerlinkOut = require('./PowerlinkOut.js');
 let PowerlinkIn = require('./PowerlinkIn.js');
+let PowerlinkOut = require('./PowerlinkOut.js');
 
 module.exports = {
-  PowerlinkOut: PowerlinkOut,
   PowerlinkIn: PowerlinkIn,
+  PowerlinkOut: PowerlinkOut,
 };
