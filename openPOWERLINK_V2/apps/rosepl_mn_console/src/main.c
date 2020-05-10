@@ -298,8 +298,8 @@ static tOplkError initPowerlink(UINT32 cycleLen_p,
     initParam.fAsyncOnly              = FALSE;
     initParam.featureFlags            = UINT_MAX;
     initParam.cycleLen                = cycleLen_p;//5000;       // required for error detection
-    initParam.isochrTxMaxPayload      = 256;              // const
-    initParam.isochrRxMaxPayload      = 256;              // const
+    initParam.isochrTxMaxPayload      = 1490;              // const
+    initParam.isochrRxMaxPayload      = 1490;              // const
     initParam.presMaxLatency          = 50000;            // const; only required for IdentRes
     initParam.preqActPayloadLimit     = 1024;               // required for initialisation (+28 bytes)
     initParam.presActPayloadLimit     = 1024;               // required for initialisation of Pres frame (+28 bytes)
