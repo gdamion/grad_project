@@ -426,7 +426,6 @@ OBD_BEGIN()
      * Manufacturer Specific Profile Area (0x2000 - 0x5FFF)
      *************************************************************************/
     OBD_BEGIN_PART_MANUFACTURER()
-
         OBD_BEGIN_INDEX_RAM(0x2001, 0x01, FALSE)
             OBD_SUBINDEX_RAM_USERDEF(0x2001, 0x00, kObdTypeInt64, kObdAccVPRW, tObdInteger64, CN1_M01_mm_x_pos1, 0x00)
         OBD_END_INDEX(0x2001)
@@ -470,7 +469,6 @@ OBD_BEGIN()
         OBD_BEGIN_INDEX_RAM(0x200B, 0x01, FALSE)
             OBD_SUBINDEX_RAM_USERDEF(0x200B, 0x00, kObdTypeInt64, kObdAccVPRW, tObdInteger64, CN1_M0B_cmdvel_rwheel2, 0x00)
         OBD_END_INDEX(0x200B)
-
     OBD_END_PART()
 
     /*************************************************************************
