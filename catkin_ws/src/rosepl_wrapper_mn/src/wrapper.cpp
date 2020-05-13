@@ -138,7 +138,7 @@ void cmd_vel_callback(const geometry_msgs::Twist::ConstPtr& msg)
 {
 	// set_powerlink_in(*msg);
 	oplk_pi_in->cmdvel_lwheel = (int64_t)(msg->linear.x * COEF_FLOAT_POINT);
-	oplk_pi_in->cmdvel_rwheel = (int64_t)(msg->linear.y * COEF_FLOAT_POINT);
+	oplk_pi_in->cmdvel_rwheel = (int64_t)(msg->angular.z * COEF_FLOAT_POINT);
 
 	ROS_INFO("Odom callback: cmdvel_lwheel = %ld | cmdvel_rwheel = %ld",\
 		oplk_pi_in->cmdvel_lwheel, oplk_pi_in->cmdvel_rwheel);
