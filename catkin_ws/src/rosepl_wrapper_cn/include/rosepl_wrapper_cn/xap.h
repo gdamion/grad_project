@@ -14,6 +14,7 @@ typedef struct
 # define COMPUTED_PI_IN_SIZE 72
 typedef struct
 {
+	int64_t mm_x_pos;
 	int64_t mm_y_pos;
 	int64_t mm_z_pos;
 	int64_t mm_x_orient;
