@@ -113,16 +113,16 @@ int main(int argc, char **argv)
 		can_run_cycle = false;
 		// ROS_INFO("Sync flow");
 		// get_powerlink_out(&powerlink_out_msg);
-		odom_msg.pose.pose.position.x = (double)(oplk_pi_out->odom_lwheel / COEF_FLOAT_POINT);
-		odom_msg.pose.pose.position.y = (double)(oplk_pi_out->odom_rwheel / COEF_FLOAT_POINT);
+		odom_msg.pose.pose.position.x = (double)oplk_pi_out->odom_lwheel / COEF_FLOAT_POINT;
+		odom_msg.pose.pose.position.y = (double)oplk_pi_out->odom_rwheel / COEF_FLOAT_POINT;
 
-		coord_msg.position.x = (double)(oplk_pi_out->mm_x_pos / COEF_FLOAT_POINT);
-		coord_msg.position.y = (double)(oplk_pi_out->mm_y_pos / COEF_FLOAT_POINT);
-		coord_msg.position.z = (double)(oplk_pi_out->mm_z_pos / COEF_FLOAT_POINT);
-		coord_msg.orientation.x = (double)(oplk_pi_out->mm_x_orient / COEF_FLOAT_POINT);
-		coord_msg.orientation.y = (double)(oplk_pi_out->mm_y_orient / COEF_FLOAT_POINT);
-		coord_msg.orientation.z = (double)(oplk_pi_out->mm_z_orient / COEF_FLOAT_POINT);
-		coord_msg.orientation.w = (double)(oplk_pi_out->mm_w_orient / COEF_FLOAT_POINT);
+		coord_msg.position.x = (double)oplk_pi_out->mm_x_pos / COEF_FLOAT_POINT;
+		coord_msg.position.y = (double)oplk_pi_out->mm_y_pos / COEF_FLOAT_POINT;
+		coord_msg.position.z = (double)oplk_pi_out->mm_z_pos / COEF_FLOAT_POINT;
+		coord_msg.orientation.x = (double)oplk_pi_out->mm_x_orient / COEF_FLOAT_POINT;
+		coord_msg.orientation.y = (double)oplk_pi_out->mm_y_orient / COEF_FLOAT_POINT;
+		coord_msg.orientation.z = (double)oplk_pi_out->mm_z_orient / COEF_FLOAT_POINT;
+		coord_msg.orientation.w = (double)oplk_pi_out->mm_w_orient / COEF_FLOAT_POINT;
 
 		// powerlink_out_pub.publish(powerlink_out_msg);
 		odom_pub.publish(odom_msg);

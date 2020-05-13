@@ -4,10 +4,16 @@
 
 #define COEF_FLOAT_POINT 10000
 
+# define COMPUTED_PI_OUT_SIZE 16
+typedef struct
+{
+	int64_t cmdvel_lwheel;
+	int64_t cmdvel_rwheel;
+} PI_OUT;
+
 # define COMPUTED_PI_IN_SIZE 72
 typedef struct
 {
-	int64_t mm_x_pos;
 	int64_t mm_y_pos;
 	int64_t mm_z_pos;
 	int64_t mm_x_orient;
@@ -17,14 +23,5 @@ typedef struct
 	int64_t odom_lwheel;
 	int64_t odom_rwheel;
 } PI_IN;
-
-# define COMPUTED_PI_OUT_SIZE 16
-typedef struct
-{
-	int64_t cmdvel_lwheel;
-	int64_t cmdvel_rwheel;
-} PI_OUT;
-
-
 
 #endif

@@ -111,8 +111,8 @@ int main(int argc, char **argv)
 		can_run_cycle = false;
 
 		// get_powerlink_out(&powerlink_out_msg);
-		cmd_vel_msg.linear.x = (double)(oplk_pi_out->cmdvel_lwheel / COEF_FLOAT_POINT);
-		cmd_vel_msg.linear.y = (double)(oplk_pi_out->cmdvel_rwheel / COEF_FLOAT_POINT);
+		cmd_vel_msg.linear.x = (double)oplk_pi_out->cmdvel_lwheel / COEF_FLOAT_POINT;
+		cmd_vel_msg.linear.y = (double)oplk_pi_out->cmdvel_rwheel / COEF_FLOAT_POINT;
 
 		// powerlink_out_pub.publish(powerlink_out_msg);
 		cmd_vel_pub.publish(cmd_vel_msg);
