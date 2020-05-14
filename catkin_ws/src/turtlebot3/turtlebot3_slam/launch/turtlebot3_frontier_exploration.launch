@@ -28,8 +28,8 @@
   </node>
 
   <!-- frontier_exploration -->
-  <node pkg="frontier_exploration" type="explore_client" name="explore_client" output="screen"/>
-  <node pkg="frontier_exploration" type="explore_server" name="explore_server" output="screen" >
+  <node pkg="exploration_server" type="plugin_client" name="explore_client" output="screen"/>
+  <node pkg="exploration_server" type="exploration_server_node" name="explore_server" output="screen" >
     <param name="frequency" type="double" value="1.0"/>
     <param name="goal_aliasing" type="double" value="$(arg sensor_range)"/>
     <rosparam file="$(find turtlebot3_navigation)/param/costmap_common_params_$(arg model).yaml" command="load" ns="explore_costmap" />

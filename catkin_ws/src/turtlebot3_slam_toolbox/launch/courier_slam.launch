@@ -1,0 +1,32 @@
+<launch>
+  <!-- Arguments -->
+  <arg name="model" default="$(env COURIER_MODEL)" doc="model type [1, 1.2, 2]"/>
+  <arg name="slam_methods" default="gmapping" doc="slam type [gmapping, cartographer, hector, karto, toolbox_karto, toolbox_lifelong, frontier_exploration]"/>
+  <arg name="configuration_basename" default="courier_lds_2d.lua"/>
+  <arg name="open_rviz" default="false"/>
+
+  <!-- courier -->
+  <include file="$(find courier_bringup)/launch/courier_remote.launch">
+    <arg name="model" value="$(arg model)" />
+  </include>
+
+  <!-- Map server
+  <node pkg="map_server" name="map_server" type="map_server" args="$(arg map_file)"/> -->
+
+  <!-- SLAM: Gmapping, Cartographer, Hector, Karto, Frontier_exploration, RTAB-Map -->
+  <include file="$(find courier_slam)/launch/courier_$(arg slam_methods).launch">
+    <arg name="model" value="$(arg model)"/>
+    <arg name="configuration_basename" value="$(arg configuration_basename)"/>
+  </include>
+
+  <!-- move_base
+  <include file="$(find courier_navigation)/launch/move_base.launch">
+    <arg name="model" value="$(arg model)" />
+  </include> -->
+
+  <!-- rviz
+  <group if="$(arg open_rviz)">
+    <node pkg="rviz" type="rviz" name="rviz" required="true"
+          args="-d $(find courier_slam)/rviz/courier_$(arg slam_methods).rviz"/>
+  </group>-->
+</launch>

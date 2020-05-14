@@ -1,0 +1,20 @@
+<launch>
+
+  <arg name="model" default="solid" doc="model type [1, 1.2, 2, solid]"/>
+
+  <include file="$(find courier_bringup)/launch/includes/description.launch.xml">
+    <arg name="model" value="$(arg model)" />
+  </include>
+
+  <!-- <node pkg="joint_state_publisher" type="joint_state_publisher" name="joint_state_publisher">
+    <param name="rate" value="50"/>
+  </node>
+
+  <node pkg="robot_state_publisher" type="robot_state_publisher" name="robot_state_publisher">
+    <param name="publish_frequency" type="double" value="50.0" />
+  </node> -->
+
+  <node pkg="rviz" type="rviz" name="$(anon rviz)" required="true"
+          args="-d $(find courier_rviz)/rviz/rviz_pilot.rviz"/>
+
+</launch>
