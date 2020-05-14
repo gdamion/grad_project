@@ -22,7 +22,8 @@
 int main(int argc, char** argv)
 {
   ros::init(argc, argv, "slam_toolbox");
-  ros::NodeHandle nh("~");
+  // ros::NodeHandle nh("~");
+  ros::NodeHandle nh;
   ros::spinOnce();
 
   int stack_size;

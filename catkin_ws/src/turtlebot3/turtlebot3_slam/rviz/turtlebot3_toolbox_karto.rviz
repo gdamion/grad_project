@@ -31,18 +31,6 @@ Panels:
     Name: Time
     SyncMode: 0
     SyncSource: LaserScan
-  - Class: courier_rviz_plugins/CourierPanel
-    Name: CourierPanel
-    PathMap: /home/ubuntu/results/pilot/map
-    PathPoses: /home/ubuntu/results/dam_demonstration/poses
-    PathProhibition: /home/ubuntu/results/pilot/prohibition
-    WaypointDescription: Default Waypoint
-  - Class: courier_rviz_plugins/CourierPanel
-    Name: CourierPanel
-    PathMap: ""
-    PathPoses: ""
-    PathProhibition: ""
-    WaypointDescription: Default Waypoint
   - Class: rviz_plugin_tutorials/Teleop
     Name: Teleop
     Topic: ""
@@ -408,11 +396,6 @@ Visualization Manager:
     - Class: rviz/PublishPoint
       Single click: true
       Topic: /clicked_point
-    - Class: courier_rviz_plugins/ProhibitionPoint
-      Clicked Point Topic: prohibition_clicked_point
-      Single click: false
-    - Class: courier_rviz_plugins/Sendpose
-      Topic: posesend
   Value: true
   Views:
     Current:
@@ -458,8 +441,6 @@ Visualization Manager:
         Value: ThirdPersonFollower (rviz)
         Yaw: 0
 Window Geometry:
-  CourierPanel:
-    collapsed: false
   Displays:
     collapsed: false
   Height: 1410
