@@ -205,19 +205,6 @@ Visualization Manager:
       Name: Planners
     - Class: rviz/Group
       Displays:
-        - Class: Submaps
-          Enabled: false
-          Fade-out distance: 1
-          High Resolution: true
-          Low Resolution: false
-          Name: Submaps
-          Submap query service: /submap_query
-          Submaps:
-            All: true
-          Topic: /submap_list
-          Tracking frame: base_link
-          Unreliable: false
-          Value: false
         - Class: rviz/MarkerArray
           Enabled: true
           Marker Topic: /trajectory_node_list
