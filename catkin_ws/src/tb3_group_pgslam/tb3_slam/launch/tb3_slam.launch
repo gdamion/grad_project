@@ -1,0 +1,76 @@
+  <launch>
+  <!-- Arguments -->
+  <arg name="model" default="$(env tb3_MODEL)" doc="model type [burger, waffle, waffle_pi]"/>
+  <arg name="slam_methods" default="toolbox_karto" doc="slam type [gmapping, toolbox_karto, toolbox_lifelong]"/>
+  <arg name="configuration_basename" default="tb3_lds_2d.lua"/>
+
+  <arg name="group_slam" default="false"/>
+
+  <!-- Necessary, if group_slam=true -->
+  <arg name="ns" default=""/>
+
+  <arg name="auto_explore" default="true"/>
+  <arg name="use_explore_lite" default="true"/>
+  <arg name="explore_costmap" default="false"/>
+  <arg name="use_frontier_exploration" default="false"/>
+
+  <group unless="$(arg group_slam)">
+    <arg name="set_base_frame" default="base_link"/>
+    <arg name="set_odom_frame" default="odom"/>
+    <arg name="set_map_frame"  default="map"/>
+  </group>
+
+  <group if="$(arg group_slam)">
+    <arg name="set_base_frame" default="$(arg ns)/base_link"/>
+    <arg name="set_odom_frame" default="$(arg ns)/odom"/>
+    <arg name="set_map_frame"  default="$(arg ns)/map"/>
+  </group>
+
+  <arg name="set_map_topic"  default="map"/>
+  <arg name="set_scan_topic" default="scan" />
+
+  <arg name="rviz" default="false"/>
+
+  <!-- Parameters -->
+  <param name="map_name"  value="$(arg set_map_topic)"/>
+  <param name="scan_topic"  value="$(arg set_scan_topic)"/>
+  <param name="base_frame" value="$(arg set_base_frame)"/>
+  <param name="odom_frame" value="$(arg set_odom_frame)"/>
+  <param name="map_frame"  value="$(arg set_map_frame)"/>
+
+  <!-- tb3 load tf robot params-->
+  <arg name="urdf_file" default="$(find xacro)/xacro --inorder '$(find tb3_description)/urdf/tb3_$(arg model).urdf.xacro'" />
+  <param name="robot_description" command="$(arg urdf_file)" />
+
+  <!-- run robot_state_publisher to publish tf links-->
+  <node pkg="robot_state_publisher" type="robot_state_publisher" name="robot_state_publisher">
+    <param name="publish_frequency" type="double" value="50.0" />
+    <param name="tf_prefix" value="$(arg ns)"/>
+  </node>
+
+  <!-- SLAM: Gmapping, Cartographer, Hector, Karto, Frontier_exploration, RTAB-Map -->
+  <include file="$(find tb3_slam)/launch/tb3_$(arg slam_methods).launch"/>
+
+  <group if="$(arg auto_explore)">
+
+    <include file="$(find tb3_slam)/launch/move_base.launch">
+      <arg name="group"     value="$(arg group_slam)"/>
+      <arg name="ns"     value="$(arg ns)"/> <!-- может быть путаница между base_libk и base_footprint -->
+    </include>
+
+    <include if="$(arg use_explore_lite)" file="$(find tb3_slam)/launch/tb3_explore_lite.launch">
+      <arg name="set_base_frame" value="$(arg set_base_frame)"/>
+      <arg name="set_map_frame"     value="$(arg set_map_frame)"/>
+    </include>
+
+    <!-- <include if="$(arg use_frontier_exploration)" file="$(find tb3_slam)/launch/tb3_frontier_exploration.launch">
+    </include> -->
+
+  </group>
+
+  <!-- rviz -->
+  <node if="$(arg rviz)" pkg="rviz" type="rviz" name="rviz" required="true"
+        args="-d $(find tb3_slam)/rviz/tb3_$(arg slam_methods).rviz"/>
+
+</launch>
+
