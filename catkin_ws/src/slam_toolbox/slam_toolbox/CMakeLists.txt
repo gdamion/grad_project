@@ -44,8 +44,8 @@ set(CMAKE_INCLUDE_CURRENT_DIR ON)
 add_definitions(-DQT_NO_KEYWORDS)
 find_package(Boost REQUIRED system serialization filesystem thread)
 
-include_directories(include ${catkin_INCLUDE_DIRS} 
-                            ${EIGEN3_INCLUDE_DIRS} 
+include_directories(include ${catkin_INCLUDE_DIRS}
+                            ${EIGEN3_INCLUDE_DIRS}
                             ${CHOLMOD_INCLUDE_DIR}
                             ${Boost_INCLUDE_DIR}
                             ${BOOST_INCLUDE_DIRS}
@@ -108,7 +108,7 @@ endif()
 
 #### Ceres Plugin
 add_library(ceres_solver_plugin solvers/ceres_solver.cpp)
-target_link_libraries(ceres_solver_plugin ${catkin_LIBRARIES} 
+target_link_libraries(ceres_solver_plugin ${catkin_LIBRARIES}
                                           ${CERES_INCLUDE_DIRS}
                                           ${CERES_LIBRARIES}
                                           ${Boost_LIBRARIES}
@@ -180,7 +180,7 @@ install(DIRECTORY include/${PROJECT_NAME}/
   DESTINATION ${CATKIN_PACKAGE_INCLUDE_DESTINATION}
 )
 
-install(DIRECTORY launch/ 
+install(DIRECTORY launch/
   DESTINATION ${CATKIN_PACKAGE_SHARE_DESTINATION}
 )
 

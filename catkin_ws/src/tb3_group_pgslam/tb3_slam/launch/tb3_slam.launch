@@ -1,6 +1,6 @@
   <launch>
   <!-- Arguments -->
-  <arg name="model" default="$(env tb3_MODEL)" doc="model type [burger, waffle, waffle_pi]"/>
+  <arg name="model" default="waffle" doc="model type [burger, waffle, waffle_pi]"/>
   <arg name="slam_methods" default="toolbox_karto" doc="slam type [gmapping, toolbox_karto, toolbox_lifelong]"/>
   <arg name="configuration_basename" default="tb3_lds_2d.lua"/>
 
@@ -14,17 +14,13 @@
   <arg name="explore_costmap" default="false"/>
   <arg name="use_frontier_exploration" default="false"/>
 
-  <group unless="$(arg group_slam)">
-    <arg name="set_base_frame" default="base_link"/>
-    <arg name="set_odom_frame" default="odom"/>
-    <arg name="set_map_frame"  default="map"/>
-  </group>
+  <arg unless="$(arg group_slam)" name="set_base_frame" default="base_footprint"/>
+  <arg unless="$(arg group_slam)" name="set_odom_frame" default="odom"/>
+  <arg unless="$(arg group_slam)" name="set_map_frame"  default="map"/>
 
-  <group if="$(arg group_slam)">
-    <arg name="set_base_frame" default="$(arg ns)/base_link"/>
-    <arg name="set_odom_frame" default="$(arg ns)/odom"/>
-    <arg name="set_map_frame"  default="$(arg ns)/map"/>
-  </group>
+  <arg if="$(arg group_slam)" name="set_base_frame" default="$(arg ns)/base_link"/>
+  <arg if="$(arg group_slam)" name="set_odom_frame" default="$(arg ns)/odom"/>
+  <arg if="$(arg group_slam)" name="set_map_frame"  default="$(arg ns)/map"/>
 
   <arg name="set_map_topic"  default="map"/>
   <arg name="set_scan_topic" default="scan" />
@@ -53,14 +49,15 @@
 
   <group if="$(arg auto_explore)">
 
-    <include file="$(find tb3_slam)/launch/move_base.launch">
+    <include file="$(find tb3_nav)/launch/move_base.launch">
       <arg name="group"     value="$(arg group_slam)"/>
       <arg name="ns"     value="$(arg ns)"/> <!-- может быть путаница между base_libk и base_footprint -->
     </include>
 
     <include if="$(arg use_explore_lite)" file="$(find tb3_slam)/launch/tb3_explore_lite.launch">
+      <arg name="explore_costmap" value="$(arg explore_costmap)"/>
       <arg name="set_base_frame" value="$(arg set_base_frame)"/>
-      <arg name="set_map_frame"     value="$(arg set_map_frame)"/>
+      <arg name="set_map_topic"     value="/$(arg ns)/$(arg set_map_topic)"/>
     </include>
 
     <!-- <include if="$(arg use_frontier_exploration)" file="$(find tb3_slam)/launch/tb3_frontier_exploration.launch">
@@ -70,7 +67,7 @@
 
   <!-- rviz -->
   <node if="$(arg rviz)" pkg="rviz" type="rviz" name="rviz" required="true"
-        args="-d $(find tb3_slam)/rviz/tb3_$(arg slam_methods).rviz"/>
+        args="-d $(find tb3_slam)/rviz/tb3_$(arg slam_methods)_$(arg ns).rviz"/>
 
 </launch>
 
