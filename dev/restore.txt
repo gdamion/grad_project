@@ -1,0 +1,43 @@
+  cython fltk1.3-doc fluid freeglut3 freeglut3-dev gazebo9 gazebo9-plugin-base gdal-data gir1.2-gtk-2.0 hddtemp hdf5-helpers libaec-dev
+  libarmadillo-dev libarmadillo8 libarpack2-dev libassimp-dev libassimp4 libatk1.0-dev libavcodec-dev libavdevice-dev libavfilter-dev
+  libavformat-dev libavresample-dev libavutil-dev libcairo-script-interpreter2 libcairo2-dev libcharls1 libcurl4-openssl-dev libdap-dev
+  libdap25 libdapclient6v5 libdapserver7v5 libdc1394-22-dev libegl1-mesa-dev libepsilon-dev libepsilon1 libexif-dev libexif-doc
+  libflann-dev libflann1.9 libfltk-cairo1.3 libfltk-forms1.3 libfltk-images1.3 libfltk1.3-dev libfreeimage-dev libfreeimage3
+  libfreexl-dev libfreexl1 libfyba-dev libfyba0 libgazebo9 libgazebo9-dev libgdal-dev libgdal20 libgdcm2-dev libgdcm2.8
+  libgdk-pixbuf2.0-dev libgeos-3.6.2 libgeos-c1v5 libgeos-dev libgeotiff-dev libgeotiff2 libgif-dev libgl2ps-dev libglade2-0
+  libgles2-mesa-dev libgphoto2-dev libgtk2.0-dev libgts-dev libhdf4-0-alt libhdf4-alt-dev libhdf5-cpp-100 libhdf5-dev libhdf5-mpi-dev
+  libhdf5-openmpi-100 libhdf5-openmpi-dev libignition-cmake-dev libignition-common libignition-common-dev libignition-fuel-tools1-1
+  libignition-fuel-tools1-dev libignition-math4 libignition-math4-dev libignition-msgs libignition-msgs-dev libignition-transport4
+  libignition-transport4-dev libilmbase-dev libjs-jquery-ui libjson-c-dev libjsoncpp-dev libjxr0 libkml-dev libkmlbase1
+  libkmlconvenience1 libkmldom1 libkmlengine1 libkmlregionator1 libkmlxsd1 liblept5 libminizip-dev libminizip1 libnetcdf-c++4
+  libnetcdf-cxx-legacy-dev libnetcdf-dev libnetcdf13 libogdi3.2 libogdi3.2-dev libogg-dev libogre-1.9-dev libogre-1.9.0v5
+  libopencv-calib3d-dev libopencv-calib3d3.2 libopencv-contrib-dev libopencv-contrib3.2 libopencv-core-dev libopencv-core3.2
+  libopencv-dev libopencv-features2d-dev libopencv-features2d3.2 libopencv-flann-dev libopencv-flann3.2 libopencv-highgui-dev
+  libopencv-highgui3.2 libopencv-imgcodecs-dev libopencv-imgcodecs3.2 libopencv-imgproc-dev libopencv-imgproc3.2 libopencv-ml-dev
+  libopencv-ml3.2 libopencv-objdetect-dev libopencv-objdetect3.2 libopencv-photo-dev libopencv-photo3.2 libopencv-shape-dev
+  libopencv-shape3.2 libopencv-stitching-dev libopencv-stitching3.2 libopencv-superres-dev libopencv-superres3.2 libopencv-ts-dev
+  libopencv-video-dev libopencv-video3.2 libopencv-videoio-dev libopencv-videoio3.2 libopencv-videostab-dev libopencv-videostab3.2
+  libopencv-viz-dev libopencv-viz3.2 libopencv3.2-java libopencv3.2-jni libopenexr-dev libopenjp2-7-dev libopenni-dev
+  libopenni-sensor-pointclouds0 libopenni0 libopenni2-0 libopenni2-dev libpango1.0-dev libpcl-apps1.8 libpcl-common1.8 libpcl-dev
+  libpcl-features1.8 libpcl-filters1.8 libpcl-io1.8 libpcl-kdtree1.8 libpcl-keypoints1.8 libpcl-ml1.8 libpcl-octree1.8
+  libpcl-outofcore1.8 libpcl-people1.8 libpcl-recognition1.8 libpcl-registration1.8 libpcl-sample-consensus1.8 libpcl-search1.8
+  libpcl-segmentation1.8 libpcl-stereo1.8 libpcl-surface1.8 libpcl-tracking1.8 libpcl-visualization1.8 libpixman-1-dev libpoppler-dev
+  libpoppler-private-dev libpostproc-dev libpq-dev libpq5 libproj-dev libproj12 libprotobuf-dev libprotoc-dev libprotoc10 libqhull-dev
+  libqhull-r7 libqt5concurrent5 libqt5designer5 libqt5designercomponents5 libqt5help5 libqt5opengl5-dev libqt5positioning5 libqt5qml5
+  libqt5quick5 libqt5quickparticles5 libqt5quicktest5 libqt5quickwidgets5 libqt5sensors5 libqt5sql5 libqt5sql5-sqlite libqt5test5
+  libqt5webchannel5 libqt5webkit5 libqt5webkit5-dev libqt5xml5 libqwt-headers libqwt-qt5-6 libqwt-qt5-dev libraw1394-dev
+  libraw1394-tools libsdformat6 libsdformat6-dev libsimbody-dev libsimbody3.5v5 libsocket++1 libspatialite-dev libspatialite7 libspnav0
+  libsuperlu-dev libsuperlu5 libswresample-dev libswscale-dev libtar-dev libtar0 libtbb-dev libtbb2 libtesseract4 libtheora-dev
+  libtinyxml-dev libtinyxml2.6.2v5 liburdfdom-dev liburdfdom-headers-dev liburdfdom-model liburdfdom-model-state liburdfdom-sensor
+  liburdfdom-world liburiparser-dev liburiparser1 libusb-1.0-0-dev libusb-1.0-doc libvtk6-dev libvtk6-java libvtk6-jni libvtk6-qt-dev
+  libvtk6.3 libvtk6.3-qt libwayland-bin libwayland-dev libxcb-shm0-dev libxcomposite-dev libxcursor-dev libxerces-c-dev libxerces-c3.2
+  libxi-dev libxinerama-dev libxml2-dev libxmu-dev libxmu-headers libxrandr-dev libyaml-dev libzip-dev libzmq3-dev libzzip-0-13
+  linux-headers-5.3.0-46 linux-headers-5.3.0-46-generic linux-image-5.3.0-46-generic linux-modules-5.3.0-46-generic odbcinst
+  odbcinst1debian2 opencv-data openni-utils proj-bin proj-data protobuf-compiler pyqt5-dev python-attr python-autobahn python-automat
+  python-backports.functools-lru-cache python-cbor python-click python-colorama python-constantly python-cycler python-glade2
+  python-gobject python-gobject-2 python-gtk2 python-hyperlink python-incremental python-lz4 python-matplotlib python-matplotlib-data
+  python-mpi4py python-nacl python-opencv python-opengl python-pam python-pyasn1-modules python-pydot python-pyqt5
+  python-pyqt5.qtopengl python-pyqt5.qtsvg python-pyqt5.qtwebkit python-qrcode python-serial python-service-identity python-snappy
+  python-subprocess32 python-trie python-twisted python-twisted-bin python-twisted-core python-txaio python-u-msgpack python-ubjson
+  python-vtk6 python-wsaccel qt5-assistant qt5-qmake qt5-qmake-bin qt5-qmltooling-plugins qtbase5-dev qtbase5-dev-tools qtchooser
+  qtdeclarative5-dev qttools5-dev qttools5-dev-tools qttools5-private-dev 

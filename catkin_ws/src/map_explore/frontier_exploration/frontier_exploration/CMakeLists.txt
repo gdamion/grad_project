@@ -59,28 +59,28 @@ add_library(frontier_plugin src/frontier_plugin.cpp src/frontier_search.cpp)
 target_link_libraries(frontier_plugin ${catkin_LIBRARIES} ${Boost_LIBRARIES} ${PCL_LIBRARIES})
 add_dependencies(frontier_plugin ${PROJECT_NAME}_generate_messages_cpp ${catkin_EXPORTED_TARGETS})
 
-if(CATKIN_ENABLE_TESTING)
-  # Find package test dependencies
-  find_package(rostest REQUIRED)
-  find_package(gtest)
+# if(CATKIN_ENABLE_TESTING)
+#   # Find package test dependencies
+#   find_package(rostest REQUIRED)
+#   find_package(gtest)
 
 
-  # Add the test folder to the include directories
-  include_directories(src/test)
+#   # Add the test folder to the include directories
+#   include_directories(src/test)
 
-  include_directories(${GTEST_INCLUDE_DIRS})
-  link_directories(${GTEST_LIBRARY_DIRS})
+#   include_directories(${GTEST_INCLUDE_DIRS})
+#   link_directories(${GTEST_LIBRARY_DIRS})
 
-  catkin_add_gtest(frontier_search_tests src/test/frontier_search_tests.cpp)
-  target_link_libraries(frontier_search_tests frontier_plugin)
+#   catkin_add_gtest(frontier_search_tests src/test/frontier_search_tests.cpp)
+#   target_link_libraries(frontier_search_tests frontier_plugin)
 
-  catkin_add_gtest(geometry_tools_tests src/test/geometry_tools_tests.cpp)
-  target_link_libraries(geometry_tools_tests frontier_plugin)
+#   catkin_add_gtest(geometry_tools_tests src/test/geometry_tools_tests.cpp)
+#   target_link_libraries(geometry_tools_tests frontier_plugin)
 
-  catkin_add_gtest(costmap_tools_tests src/test/costmap_tools_tests.cpp)
-  target_link_libraries(costmap_tools_tests frontier_plugin)
+#   catkin_add_gtest(costmap_tools_tests src/test/costmap_tools_tests.cpp)
+#   target_link_libraries(costmap_tools_tests frontier_plugin)
 
-endif()
+# endif()
 
 install(TARGETS frontier_plugin
         ARCHIVE DESTINATION ${CATKIN_PACKAGE_LIB_DESTINATION}
